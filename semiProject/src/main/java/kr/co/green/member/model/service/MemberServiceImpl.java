@@ -1,5 +1,42 @@
 package kr.co.green.member.model.service;
 
-public class MemberServiceImpl {
+import java.sql.Connection;
+
+import kr.co.green.member.model.dao.MemberDAO;
+import kr.co.green.member.model.dto.MemberDTO;
+import kr.co.green.common.DatabaseConnection;
+
+public class MemberServiceImpl implements MemberService {
+	private Connection con;
+	private DatabaseConnection dc;
+	private MemberDAO memberDAO;
+
+	public MemberServiceImpl() {
+		memberDAO = new MemberDAO();
+		dc = new DatabaseConnection();
+		con = dc.connDB();
+	}
+
+	@Override
+	public MemberDTO memberLogin(String email, String pwd) {
+		return memberDAO.memberLogin(con, email, pwd);
+	}
+
+	@Override
+	public int memberEnroll(MemberDTO memberDTO) {
+		return memberDAO.memberEnroll(con, memberDTO);
+	}
+
+	@Override
+	public int memberDelete(String name, String nickname) {
+
+		return memberDAO.memberDelete(con, name, nickname);
+	}
+
+	@Override
+	public boolean duplicateEmail(String email) {
+
+		return memberDAO.duplicateEmail(con, email);
+	}
 
 }
