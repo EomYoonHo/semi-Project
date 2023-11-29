@@ -12,11 +12,7 @@ import kr.co.green.ReviewBoard.model.dto.ReviewBoardDTO;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
 
 
-<<<<<<< HEAD
-@WebServlet("/boardUpdate.do")
-=======
 @WebServlet("/Update.do")
->>>>>>> branch 'master' of https://github.com/EomYoonHo/semi-Project.git
 public class UpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    

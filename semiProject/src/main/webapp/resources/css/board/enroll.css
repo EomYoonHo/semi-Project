@@ -1,0 +1,75 @@
+
+
+.card-write {
+    padding: 20px;
+    height: 650px;
+    background-color: rgb(223, 223, 223);
+    
+}
+
+.card-write input, textarea{
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #6d6b6b;
+}
+
+
+
+
+.card-write .title-w input[type="text"] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 85.5%;
+    
+}
+
+.card-write .msg1 textarea {
+    min-width: 85.5%;
+    max-width: 85.5%;
+    min-height: 350px;
+    max-height: 350px;
+    box-shadow: 3px 3px 10px #6d6b6b;
+    
+
+    /* vertical-align: 텍스트를 수직, 수평 정렬 할 수 있다. */
+    vertical-align: top;
+}
+
+.card-write .msg2 textarea {
+    min-width: 85.5%;
+    max-width: 85.5%;
+    min-height: 280px;
+    max-height: 280px;
+    box-shadow: 3px 3px 10px #6d6b6b;
+    
+
+    /* vertical-align: 텍스트를 수직, 수평 정렬 할 수 있다. */
+    vertical-align: top;
+}
+
+.card-write input[type="file"] {
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    margin-left: 40px;
+    padding: 20px;
+}
+
+.btn-w {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px 10px 20px 10px;
+    padding: 20px;
+
+}
+
+.btn-w a {
+    background-color: tomato;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    
+}
