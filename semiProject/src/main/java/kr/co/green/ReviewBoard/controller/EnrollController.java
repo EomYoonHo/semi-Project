@@ -49,6 +49,7 @@ public class EnrollController extends HttpServlet {
 		
 		
 		HttpSession session = request.getSession();
+<<<<<<< HEAD
 //		int mno = (int)session.getAttribute("m_no");
 		int mno = 8;
 		String nickName = (String)session.getAttribute("nickName");
@@ -106,6 +107,65 @@ public class EnrollController extends HttpServlet {
 // 		            
 // 		            // ÆÄÀÏÀÇ ÀÌ¸§ÀÌ "filename=" ´ÙÀ½¿¡ ³ª¿À±â ¶§¹®¿¡
 // 		            // "filename=" ÀÇ ´ÙÀ½ ¹®ÀÚºÎÅÍ ³¡±îÁö ÃßÃâ
+=======
+		//int mno = (int)session.getAttribute("m_no");
+		int mno= 5;
+		String nickName = (String)session.getAttribute("nickName");
+		
+//		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½Ò¶ï¿½
+//		Collection<Part> parts = request.getParts();
+// 		String uploadDirectory = "C:\\Users\\pje97\\eclipse-workspace\\FirstProject\\src\\main\\webapp\\resource\\upload";
+// 		
+// 		File filePath = new File(uploadDirectory);
+// 		
+// 		if(!filePath.exists()) {
+// 			filePath.mkdirs();
+// 		}
+// 		
+// 		String fileName = null;
+// 		
+// 		for(Part part : parts) {
+// 			fileName = getFileName(part);
+// 		
+// 			if(fileName != null) {
+// 				part.write(filePath + File.separator + fileName);
+// 			}
+// 		
+// 		}
+ 		
+ 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
+ 		
+ 		ReviewBoardDTO board = new ReviewBoardDTO();
+// 		board.setTitle(title);
+// 		board.setContent(content);
+// 		board.setStar(star);
+// 		board.setNickName(nickName);
+// 		board.setFileName(fileName);
+// 		board.setFilePath(uploadDirectory);
+	
+ 		int result = boardService.boardEnroll(title, content, star, mno);
+	
+ 		if(result > 0) {
+ 			response.sendRedirect("/reviewBoardList.do?cpage=1");
+ 		}else {
+ 			
+ 		}
+ 		
+	}
+// 		private String getFileName(Part part) {
+// 			String contentDisposition = part.getHeader("content-disposition");
+//
+// 			String[] tokens = contentDisposition.split(";");
+//
+// 			  // ï¿½ï¿½Å«ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¼­ ï¿½ï¿½Å«ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ filenameï¿½ï¿½ï¿½ï¿½
+// 		      // ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Â°ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+// 		      for(String token : tokens) {
+// 		         // ï¿½ï¿½Å«ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ filenameï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+// 		         if(token.trim().startsWith("filename")) {
+// 		            
+// 		            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ "filename=" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// 		            // "filename=" ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+>>>>>>> branch 'master' of https://github.com/EomYoonHo/semi-Project.git
 // 		            return token.substring(token.indexOf('=')+2, token.length()-1);
 // 		         }
 // 		      }

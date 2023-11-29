@@ -214,7 +214,11 @@ public class ReviewBoardDAO {
 		
 			int result = pstmt.executeUpdate();
 			return result;
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> branch 'master' of https://github.com/EomYoonHo/semi-Project.git
 		} catch (SQLException e) {
 			
 			e.printStackTrace();

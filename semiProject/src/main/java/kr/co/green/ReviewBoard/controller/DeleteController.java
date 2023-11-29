@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
 
 
+<<<<<<< HEAD
 @WebServlet("/boardDelete.do")
+=======
+@WebServlet("/Delete.do")
+>>>>>>> branch 'master' of https://github.com/EomYoonHo/semi-Project.git
 public class DeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
