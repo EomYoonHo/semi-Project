@@ -42,8 +42,23 @@ public class BoardServiceImpl {
 
 	// 상세보기
 
-//	public void boardSelect(BoardDTO board) {
-//		boardDAO.boardSelect(con, board);
-//	}
+	public void boardSelect(BoardDTO board) {
+		boardDAO.boardSelect(con, board);
+	}
+	
+	// 수정
+	public int boardUpdate(int b_idx, String b_title, String b_content) {
+		return boardDAO.boardUpdate(con, b_idx, b_title, b_content);
+	};
+	
+	// 수정을위한 상세보기
+	public void boardUpdateSelect(BoardDTO board) {
+		boardDAO.boardUpdateSelect(con, board);
+	}
+
+	// 삭제
+	public int boardDelete(int b_idx) {
+		return boardDAO.boardDelete(con, b_idx);
+	};
 
 }

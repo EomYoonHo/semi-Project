@@ -40,7 +40,7 @@ public class BoardListController extends HttpServlet {
 		// 보여질 페이지 수
 		int pageLimit = 5;
 		// 한 페이지에 들어갈 게시글 수(0~4)5개
-		int boardLimit = 5;
+		int boardLimit = 10;
 		// 나머지 페이징 처리는 common
 
 		// 페이징처리

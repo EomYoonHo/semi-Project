@@ -27,6 +27,7 @@ public class BoardDAO {
 				+ "		JOIN  MEMBER m"
 				+ "		ON b.m_no=m.m_no"
 				+ "		WHERE b_DELETE_DATE IS NULL" 
+				+ "		AND b_title LIKE '%' || ? || '%' "
 				+ "	 	ORDER BY b_in_date DESC"
 				+ "		OFFSET ? ROWS FETCH FIRST ? ROWS ONLY";
 
@@ -36,8 +37,9 @@ public class BoardDAO {
 		try {
 			pstmt = con.prepareStatement(query);
 			// 3.물음표에 값넣기
-			pstmt.setInt(1, pi.getOffset());
-			pstmt.setInt(2, pi.getBoardLimit());
+			pstmt.setString(1, searchText);
+			pstmt.setInt(2, pi.getOffset());
+			pstmt.setInt(3, pi.getBoardLimit());
 
 			// 4.쿼리실행
 			ResultSet rs = pstmt.executeQuery();
@@ -68,9 +70,13 @@ public class BoardDAO {
 
 	// 전체 게시글 수
 	public int boardListCount(Connection con, String searchText) {
-		String query = "SELECT count(*) AS cnt FROM board WHERE b_delete_date IS NULL";
+		String query = "SELECT count(*) AS cnt "
+				+ "	FROM board "
+				+ "	WHERE b_delete_date IS NULL"
+				+ "	AND b_title LIKE '%' || ? || '%' ";
 		try {
 			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, searchText);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				int result = rs.getInt("CNT");
@@ -132,42 +138,145 @@ public class BoardDAO {
 	}
 
 	// 상세보기
-//	public void boardSelect(Connection con, BoardDTO board) {
-//		String query = "SELECT board_idx," 
-//				+ " 				board_title," 
-//				+ " 				board_memberNo,"
-//				+ " 				board_views," 
-//				+ " 				board_in_date," 
-//				+ " 				board_content"
-//				+ "		FROM board" 
-//				+ "		WHERE board_idx=?";
-//
-//		try {
-//			pstmt = con.prepareStatement(query);
-//			pstmt.setInt(1, board.getIdx());
-//			ResultSet rs = pstmt.executeQuery();
-//
-//			while (rs.next()) {
-//				// 글번호, 제목, 작성자, 조회수, 작성일, 내용 꺼내기
-//				int idx = rs.getInt("board_IDX");
-//				String title = rs.getString("board_TITLE");
-//				int memberNo = rs.getInt("board_memberNo");
-//				int views = rs.getInt("board_VIEWS");
-//				String inDate = rs.getString("board_IN_DATE");
-//				String content = rs.getString("board_CONTENT");
-//
-//				board.setIdx(idx);
-//				board.setTitle(title);
-//				board.setMemberNo(memberNo);
-//				board.setViews(views);
-//				board.setInDate(inDate);
-//				board.setContent(content);
-//			}
-//			pstmt.close();
-//			con.close();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//
-//	}
+	public void boardSelect(Connection con, BoardDTO board) {
+		String query = "SELECT b.b_idx," 
+				+ " 				b.b_title," 
+				+ " 				m.m_nickname,"
+				+ " 				b.b_views," 
+				+ " 				b.b_in_date," 
+				+ " 				b.b_content"
+				+ "		FROM board b" 
+				+ "		JOIN member m"	
+				+ "     ON b.m_no = m.m_no"
+				+ "		WHERE b_idx=?";
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, board.getB_idx());
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				// 글번호, 제목, 작성자, 조회수, 작성일, 내용 꺼내기
+				int b_idx = rs.getInt("b_IDX");
+				String b_title = rs.getString("b_TITLE");
+				String m_nickname = rs.getString("m_nickname");
+				int b_views = rs.getInt("b_VIEWS");
+				String b_inDate = rs.getString("b_IN_DATE");
+				String b_content = rs.getString("b_CONTENT");
+
+				board.setB_idx(b_idx);
+				board.setB_title(b_title);
+				board.setM_nickname(m_nickname);
+				board.setB_views(b_views);
+				board.setB_inDate(b_inDate);
+				board.setB_content(b_content);
+			}
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	//수정
+	public int boardUpdate(Connection con, int b_idx, String b_title, String b_content) {
+		String query = "UPDATE board "
+				+ "		SET 	b_TITLE=?," 
+				+ " 			b_CONTENT=?," 
+				+ " 			b_update_date =sysdate" 
+				+ " 	WHERE B_IDX=?";
+		
+		try {
+			//쿼리실행준비
+			pstmt = con.prepareStatement(query);
+			//물음표채워서 쿼리완성
+			pstmt.setString(1, b_title);
+			pstmt.setString(2, b_content);
+			pstmt.setInt(3, b_idx);
+			//쿼리실행
+			int result = pstmt.executeUpdate();
+			pstmt.close();
+			con.close();
+			return result;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+		return 0;
+	
+	}	
+	
+	// 수정을위한 상세보기
+	public void boardUpdateSelect(Connection con, BoardDTO board) {
+		//번호 작성일 작성자 조회수 제목 내용
+		
+		String query = "SELECT b.b_idx," 
+				+ " 				b.b_title," 
+				+ " 				m.m_nickname,"
+				+ " 				b.b_views," 
+				+ " 				b.b_in_date," 
+				+ " 				b.b_content"
+				+ "		FROM board b" 
+				+ "		JOIN member m"	
+				+ "     ON b.m_no = m.m_no"
+				+ "		WHERE b_idx=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, board.getB_idx());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int b_idx = rs.getInt("b_IDX");
+				String b_title = rs.getString("b_TITLE");
+				String m_nickname = rs.getString("m_nickname");
+				int b_views = rs.getInt("b_VIEWS");
+				String b_inDate = rs.getString("b_IN_DATE");
+				String b_content = rs.getString("b_CONTENT");
+
+				board.setB_idx(b_idx);
+				board.setB_title(b_title);
+				board.setM_nickname(m_nickname);
+				board.setB_views(b_views);
+				board.setB_inDate(b_inDate);
+				board.setB_content(b_content);	
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	
+	//삭제
+	public int boardDelete(Connection con, int b_idx) {
+		String query = "UPDATE board"
+				+"		SET b_delete_date = sysdate"
+				+"		WHERE b_idx = ?";
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, b_idx);
+			
+			int result = pstmt.executeUpdate();
+			pstmt.close();
+			con.close();
+			return result;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	
+	
+	
 }
