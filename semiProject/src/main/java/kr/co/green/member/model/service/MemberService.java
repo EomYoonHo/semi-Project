@@ -10,4 +10,10 @@ public interface MemberService {
 	public int memberDelete(String name, String nickname);
 
 	public boolean duplicateEmail(String email);
+
+	public void selectMember(MemberDTO memberDTO);
+	public MemberDTO retrieveMember(String email);
 }
+
+
+

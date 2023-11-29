@@ -6,7 +6,7 @@
 
 <meta charset="utf-8">
 <title>LOGIN</title>
-<link rel="stylesheet" href="../../resources/css/yonnho.css">
+<link rel="stylesheet" href="/resources/css/yonnho.css">
 <!-- Meta -->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -24,17 +24,18 @@
 	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 	crossorigin="anonymous"></script>
 <link rel="shortcut icon" href="favicon.ico">
+<script type="text/javascript" src="/resources/js/member/member.js"></script>
 </head>
 <body>
 	<div class="jb-box">
 
 		<video muted="" autoplay="" loop="">
-			<source src="../video/yoonho.mp4" type="video/mp4">
+			<source src="/views/video/ocean.mp4" type="video/mp4">
 		</video>
 		<div class="jb-text login-signup">
 			<a href="/form/loginform.do">로그인</a> 
 			<a href="/form/registerform.do">회원가입</a>
-			<a href="form/mapform.do" class="link link--text"
+			<a href="/form/mapform.do" class="link link--text"
 				style="color: white;">지도 <svg xmlns="http://www.w3.org/2000/svg"
 					width="16" height="16" fill="currentColor"
 					class="bi bi-globe-americas" viewBox="0 0 16 16">
@@ -45,18 +46,22 @@
 			</a>
 		</div>
 
-
-
 		<div class="login-box">
 			<h2>로그인</h2>
-			<form action="/login.do" method="POST">
+			<form method="post"  id="loginbox" >
 				<div class="user-box">
 					<input type="email" name="email" required=""> <label>EMAIL</label>
 				</div>
 				<div class="user-box">
 					<input type="password" name="pwd" required=""> <label>PASSWORD</label>
 				</div>
-				<button type="submit">로그인</button>
+				<a href="#"  onclick="login()">
+            	<span></span>
+            	<span></span>
+            	<span></span>
+            	<span></span>
+            	Login
+          		</a>
 			</form>
 		</div>
 	</div>

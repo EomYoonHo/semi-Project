@@ -14,14 +14,14 @@ import kr.co.green.ReviewBoard.model.dto.ReviewBoardDTO;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
 
 
-@WebServlet("/DetailController")
+@WebServlet("/detail.do")
 public class DetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
     public DetailController() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	
@@ -34,15 +34,15 @@ public class DetailController extends HttpServlet {
 		
 		if(result > 0) {
 			
-			ReviewBoardDTO board = new ReviewBoardDTO();
-			board.setIdx(idx);
+			ReviewBoardDTO reviewboard = new ReviewBoardDTO();
+			reviewboard.setIdx(idx);
 			
-			boardService.boardSelect(board);
+			boardService.boardSelect(reviewboard);
 			
 			
-			if(!Objects.isNull(board.getIdx())) {
-				request.setAttribute("board", board);
-				RequestDispatcher view = request.getRequestDispatcher(" ");
+			if(!Objects.isNull(reviewboard.getIdx())) {
+				request.setAttribute("reviewboard", reviewboard);
+				RequestDispatcher view = request.getRequestDispatcher("/views/reviewboard/reviewDetail.jsp");
 				view.forward(request, response);
 			}
 		}

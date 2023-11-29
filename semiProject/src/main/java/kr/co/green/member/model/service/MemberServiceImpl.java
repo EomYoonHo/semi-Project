@@ -2,9 +2,9 @@ package kr.co.green.member.model.service;
 
 import java.sql.Connection;
 
+import kr.co.green.common.DatabaseConnection;
 import kr.co.green.member.model.dao.MemberDAO;
 import kr.co.green.member.model.dto.MemberDTO;
-import kr.co.green.common.DatabaseConnection;
 
 public class MemberServiceImpl implements MemberService {
 	private Connection con;
@@ -37,6 +37,17 @@ public class MemberServiceImpl implements MemberService {
 	public boolean duplicateEmail(String email) {
 
 		return memberDAO.duplicateEmail(con, email);
+	}
+	
+	@Override
+	public void selectMember(MemberDTO memberDTO) {
+		memberDAO.selectMember(con,memberDTO);
+	}
+	
+	@Override
+	public MemberDTO retrieveMember(String email) {
+	
+		return memberDAO.retrieveMember(con,email);
 	}
 
 }

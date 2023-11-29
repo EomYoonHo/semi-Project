@@ -16,16 +16,20 @@
         <meta name="description" content="">
 
         <!-- The compiled CSS file -->
-        <link rel="stylesheet" href="css/production.css">
-        <link rel="stylesheet" href="./css/yh.css">
-        <link rel="stylesheet" href="./css/table.css">
-        <link rel="stylesheet" href="./css/star.css">
+        <link rel="stylesheet" href="/resources/css/production.css">
+        <link rel="stylesheet" href="/resources/css/yh.css">
+        <link rel="stylesheet" href="/resources/css/table.css">
+        <link rel="stylesheet" href="/resources/css/star.css">
+        <link rel="stylesheet" href="/resources/css/order.css">
         <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
         <link rel="stylesheet" th:href="@{./css/custom.min.css}">
-
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+		
         <!-- 부트스트랩 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         
 
         <!-- Web fonts -->
@@ -35,7 +39,10 @@
         <link rel="shortcut icon" href="favicon.ico">
 
 
-
+		<!-- 잡것 -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
         
 
    
@@ -55,45 +62,51 @@
                   <h3 style="font-size: 50px;">Review</h3>
               </div>
           </div>
-          <form class="mb-3" name="myform" id="myform" method="post" style="text-align: center; margin: 0px;">
+                <form class=" form-horizontal" method="post" action="/reviewEnroll.do" th:object="${postDto}">
+          <div class="mb-3" name="myform" id="myform" method="post" style="text-align: center; margin: 0px;">
             <fieldset>
-                <input type="radio" name="Star" value="5" id="rate1"><label
+                <input type="radio" name="star" value="★★★★★" id="rate1"><label
                     for="rate1">★</label>
-                <input type="radio" name="Star" value="4" id="rate2"><label
+                <input type="radio" name="star" value="★★★★" id="rate2"><label
                     for="rate2">★</label>
-                <input type="radio" name="Star" value="3" id="rate3"><label
+                <input type="radio" name="star" value="★★★" id="rate3"><label
                     for="rate3">★</label>
-                <input type="radio" name="Star" value="2" id="rate4"><label
+                <input type="radio" name="star" value="★★" id="rate4"><label
                     for="rate4">★</label>
-                <input type="radio" name="Star" value="1" id="rate5"><label
+                <input type="radio" name="star" value="★" id="rate5"><label
                     for="rate5">★</label>
             </fieldset>
-        </form>   
-          
+        </div>   
+          <main role="main" class="container">
           <div id="board-list">
-              <div class="container">
-                <form class=" form-horizontal" method="post" action="/reviewEnroll.do" th:object="${postDto}">
-                    <div class="form-group">
-                        <label>제목</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name ="title" th:field="*{title}" placeholder="제목을 입력해 주세요."/>
-                        </div>
-                    </div>
+              <div class="container page-title">
+                    <h3 style="font-size: 30px;">TITLE</h3>
+                </div>
+                <div class="pt-1"></div>
+                    <input type="text" name="title" placeholder="제목을 입력하세요" style="border-radius:5px; width:100%; padding:5px; background-color: #f9f7f9;">
+                </div>
         
-                    <div class="form-group">
-                        <label>내용</label>
-                        <div class="col-sm-12">
-                            <textarea class="form-control" name = "content" style="height: 300px;" th:field="*{content}"
-                                      placeholder="내용을 입력해 주세요."></textarea>
-                        </div>
-                    </div>
-        
+                    <div class="container page-title">
+                    <h3 style="font-size: 30px;">CONTENT</h3>
+                </div>
+                <div class="pt-1 bbb">
+                    <textarea id="summernote" name="content"></textarea>
+                </div>    
+                <script>
+                    $('#summernote').summernote({
+                      placeholder: '내용을 입력해주세요',
+                      tabsize: 2,
+                      height: 200
+                    });
+                  </script>                     
                     
 </div>
 </div>
 <button style="margin: 20px;" class="btn-s btn-s-dark">작성</button>
-<a href="review.html"><button style="margin: 20px;" class="btn-s btn-s-dark">취소</button></a>
+<button type="button" style="margin: 20px;" class="btn-s btn-s-dark" onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소</button>
+
 </form>
+</main>
 </section>
 
        
@@ -112,19 +125,21 @@
                     <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                     <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                   </svg></a>
-                  <a href="./login.html" class="link link--text left">로그인</a>
-                <a href="./register.html" class="link link--text">회원가입</a>
+                 <a href="/views/member/login.jsp" class="link link--text left">로그인</a>
+                <a href="/views/member/register.jsp" class="link link--text">회원가입</a>
                 </nav>
 
             <!-- Page Content -->
             <main class="content pt2 pb2">
-                <h2>게시판 작성하는 곳 입니다.</h2>
+                <h2>게시판 작성</h2>
             
                
             </main>
                         <!-- Footer -->
             <footer class="border--top pt1 pb1">
-                <img src="./img/mm.jpg" alt="group">
+              <video muted autoplay loop>
+                <source src="/views/video/ppp.mp4" type="video/mp4">
+            </video>
                 <p class="text--gray small mb0">&copy; PESS-PORT | 조장 : 엄윤호 <a href="https://www.eatapapaya.com" class="link link--text"></a>.</p>
             </footer>
         </div><!-- end Body -->

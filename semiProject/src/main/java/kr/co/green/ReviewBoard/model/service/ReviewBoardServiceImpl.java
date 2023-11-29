@@ -32,8 +32,8 @@ public class ReviewBoardServiceImpl implements ReviewBoardService {
 	}
 	
 	@Override
-	public int boardEnroll(String title, String content, String star) {	
-		return ReviewBoardDAO.boardEnroll(con,title,content,star);
+	public int boardEnroll(String title, String content, String star, int mno) {	
+		return ReviewBoardDAO.boardEnroll(con,title,content,star,mno);
 	}
 
 	@Override
@@ -48,8 +48,8 @@ public class ReviewBoardServiceImpl implements ReviewBoardService {
 
 
 	@Override
-	public int boardUpdate(int idx, String title, String content, String star, String fileName, String uploadDirectory) {
-		return ReviewBoardDAO.boardUpdate(con, idx, title, content, star, fileName, uploadDirectory);
+	public int boardUpdate(int idx, String title, String content, String star) {
+		return ReviewBoardDAO.boardUpdate(con, idx, title, content, star);
 	}
 
 	@Override

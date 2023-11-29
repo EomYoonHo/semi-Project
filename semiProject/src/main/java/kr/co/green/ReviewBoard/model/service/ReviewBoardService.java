@@ -14,7 +14,7 @@ public interface ReviewBoardService {
 	public int boardListCount(String searchText);
 	
 	// 게시글 추가	
-	public int boardEnroll (String title, String content, String star);
+	public int boardEnroll (String title, String content, String star, int mno);
 	
 	// 조회수 +1
 	public int boardView(int idx);
@@ -23,7 +23,7 @@ public interface ReviewBoardService {
 	public void boardSelect(ReviewBoardDTO reviewboard) ;
 	
 	// 수정
-	public int boardUpdate(int idx, String title, String content, String star, String fileName, String uploadDirectory);
+	public int boardUpdate(int idx, String title, String content, String star);
 	
 	// 삭제
 	public int boardDelete(int idx);

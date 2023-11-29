@@ -1,11 +1,11 @@
 package kr.co.green.member.model.dto;
 
 public class MemberDTO {
-	private int m_no;
 	public MemberDTO() {
 		super();
 	}
 
+	private int m_no;
 	private String m_name;
 	private String m_email;
 	private String m_pwd;

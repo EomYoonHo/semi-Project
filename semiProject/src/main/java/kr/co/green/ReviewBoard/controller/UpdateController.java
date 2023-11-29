@@ -12,7 +12,7 @@ import kr.co.green.ReviewBoard.model.dto.ReviewBoardDTO;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
 
 
-@WebServlet("/UpdateController.do")
+@WebServlet("/boardUpdate.do")
 public class UpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
@@ -29,17 +29,24 @@ public class UpdateController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String star = request.getParameter("star");
-		String fileName = request.getParameter("fileName");
-		String uploadDirectory = request.getParameter("uploadDirectory");
+		
 		
 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
-		ReviewBoardDTO boardDTO = new ReviewBoardDTO();
+		ReviewBoardDTO reviewboard = new ReviewBoardDTO();
 		
-		int result = boardService.boardUpdate(idx, title, content, star, fileName, uploadDirectory);
+		reviewboard.setContent(content);
+		request.setAttribute("reviewboard", reviewboard);
+		
+		
+		int result = boardService.boardUpdate(idx, title, content, star);
 		
 		if(result > 0) {
 			response.sendRedirect("/reviewBoardList.do?cpage=1");

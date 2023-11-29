@@ -2,8 +2,6 @@ package kr.co.green.member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,18 +24,13 @@ public class RegisterController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
-		// åª›ë¯©ì»ºæ¹²ï¿½
+		// °ª¹Ş±â
 		String email = request.getParameter("email");
-		String pwd = request.getParameter("pwd");
+		String pwd = request.getParameter("password");
 		String pwdCheck = request.getParameter("pwdCheck");
 		String name = request.getParameter("name");
 		String nickname = request.getParameter("nickname");
@@ -54,23 +47,23 @@ public class RegisterController extends HttpServlet {
 		memberDTO.setM_nickname(nickname);
 
 		
-		//ï¿½ì‰¶ï¿½ìåª›ï¿½ï¿½ì—¯
+		//È¸¿ø°¡ÀÔ
 		MemberServiceImpl memberService = new MemberServiceImpl();
 		int result  = memberService.memberEnroll(memberDTO);
 		if (result==0) {
-			validationAlert(response,"ï¿½ì‰¶ï¿½ìåª›ï¿½ï¿½ì—¯ï¿½ë¿‰ ï¿½ë–ï¿½ë™£ï¿½ë»½ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+			validationAlert(response,"È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
 		}else {
-			RequestDispatcher view =request.getRequestDispatcher("/views/member/map.jsp");
+			RequestDispatcher view =request.getRequestDispatcher("/views/member/login.jsp");
 			view.forward(request, response);
-			System.out.println("ï¿½ê½¦æ€¨ï¿½");
+			System.out.println("¼º°ø");
 		}
 		
-//		//ï¿½ì‘€ï¿½ìŠšï¿½ê½¦ å¯ƒï¿½ï¿½ê¶—
-//		//ï¿½ì” ç”±ï¿½
-//		String namePattern ="^[åª›ï¿½-ï¿½ì˜¡]+$";
+//		//À¯È¿¼º °Ë»ç
+//		//ÀÌ¸§
+//		String namePattern ="^[°¡-ÆR]+$";
 //		Pattern pattern = Pattern.compile(namePattern);
 //		Matcher nameMatcher=pattern.matcher(name);
-//		//ï¿½ë™£ï¿½ë’ªï¿½ì™ï¿½ë±¶
+//		//ÆĞ½º¿öµå
 //		String pwdpattern ="^(?=.*[a-zA-Z])(?=.*[@$!%*?&\\\\#])[A-Za-z\\\\d@$!%*?&\\\\#]{6,20}$";
 //		Pattern passwordPattern = Pattern.compile(pwdpattern);
 //		Matcher pwdMatcher = pattern.matcher(pwd);
@@ -81,12 +74,79 @@ public class RegisterController extends HttpServlet {
 		
 			
 //		}else if(!nameMatcher.matches()) {
-//			validationAlert(response,"ï¿½ì‡…æ´ï¿½ï¿½ì”¤ï¿½ï¿½ ï¿½ì‰¶ï¿½ìï¿½ì‘æ¿¡ï¿½ è«›ì†ï¿½ ï¿½ë¸¡ï¿½ë’¿ï¿½ë•²ï¿½ë–");
+//			validationAlert(response,"¿Ü±¹ÀÎÀº È¸¿øÀ¸·Î ¹ŞÁö ¾Ê½À´Ï´Ù");
 //		}else if(!pwdMatcher.matches()) {
-//			validationAlert(response,"é®ê¾¨ï¿½è¸°ëŠìƒ‡åª›ï¿½ ï¿½ì ™ï§¢ë‚†ë¿‰ ï§ìšï¿½ ï¿½ë¸¡ï¿½ë’¿ï¿½ë•²ï¿½ë–");
+//			validationAlert(response,"ºñ¹Ğ¹øÈ£°¡ Á¤Ã¥¿¡ ¸ÂÁö ¾Ê½À´Ï´Ù");
+//		}
+		
+
+	}
+	
+	
+//////////////////////////////////
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+
+		// °ª¹Ş±â
+		String email = request.getParameter("email");
+		String pwd = request.getParameter("password");
+		String pwdCheck = request.getParameter("pwdCheck");
+		String name = request.getParameter("name");
+		String nickname = request.getParameter("nickname");
+
+//	String salt = BCrypt.gensalt(12);
+//	
+//	String hashedPassword = BCrypt.hashpw(pwd,salt);
+
+		//
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setM_email(email);
+		memberDTO.setM_pwd(pwd);
+		memberDTO.setM_name(name);
+		memberDTO.setM_nickname(nickname);
+
+		
+		//È¸¿ø°¡ÀÔ
+		MemberServiceImpl memberService = new MemberServiceImpl();
+		int result  = memberService.memberEnroll(memberDTO);
+		if (result==0) {
+			validationAlert(response,"È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+		}else {
+			RequestDispatcher view =request.getRequestDispatcher("/views/member/login.jsp");
+			view.forward(request, response);
+			System.out.println("¼º°ø");
+		}
+		
+//		//À¯È¿¼º °Ë»ç
+//		//ÀÌ¸§
+//		String namePattern ="^[°¡-ÆR]+$";
+//		Pattern pattern = Pattern.compile(namePattern);
+//		Matcher nameMatcher=pattern.matcher(name);
+//		//ÆĞ½º¿öµå
+//		String pwdpattern ="^(?=.*[a-zA-Z])(?=.*[@$!%*?&\\\\#])[A-Za-z\\\\d@$!%*?&\\\\#]{6,20}$";
+//		Pattern passwordPattern = Pattern.compile(pwdpattern);
+//		Matcher pwdMatcher = pattern.matcher(pwd);
+		
+//		if(nameMatcher.matches()&&pwdMatcher.matches()) {
+	
+			
+		
+			
+//		}else if(!nameMatcher.matches()) {
+//			validationAlert(response,"¿Ü±¹ÀÎÀº È¸¿øÀ¸·Î ¹ŞÁö ¾Ê½À´Ï´Ù");
+//		}else if(!pwdMatcher.matches()) {
+//			validationAlert(response,"ºñ¹Ğ¹øÈ£°¡ Á¤Ã¥¿¡ ¸ÂÁö ¾Ê½À´Ï´Ù");
 //		}
 		
 	}
+	
+	
+	////////////////////////////////////////
+	
 	private void validationAlert(HttpServletResponse response, String msg)throws IOException{
 		PrintWriter out = response.getWriter();
 		out.println("<script>"

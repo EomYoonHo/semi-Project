@@ -6,7 +6,8 @@
    
 
     <head>
-
+		<script src="/resources/js/reviewboard/reviewboard.js"></script>
+		
         <!-- Meta -->
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,9 +16,9 @@
         <meta name="description" content="">
 
         <!-- The compiled CSS file -->
-        <link rel="stylesheet" href="css/production.css">
-        <link rel="stylesheet" href="./css/yh.css">
-        <link rel="stylesheet" href="./css/table.css">
+        <link rel="stylesheet" href="/resources/css/production.css">
+        <link rel="stylesheet" href="/resources/css/yh.css">
+        <link rel="stylesheet" href="/resources/css/table.css">
         
 
         <!-- 부트스트랩 -->
@@ -51,7 +52,8 @@
                   <div class="search-window">
                       <form action="/reviewBoardList.do" method = "GET">
                           <div class="search-wrap">
-                              <input id="search" type="search" name="searchText" placeholder="검색어를 입력해주세요." value="">
+                          	  <input type="hidden" name= "cpage" value ="1">
+                              <input id="search" type="search" name="searchText" placeholder="검색어를 입력해주세요.">
                               <button type="submit" class="btn btn-dark">검색</button>
                           </div>
                       </form>
@@ -93,11 +95,11 @@
               		<c:otherwise>
               			<c:forEach var = "item" items ="${list}">
               				<tr onclick = "detailPage(${item.idx})">              				 
-              			  <td>${row}</td>
-                          <td>${item.title}</td>                
-                          <td>${item.nickName}</td>
-                          <td>${item.star}</td>
-                          <td>${item.views}</td>  				         
+		              			  <td>${row}</td>
+		                          <td>${item.title}</td>                
+		                          <td>${item.nickName}</td>
+		                          <td>${item.star}</td>
+		                          <td>${item.views}</td>  				         
               				</tr>
               			    <c:set var = "row" value= "${row-1}"/>
               			</c:forEach>            		
@@ -108,6 +110,7 @@
       
       
       
+  <!-- 
                       <tr>
                           <td>2</td>
                           <th><a href="#!">민수형 먹방입니다. 이용해주셔서 감사합니다</a></th>
@@ -195,6 +198,7 @@
       <td>★★★★★</td>
                           <td>1</td>
   </tr>
+   -->
 </tbody>
 </table>
 </div>
@@ -222,8 +226,8 @@
                     <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                     <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
                   </svg></a>
-                  <a href="./login.html" class="link link--text left">로그인</a>
-                <a href="./register.html" class="link link--text">회원가입</a>
+                  <a href="/views/member/login.jsp" class="link link--text left">로그인</a>
+                <a href="/views/member/register.jsp" class="link link--text">회원가입</a>
                 </nav>
 
             <!-- Page Content -->
@@ -234,7 +238,9 @@
             </main>
                         <!-- Footer -->
             <footer class="border--top pt1 pb1">
-              <img src="./img/mm.jpg" alt="group">
+              <video muted autoplay loop>
+                <source src="/views/video/ppp.mp4" type="video/mp4">
+            </video>
                 <p class="text--gray small mb0">&copy; PESS-PORT | 조장 : 엄윤호 <a href="https://www.eatapapaya.com" class="link link--text"></a>.</p>
             </footer>
         </div><!-- end Body -->

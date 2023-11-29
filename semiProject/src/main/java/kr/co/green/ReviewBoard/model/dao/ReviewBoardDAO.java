@@ -18,12 +18,16 @@ public class ReviewBoardDAO {
 		ArrayList<ReviewBoardDTO> list =new ArrayList<>();
 		
 		String query = "SELECT r_idx, "
-				+ "r_title, "
-//				+ "r_nickname, "
-				+ "r_star, "
-				+ "r_views  "
-				+ " FROM review  "
-				+ "WHERE r_delete_date IS NULL AND r_title LIKE '%' || ? || '%' ORDER BY r_in_date DESC  OFFSET ? ROWS FETCH FIRST ? ROWS ONLY ";
+				+ "			   r_title, "
+				+ "			   m_nickname, "
+				+ "			   r_star, "
+				+ "			   r_views  "
+				+ " 	FROM review r "
+				+ "		join member m on r.m_no = m.m_no "
+				+ " 	WHERE r_delete_date IS NULL "
+				+ "		AND r_title LIKE '%' || ? || '%' "
+				+ "		ORDER BY r_in_date DESC  "
+				+ "		OFFSET ? ROWS FETCH FIRST ? ROWS ONLY ";
 		
 		try {
 			pstmt = con.prepareStatement(query);
@@ -38,19 +42,18 @@ public class ReviewBoardDAO {
 			while(rs.next()) {
 				int idx = rs.getInt("R_IDX");
 				String title = rs.getString("R_TITLE");
-//				String nickName = rs.getString("R_NICKNAME");
+				String nickname = rs.getString("M_NICKNAME");
 				String star = rs.getString("R_STAR");
 				int views = rs.getInt("R_VIEWS");
 				
 				ReviewBoardDTO board = new ReviewBoardDTO();
 				board.setIdx(idx);
 				board.setTitle(title);
-//				board.setNickName(nickName);
+				board.setNickName(nickname);
 				board.setStar(star);
 				board.setViews(views);
 				
 				list.add(board);
-			
 			}
 			
 		} catch (SQLException e) {
@@ -86,7 +89,7 @@ public class ReviewBoardDAO {
 	}
 	
 
-	public int boardEnroll(Connection con, String title, String content, String star) {
+	public int boardEnroll(Connection con, String title, String content, String star, int mno) {
 		String query = "INSERT INTO review"
 				+ "		VALUES(review_SEQ.nextval," 
 				+ "			   ?," 
@@ -96,7 +99,7 @@ public class ReviewBoardDAO {
 				+ "			   NULL,"  
 				+ "			   NULL,"
 				+ "				0,"
-				+ "				0)"; 
+				+ "				?)"; 
 		
 		
 		try {
@@ -106,6 +109,7 @@ public class ReviewBoardDAO {
 			pstmt.setString(1, title);
 			pstmt.setString(2, content);
 			pstmt.setString(3, star);
+			pstmt.setInt(4, mno);
 		
 			
 			
@@ -145,11 +149,12 @@ public class ReviewBoardDAO {
 				+ "		r_title,"
 				+ "		r_content,"
 				+ "		r_star,"
-				+ "		r_nickName"
+				+ "		m_nickName,"
 				+ "		r_in_date,"
 				+ "		r_update_date,"
 				+ "		r_views"
-				+ "		FROM review"
+				+ "		FROM review r"
+				+ "		join member m on r.m_no = m.m_no"
 				+ "		WHERE r_idx = ?";
 		
 		try {
@@ -158,11 +163,13 @@ public class ReviewBoardDAO {
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				
+				
 				int idx = rs.getInt("R_IDX");
 				String title = rs.getString("R_TITLE");
 				String content = rs.getString("R_CONTENT");
 				String star = rs.getString("R_STAR");
-				String nickName = rs.getString("R_NICKNAME");
+				String nickName = rs.getString("M_NICKNAME");
 				String indate = rs.getString("R_IN_DATE");
 				String updateDate = rs.getString("R_UPDATE_DATE");
 				int views = rs.getInt("R_VIEWS");
@@ -187,13 +194,15 @@ public class ReviewBoardDAO {
 
 
 
-	public int boardUpdate(Connection con, int idx, String title, String content, String star, String fileName,
-			String uploadDirectory) {
-			
+	public int boardUpdate(Connection con, int idx, String title, String content, String star) {
+			System.out.println(idx);
+			System.out.println(title);
+			System.out.println(content);
 		String query = "UPDATE review"
-				+ "		SET r_title = ?,"
+				+ "		SET"
+				+ "		r_title = ?,"
 				+ "		r_content = ?,"
-				+ "		r_star = ?,"
+				+ "		r_star = ?"
 				+ "		WHERE r_idx = ?";
 		
 		try {

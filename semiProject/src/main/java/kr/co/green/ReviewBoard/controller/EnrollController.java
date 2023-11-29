@@ -46,8 +46,11 @@ public class EnrollController extends HttpServlet {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String star = request.getParameter("star");
-			
+		
+		
 		HttpSession session = request.getSession();
+//		int mno = (int)session.getAttribute("m_no");
+		int mno = 8;
 		String nickName = (String)session.getAttribute("nickName");
 		
 //		// 파일 업로드할때
@@ -73,7 +76,7 @@ public class EnrollController extends HttpServlet {
  		
  		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
  		
- 		ReviewBoardDTO board = new ReviewBoardDTO();
+ 		ReviewBoardDTO board = new ReviewB111111111111111111	oardDTO();
 // 		board.setTitle(title);
 // 		board.setContent(content);
 // 		board.setStar(star);
@@ -81,7 +84,7 @@ public class EnrollController extends HttpServlet {
 // 		board.setFileName(fileName);
 // 		board.setFilePath(uploadDirectory);
 	
- 		int result = boardService.boardEnroll(title, content, star);
+ 		int result = boardService.boardEnroll(title, content, star, mno);
 	
  		if(result > 0) {
  			response.sendRedirect("/reviewBoardList.do?cpage=1");

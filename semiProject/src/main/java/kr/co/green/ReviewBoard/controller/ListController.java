@@ -38,7 +38,7 @@ public class ListController extends HttpServlet {
 		
 		int pageLimit = 5; // 보여질 페이지 수
 		
-		int boardLimit = 5; // 한페이지에 들어갈 게시글 수
+		int boardLimit = 10; // 한페이지에 들어갈 게시글 수
 		
 		BoardPagination page = new BoardPagination();	// 나머지 페이징 처리 common
 		
@@ -49,12 +49,8 @@ public class ListController extends HttpServlet {
 		int row = listCount - (cpage-1) * boardLimit;
 //		String star = request.getParameter("star");
 		
-		
-		
 		request.setAttribute("row", row);
-		
 		request.setAttribute("searchText", searchText); // 검색
-		
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		RequestDispatcher view = request.getRequestDispatcher("/views/reviewboard/review.jsp");

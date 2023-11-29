@@ -10,7 +10,7 @@ import kr.co.green.member.model.dto.MemberDTO;
 public class MemberDAO {
 	private PreparedStatement pstmt;
 
-	// æ¿¡ì’“ë ‡ï¿½ì”¤
+	// ·Î±×ÀÎ
 	public MemberDTO memberLogin(Connection con, String email, String pwd) {
 
 		String query = "SELECT M_NO,M_NAME,M_EMAIL,M_PWD,M_NICKNAME,M_IN_DATE" 
@@ -51,7 +51,7 @@ public class MemberDAO {
 
 	}
 
-	// ï§Žã…»ì¾­ç•°ë¶½ï¿½
+	// ¸â¹öÃß°¡
 	public int memberEnroll(Connection con, MemberDTO memberDTO) {
 		String query = "INSERT INTO MEMBER "
 				+ "		VALUES(member_seq.NEXTVAL,"
@@ -78,7 +78,7 @@ public class MemberDAO {
 		return result;
 	}
 
-	// ï§Žã…»ì¾­ï¿½ê¶˜ï¿½ì £
+	// ¸â¹ö»èÁ¦
 	public int memberDelete(Connection con, String name, String nickname) {
 		String query = "DELETE FROM MEMBER" 
 				+ "		WHERE M_NAME=?" 
@@ -105,7 +105,7 @@ public class MemberDAO {
 	public boolean duplicateEmail(Connection con, String email) {
 		String query = "SELECT M_EMAIL"
 				+ "		FROM MEMBER"
-				+ "		WHERE M_EMAIL";
+				+ "		WHERE M_EMAIL = ?";
 		
 		try {
 			pstmt = con.prepareStatement(query);
@@ -119,5 +119,75 @@ public class MemberDAO {
 
 		return false;
 	}
+
+	public void selectMember(Connection con, MemberDTO memberDTO) {
+		String query ="SELECT m_email,"
+				+ "				m_name,"
+				+ "				m_no,"
+				+ "				m_pwd,"
+				+ "				m_nickname,"
+				+ "				m_in_date"
+				+ "		 FROM member"
+				+ "		 WHERE  m_email=?";
+		
+		
+		try {
+			pstmt =con.prepareStatement(query);
+			pstmt.setString(1, memberDTO.getM_email());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int no =rs.getInt("m_no");
+				String name =rs.getString("m_name");
+				String email= rs.getString("m_email");
+				String pwd =rs.getString("m_pwd");
+				String nickname =rs.getString("m_nickname");
+				String indate =rs.getString("m_in_date");
+				memberDTO.setM_no(no);
+				memberDTO.setM_name(name);
+				memberDTO.setM_email(email);
+				memberDTO.setM_pwd(pwd);
+				memberDTO.setM_nickname(nickname);
+				memberDTO.setM_in_date(indate);
+			}
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		 
+	}
+
+	public MemberDTO retrieveMember(Connection con, String email) {
+		String query = "SELECT M_NO,"
+				+ "					M_NAME"
+				+ "		FROM MEMBER"
+				+ "		WHERE M_EMAIL = ? ";
+
+		MemberDTO memberInfo = new MemberDTO();
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, email);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				String M_NAME = rs.getString("M_NAME");
+				int M_NO = rs.getInt("M_NO");
+				memberInfo.setM_email(email);
+				memberInfo.setM_name(M_NAME);
+				memberInfo.setM_no(M_NO);
+			}
+			
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+
+		return memberInfo;
+	}
+
 
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.co.green.member.model.service.MemberServiceImpl;
 
-@WebServlet("/DuplicatedController")
+@WebServlet("/duplicateEmail.do")
 public class DuplicatedController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,6 +35,7 @@ public class DuplicatedController extends HttpServlet {
 
 		MemberServiceImpl memberService = new MemberServiceImpl();
 		boolean isEmailDupilcate = memberService.duplicateEmail(email);
+		System.out.println(isEmailDupilcate);
 		PrintWriter out = response.getWriter();
 
 		out.print(isEmailDupilcate);

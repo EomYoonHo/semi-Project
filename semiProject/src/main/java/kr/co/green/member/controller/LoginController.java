@@ -26,13 +26,44 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	}
+//		String email = request.getParameter("email");
+//		String pwd = request.getParameter("pwd");
+//		System.out.println("받아오는값"+email);
+//
+//		MemberServiceImpl memberService = new MemberServiceImpl();
+//
+//		MemberDTO member = memberService.memberLogin(email, pwd);
+//
+////	if(BCrypt.checkpw(pwd,member.getM_pwd())) {
+////		System.out.println("");
+////	}else {
+////		System.out.println("");
+////	}
+//
+//		if (Objects.isNull(member.getM_no())) {
+//			response.sendRedirect("/views/common/error.jsp");
+//		} else {
+//			HttpSession session = request.getSession();
+//			session.setAttribute("name", member.getM_name());
+//			session.setAttribute("nickname", member.getM_nickname());
+//			System.out.println(member.getM_name());
+//			
+//
+//			RequestDispatcher view = request.getRequestDispatcher("/views/common/map.jsp");
+//			view.forward(request, response);
+//		}
 
+	}
+	
+////////////////////////////////
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
+		System.out.println("이메일:"+email);
+		System.out.println("비번:"+pwd);
 
 		MemberServiceImpl memberService = new MemberServiceImpl();
 
@@ -45,11 +76,14 @@ public class LoginController extends HttpServlet {
 //	}
 
 		if (Objects.isNull(member.getM_no())) {
-			response.sendRedirect("/views/common/error.jsp");
+			response.sendRedirect("/views/reviewboard/review.jsp");
+			System.out.println("오류");
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("name", member.getM_name());
-			session.setAttribute("nickname", member.getM_nickname());
+			session.setAttribute("email", member.getM_email());
+			session.setAttribute("nickName", member.getM_nickname());
+			System.out.println("로그인한사람:"+member.getM_name());
 
 			RequestDispatcher view = request.getRequestDispatcher("/views/reviewboard/review.jsp");
 			view.forward(request, response);
