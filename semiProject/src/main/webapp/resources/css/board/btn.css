@@ -11,6 +11,14 @@
       padding: 0px;
   }
 
+  .yy-jelly{
+    &:hover {
+        animation: jelly 0.5s;
+      }
+      margin: 0px;
+      padding: 0px;
+  }
+
   .btn {
     margin: 1rem;
   

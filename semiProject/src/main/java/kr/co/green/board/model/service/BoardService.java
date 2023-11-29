@@ -19,5 +19,14 @@ public interface BoardService {
 	public int boardView(int b_idx);
 
 	// 상세보기
-//	public void boardSelect(BoradDTO board);
+	public void boardSelect(BoardDTO board);
+	
+	// 수정
+	public int boardUpdate(int b_idx, String b_title, String b_content);
+	
+	// 수정을위한 상세보기
+	public void boardUpdateSelect(BoardDTO board);
+	
+	//삭제
+	public int boardDelete(int b_idx);
 }
