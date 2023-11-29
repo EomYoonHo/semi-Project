@@ -18,8 +18,8 @@
 <!-- The compiled CSS file -->
 <link rel="stylesheet" href="./resources/css/board/production.css">
 <link rel="stylesheet" href="./resources/css/board/yh.css">
-<link rel="stylesheet" href="./resources/css/board/table.css">
-
+<link rel="stylesheet" href="./resources/css/board/btn.css">
+<link rel="stylesheet" href="./resources/css/board/list.css">
 <!-- 부트스트랩 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -40,49 +40,42 @@
 <!-- favicon.ico. Place these in the root directory. -->
 <link rel="shortcut icon" href="favicon.ico">
 
-<script src="/resources/js/board.js"></script>
+
+
+
+
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="./css-table-12/css/bootstrap.min.css">
+
+<!-- Style -->
+<!-- <link rel="stylesheet" href="./css-table-12/css/style.css"> -->
+
+
 </head>
 
 
 <body>
-	<section class="notice left2">
-		<div class="page-title">
-			<div class="container">
-				<h3>Community</h3>
-			</div>
-		</div>
+	<div class="left2 beaut">
 
+		<div>
 
-		<!-- board seach area -->
-		<div id="board-search">
-			<div class="container">
-				<div class="search-window">
-					<form action="/boardList.do" method="get">
-						<div class="search-wrap">
-						<input type="hidden" name="cpage" value="1">
-							<label for="search" class="blind">공지사항 내용 검색</label> <input
-								id="search" type="search" name="searchText" placeholder="제목을 입력해주세요."
-								value="">
-							<button type="submit" class="btn btn-dark">검색</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+			<div>
 
-		<!-- board list area -->
-		<div id="board-list">
-			<div class="container">
-				<table class="board-table">
+				<table class="table custom-table">
 					<thead>
 						<tr>
-							<th scope="col" class="th-num">번호</th>
-							<th scope="col" class="th-title">제목</th>
-							<th scope="col" class="th-date">작성자</th>
-							<th scope="col" class="th-date">조회수</th>
+
+							<th style="background-color: rgb(71, 69, 69); color: white;">글번호</th>
+							<th style="background-color: rgb(71, 69, 69); color: white;">제목</th>
+							<th style="background-color: rgb(71, 69, 69); color: white;">작성자</th>
+							<th style="background-color: rgb(71, 69, 69); color: white;">조회수</th>
+
 						</tr>
 					</thead>
 					<tbody>
+					
 						<c:choose>
 							<c:when test="${empty list}">
 								<tr>
@@ -91,9 +84,9 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
-									<tr>
+									<tr onclick="detailPage(${item.b_idx})">
 										<td>${row}</td>
-										<td onclick="detailPage(${item.b_idx}, ${row} )">${item.b_title}</td>
+										<td>${item.b_title}</td>
 										<td>${item.m_nickname}</td>
 										<td>${item.b_views}</td>
 									</tr>
@@ -101,49 +94,24 @@
 								</c:forEach>
 							</c:otherwise>
 						</c:choose>
+						
 					</tbody>
 				</table>
 			</div>
+
+
 		</div>
-			<!-- 페이지이동버튼 -->
-			<nav aria-label="Page navigation example">
-				<ul class="pagination">
-		<a href="/views/board/list2.jsp"><button class="btn-s btn-s-dark"
-				onclick="window.location.href = '/views/board/list2.jsp'">글작성</button></a>
 
-					<c:choose>
-						<c:when test="${pi.currentPage == 1}">
-							<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="page-item"><a class="page-link"
-								href="/boardList.do?cpage=${pi.currentPage-1}&searchText=${searchText}">Previous</a></li>
-						</c:otherwise>
-					</c:choose>
+	</div>
 
 
-					<c:forEach var="page" begin="${pi.startPage}" end="${pi.endPage}">
-						<li class="page-item"><a class="page-link"
-							href="/boardList.do?cpage=${page}&searchText=${searchText}">${page}</a></li>
-					</c:forEach>
+	<button class="btn btn-primary btn-jelly"
+	style="background-color: rgb(71, 69, 69); color: white;"
+	onclick="window.location.href = '/views/board/list2.jsp'">글작성</button>
 
-
-					<c:choose>
-						<c:when test="${pi.currentPage == pi.maxPage}">
-							<li class="page-item"><a class="page-link" href="#">Next</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="page-item"><a class="page-link"
-								href="/boardList.do?cpage=${pi.currentPage+1}&searchText=${searchText}">Next</a></li>
-						</c:otherwise>
-					</c:choose>
-
-
-
-				</ul>
-			</nav>
-	</section>
-
+	<input class="iii" type="text" placeholder="검색할 내용">
+	<button class="btn btn-primary btn-jelly"
+		style="background-color: rgb(71, 69, 69); color: white;">검색</button>
 
 
 
@@ -171,7 +139,7 @@
 						d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
                     <path
 						d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                  </svg></a> <a href="/form/loginform.do" class="link link--text left">로그인</a>
+                  </svg></a> <a href="./login.html" class="link link--text left">로그인</a>
 			<a href="./register.html" class="link link--text">회원가입</a>
 		</nav>
 
@@ -183,7 +151,6 @@
 		</main>
 		<!-- Footer -->
 		<footer class="border--top pt1 pb1">
-			<img src="./img/mm.jpg" alt="group">
 			<p class="text--gray small mb0">
 				&copy; PESS-PORT | 조장 : 엄윤호 <a href="https://www.eatapapaya.com"
 					class="link link--text"></a>.
@@ -200,3 +167,4 @@
 
 </body>
 </html>
+

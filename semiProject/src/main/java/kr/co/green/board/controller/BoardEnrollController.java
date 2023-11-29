@@ -43,15 +43,11 @@ public class BoardEnrollController extends HttpServlet {
 		String b_title = request.getParameter("b_title");
 		String b_content = request.getParameter("b_content");
 		
-		System.out.println("b_title "+ b_title);
-		System.out.println("b_content "+ b_content);
-		
 		
 		//2.세션에 있는 name 꺼내기
 		HttpSession session = request.getSession();
 		int m_no = (int)session.getAttribute("m_no");
-		System.out.println("m_no"+m_no);
-
+		
 		//파일 업로드
 		Collection<Part> parts = request.getParts();
 		String uploadDirectory = "C:\\prj\\세미프로젝트\\src\\main\\webapp\\resources\\uploads";

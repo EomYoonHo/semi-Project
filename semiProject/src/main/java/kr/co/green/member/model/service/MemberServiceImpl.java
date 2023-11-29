@@ -38,16 +38,5 @@ public class MemberServiceImpl implements MemberService {
 
 		return memberDAO.duplicateEmail(con, email);
 	}
-	
-	@Override
-	public void selectMember(MemberDTO memberDTO) {
-		memberDAO.selectMember(con,memberDTO);
-	}
-	
-	@Override
-	public MemberDTO retrieveMember(String email) {
-	
-		return memberDAO.retrieveMember(con,email);
-	}
 
 }
