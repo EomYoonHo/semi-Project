@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en-us">
     
@@ -13,10 +16,10 @@
         <meta name="description" content="">
 
         <!-- The compiled CSS file -->
-        <link rel="stylesheet" href="css/production.css">
-        <link rel="stylesheet" href="./css/yh.css">
-        <link rel="stylesheet" href="./css/order.css">
-        <link rel="stylesheet" href="./css/table.css">
+        <link rel="stylesheet" href="/resources/css/board/production.css">
+        <link rel="stylesheet" href="/resources/css/board/yh.css">
+        <link rel="stylesheet" href="/resources/css/board/order.css">
+        <link rel="stylesheet" href="/resources/css/board/table.css">
 
         <!-- 부트스트랩 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -35,7 +38,7 @@
     <body>
       <!-- ㅇㅇ -->
       <div class="container"> <!-- 중반부 전체를 감싸는 div 태그-->
-        <div class="page-title left2">
+        <div class="page-title left5">
           <div class="container">
               <h3 style="font-size: 50px;">Tour Package</h3>
             </div>
@@ -45,33 +48,46 @@
           <div class="product-list">
             <div class="slider">
               <div class="slide img">
-                  <img src="./img/1.jpg" alt="이미지 1">
+                <img src="${pack.p_file_path1}" alt="이미지 1">
               </div>
               <div class="slide img">
-                <img src="./img/2.jpg" alt="이미지 1">
+                <img src="${pack.p_file_path2}" alt="이미지 1">
               </div>
               <div class="slide img">
-                <img src="./img/3.jpg" alt="이미지 1">
+                <img src="${pack.p_file_path3}" alt="이미지 1">
               </div>
           </div>
           </div>
         </div><br><br>
           <div id="fifth">
             <div>
-                        <p class="packagename">민수's 팬티</p>
-                        <p class="packagename2">Minsu's Panties</p>
+                        <p class="packagename">${pack.p_name}</p>
                     </div>
                     <div id="heart2">
                         <a href="#"><i class="far fa-heart" id="heart3"></i></a>
                     </div>
                 </div>
 
-                <p class="detail left2">약 3일동안빨지 않았습니다.
-                <div class="productdetail left2">
+                <p class="detail left2">${pack.p_content}</p>
+                <div class="productdetail left4">
+                  <span>기간</span>
+                <select class="pts" name="languages" id="lang">
+                  <option value="">기간을 선택해주세요.</option>
+                  <option value="">2023-11-23 ~ 2023-12-23</option>
+                  <option value="">2023-11-25 ~ 2023-12-25</option>
+                  <option value="">2023-11-27 ~ 2023-12-27</option>
+                  <option value="">2023-11-29 ~ 2023-12-29</option>
+                </select>
+              </div>
+                <div class="productdetail left3">
                     <span>가격</span>
-                    <span>99,999</span>
+                    <span>${pack.p_price}</span>
                 </div>
-                <button class="btn-s btn-s-dark">구매</button><br><br><br><br>
+                <div class="productdetail left3">
+                  <span>인원수</span>
+                  <input class="minsu2 pts" type="number">
+              </div><br>
+                <button style="margin: 0px;" class="btn-s btn-s-dark">구매</button><br><br><br><br>
                 <div class="page-title left2">
                 <div class="container">
                     <h3 style="font-size: 30px;">Thank you for purchasing our product.</h3>
