@@ -18,6 +18,7 @@ public class PackageServiceImpl {
 	}
 	
 	//orderDetail에 뿌려주기
+	// 멤버랑 패키지 정보넣어서
 	public void packageSelect(PackageDTO pack) {
 		packageDAO.packageSelect(con, pack);
 	}
