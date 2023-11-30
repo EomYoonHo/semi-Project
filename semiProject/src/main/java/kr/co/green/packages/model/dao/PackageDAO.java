@@ -23,8 +23,7 @@ public class PackageDAO {
 				+" 				p_price"
 				+"		FROM package1"
 				+"		WHERE p_idx=?";
-		
-		
+
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, pack.getP_idx());

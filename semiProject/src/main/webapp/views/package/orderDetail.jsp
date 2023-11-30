@@ -6,6 +6,93 @@
     
 
     <head>
+    <!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>">
+	<!-- 포트원 sdk -->
+	<script type="text/javascript" src="https://cdn.iamport.kr/v1/iamport.js"></script>
+	
+    
+    <script type="text/javascript">
+	var IMP = window.IMP;
+	IMP.init('imp88413461');
+
+	var today = new Date();
+	var hours = today.getHours();
+	var minutes = today.getMinutes();
+	var seconds = today.getSeconds();
+	var milliseconds = today.getMilliseconds();
+	var makeMerchantUid = hours + minutes + seconds + milliseconds;
+
+	
+	function requestPay() {
+		IMP.request_pay(
+	        {
+	            pg: 'kakaopay.TC0ONETIME',//pg사
+	            pay_method: 'kakaopay',//결제수단
+	            merchant_uid: "IMP" + makeMerchantUid,//가맹점 주문번호
+	            name: "${pack.p_name}",//결제대상 제품명
+	            amount:${pack.p_price},//결제금액
+	            //custom_data /object//사용자 정의 데이타
+	            buyer_email: "${member.m_email}",//주문자이메일
+	            buyer_name: "${member.m_name}",//주문자명
+	            buyer_tel: "${member.m_phone}"//주문자 연락처
+	            buyer_addr: '서울특별시 강남구 삼성동',//주문자 주소
+	            buyer_postcode: '123-456',//주문자 우편
+	        },function (rsp){
+	            if(rsp.success){
+	                console.log(rsp);
+	                console.log(rsp.imp_uid);
+	                console.log(rsp.merchant_uid);
+	                console.log(rsp.paid_amount);
+	                console.log(rsp.name);
+	                console.log("성공");
+	              
+
+	                $.ajax({
+	                	type : "POST",
+	                	url : "/payment.do",
+	                	data : {
+	                			success : rsp.success,//성공여부/boolean
+	                			status : rsp.status,//결제상태
+	                			receipt_url : rsp.receipt_url,//거래 매출전표 URL
+	                			pg_type : rsp.pg_type,//"payment"
+	                			pg_tid : rsp.pg_tid,//pg사 거래번호
+	                			pg_provider : rsp.pg_provider, //pg 구분코드
+	                			pay_method : rsp.pay_method,//결제수단 구분코드
+	                			paid_at : rsp.paid_at,//결제 승인 시각/number
+		                        paid_amount : rsp.paid_amount,//결제금액/number
+		                        name : rsp.name, // 상품명
+		                        merchant_uid : rsp.merchant_uid,//주문 번호
+	                			imp_uid : rsp.imp_uid,//포트원 고유 결제 번호
+	                			custom_data : rsp.custom_data,//임의 지정데이터
+	                			currency : rsp.currency, //사용통화
+	                			card_quota : rsp.card_quota,
+	                			card_number : rsp.card_number,
+	                			card_name : rsp.card_name,
+	                			buyer_tel : rsp.buyer_tel,//주문자 연락처
+	                			buyer_postcode : rsp.buyer_postcode,//주문자 우편번호
+	                			buyer_name : rsp.buyer_name,//주문자명
+	                			buyer_email : rsp.buyer_email,//주문자 email
+	                			buyer_addr : rsp.buyer_addr,//주문자 주소
+	                			bank_name : rsp.bank_name,//
+	                			apply_num : rsp.apply_num//신용카드 승인번호
+	                },
+	                success : function(res){
+	                	console.log(rsp.imp_uid)
+	                	location.href= "/orderResult.do?imp_uid="+ rsp.imp_uid;
+	                },
+	                error :  function(response){
+	                }
+	            })
+	            }else{
+	                console.log(rsp);
+	                console.log("실패");	   
+	                alert('결제에 실패했습니다. 에러 내용:${rsp.error_msg}');
+	            }
+	        }
+	    );
+	}
+</script>
 
         <!-- Meta -->
         <meta charset="utf-8">
@@ -87,7 +174,7 @@
                   <span>인원수</span>
                   <input class="minsu2 pts" type="number">
               </div><br>
-                <button style="margin: 0px;" class="btn-s btn-s-dark">구매</button><br><br><br><br>
+                <button style="margin: 0px;" class="btn-s btn-s-dark" onclick="requestPay()">구매</button><br><br><br><br>
                 <div class="page-title left2">
                 <div class="container">
                     <h3 style="font-size: 30px;">Thank you for purchasing our product.</h3>

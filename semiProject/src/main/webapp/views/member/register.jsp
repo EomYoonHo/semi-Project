@@ -59,8 +59,7 @@
                <span id="nameMsg" ></span>
             </div>
             <div class="user-box">
-               <input type="text"  id="phone" name="phone" required><label>PHONE</label>
-               <span id="phoneMsg" ></span>
+               <input type="text"  id="phone" name="phone" required > <label>PHONE</label>
             </div>
             <div class="user-box">
                <input type="text"  id="nickname" name="nickname" required><label>NICK-NAME</label>
