@@ -99,7 +99,7 @@ public class RegisterController extends HttpServlet {
 		String pwdCheck = request.getParameter("pwdCheck");
 		String name = request.getParameter("name");
 		String nickname = request.getParameter("nickname");
-
+		String phone = request.getParameter("phone");
 //	String salt = BCrypt.gensalt(12);
 //	
 //	String hashedPassword = BCrypt.hashpw(pwd,salt);
@@ -110,7 +110,7 @@ public class RegisterController extends HttpServlet {
 		memberDTO.setM_pwd(pwd);
 		memberDTO.setM_name(name);
 		memberDTO.setM_nickname(nickname);
-
+		memberDTO.setM_phone(phone);
 		
 		//회원가입
 		MemberServiceImpl memberService = new MemberServiceImpl();

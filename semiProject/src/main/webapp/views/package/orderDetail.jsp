@@ -168,7 +168,7 @@
               </div>
                 <div class="productdetail left3">
                     <span>가격</span>
-                    <span>${pack.p_price}</span>
+                    <span>${pack.p_price}₩</span>
                 </div>
                 <div class="productdetail left3">
                   <span>인원수</span>
