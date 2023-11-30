@@ -33,6 +33,7 @@ public class RegisterController extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		String pwdCheck = request.getParameter("pwdCheck");
 		String name = request.getParameter("name");
+		String phone =request.getParameter("phone");
 		String nickname = request.getParameter("nickname");
 
 //	String salt = BCrypt.gensalt(12);
@@ -44,6 +45,7 @@ public class RegisterController extends HttpServlet {
 		memberDTO.setM_email(email);
 		memberDTO.setM_pwd(pwd);
 		memberDTO.setM_name(name);
+		memberDTO.setM_phone(phone);
 		memberDTO.setM_nickname(nickname);
 
 		
