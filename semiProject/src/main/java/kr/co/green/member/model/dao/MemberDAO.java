@@ -54,7 +54,7 @@ public class MemberDAO {
 	public int memberEnroll(Connection con, MemberDTO memberDTO) {
 		String query = "INSERT INTO MEMBER "
 				+ "		VALUES(member_seq.NEXTVAL,"
-				+ "					?,?,?,?,"
+				+ "					?,?,?,?"
 				+ "					SYSDATE)";
 		int result = 0;
 		try {
@@ -64,7 +64,6 @@ public class MemberDAO {
 			pstmt.setString(2, memberDTO.getM_email());
 			pstmt.setString(3, memberDTO.getM_pwd());
 			pstmt.setString(4, memberDTO.getM_nickname());
-
 			result = pstmt.executeUpdate();
 
 			pstmt.close();

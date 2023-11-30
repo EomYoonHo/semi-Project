@@ -12,6 +12,7 @@ public class MemberDTO {
 	private String m_nickname;
 	private String m_in_date;
 
+
 	public int getM_no() {
 		return m_no;
 	}
