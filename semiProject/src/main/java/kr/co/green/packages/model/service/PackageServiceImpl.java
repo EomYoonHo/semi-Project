@@ -22,6 +22,10 @@ public class PackageServiceImpl {
 	public void packageSelect(PackageDTO pack) {
 		packageDAO.packageSelect(con, pack);
 	}
+
+	public PackageDTO getP_price(String p_name) {
+		return packageDAO.getP_price(con,p_name);
+	}
 	
 	
 	

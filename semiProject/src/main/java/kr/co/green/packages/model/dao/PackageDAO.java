@@ -37,7 +37,7 @@ public class PackageDAO {
 				String p_file_path1 = rs.getString("p_file_path1");
 				String p_file_path2 = rs.getString("p_file_path2");
 				String p_file_path3 = rs.getString("p_file_path3");
-				String p_price = rs.getString("p_price");
+				int p_price = rs.getInt("p_price");
 
 
 				pack.setP_idx(p_idx);
@@ -55,6 +55,48 @@ public class PackageDAO {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public PackageDTO getP_price(Connection con, String p_name) {
+		String query = "SELECT p_idx,"
+				+" 					p_name,"	
+				+" 					p_content,"	
+				+" 					p_file_path1,"	
+				+" 					p_file_path2,"	
+				+" 					p_file_path3,"	
+				+" 					p_price"
+				+"		FROM package1"
+				+"		WHERE p_name=?";
+		
+		PackageDTO result = new PackageDTO();
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, p_name);
+			ResultSet rs =pstmt.executeQuery();
+			
+			while (rs.next()) {
+				int p_idx = rs.getInt("p_idx");
+				String p_content = rs.getString("p_content");
+				String p_file_path1 = rs.getString("p_file_path1");
+				String p_file_path2 = rs.getString("p_file_path2");
+				String p_file_path3 = rs.getString("p_file_path3");
+				int p_price = rs.getInt("p_price");
+				
+
+				result.setP_idx(p_idx);
+				result.setP_name(p_name);
+				result.setP_content(p_content);
+				result.setP_file_path1(p_file_path1);
+				result.setP_file_path2(p_file_path2);
+				result.setP_file_path3(p_file_path3);
+				result.setP_price(p_price);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	

@@ -7,7 +7,7 @@ public class PackageDTO {
 	private String p_file_path1;
 	private String p_file_path2;
 	private String p_file_path3;
-	private String p_price;
+	private int p_price;
 	
 	public int getP_idx() {
 		return p_idx;
@@ -46,10 +46,10 @@ public class PackageDTO {
 	public void setP_file_path3(String p_file_path3) {
 		this.p_file_path3 = p_file_path3;
 	}
-	public String getP_price() {
+	public int getP_price() {
 		return p_price;
 	}
-	public void setP_price(String p_price) {
+	public void setP_price(int p_price) {
 		this.p_price = p_price;
 	}
 }
