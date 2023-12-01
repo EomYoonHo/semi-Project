@@ -39,6 +39,7 @@ public class MemberDAO {
 				String resultPwd = rs.getString("M_PWD");
 				String resultNickname = rs.getString("M_NICKNAME");
 				String resultIndate = rs.getString("M_IN_DATE");
+
 				result.setM_no(resultNo);
 				result.setM_name(resultName);
 				result.setM_email(resultEmail);
@@ -126,6 +127,7 @@ public class MemberDAO {
 
 		return false;
 	}
+
 
 	public void selectMember(Connection con, MemberDTO memberDTO) {
 		String query ="SELECT m_email,"

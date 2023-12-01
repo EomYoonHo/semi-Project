@@ -36,6 +36,7 @@ public class MemberServiceImpl implements MemberService {
 	public boolean duplicateEmail(String email) {
 		return memberDAO.duplicateEmail(con, email);
 	}
+
 	
 	@Override
 	public void selectMember(MemberDTO memberDTO) {
