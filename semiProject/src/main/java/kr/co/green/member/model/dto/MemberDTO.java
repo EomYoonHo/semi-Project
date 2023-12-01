@@ -10,6 +10,7 @@ public class MemberDTO {
 	private String m_email;
 	private String m_pwd;
 	private String m_nickname;
+	private String m_phone;
 	private String m_in_date;
 
 	public int getM_no() {
@@ -58,6 +59,14 @@ public class MemberDTO {
 
 	public void setM_in_date(String m_in_date) {
 		this.m_in_date = m_in_date;
+	}
+
+	public String getM_phone() {
+		return m_phone;
+	}
+
+	public void setM_phone(String m_phone) {
+		this.m_phone = m_phone;
 	}
 
 }
