@@ -105,8 +105,7 @@
 				<br>
 			</div>
 		</div>
-		<br>
-		<br>
+		<br> <br>
 		<!-- board list area -->
 		<div id="board-list">
 			<div class="container iipp3">
@@ -121,15 +120,15 @@
 					</tr>
 					<tr>
 						<th>상품가격</th>
-						<td>${getPrice.p_price} 원</td>
+						<td>${getPrice.p_price}원</td>
 					</tr>
 					<tr>
 						<th>예약인원</th>
-						<td>${people} 명</td>
+						<td>${people}명</td>
 					</tr>
 					<tr>
 						<th>결제하실 금액</th>
-						<td>${orderDTO.o_paid_amount} 원</td>
+						<td>${orderDTO.o_paid_amount}원</td>
 					</tr>
 					<tr>
 						<th>구매자전화번호</th>
@@ -174,26 +173,27 @@
 	<footer class="glamping-N3" data-bid="hNLPJ5jFl2">
 		<div class="footer-container">
 			<!-- <audio src="./music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio> -->
-			<img class="footer-backimg img-pc" src="./img/apl.jpg" alt="PC 푸터 비주얼">
+			<img class="footer-backimg img-pc" src="./img/apl.jpg"
+				alt="PC 푸터 비주얼">
 			<div class="footer-body container-md">
 				<h2 class="footer-logo">
-					<a href="javascript:void(0)">
-					 <img src="./img/pessport.png" alt="로고">
+					<a href="javascript:void(0)"> <img src="./img/pessport.png"
+						alt="로고">
 					</a>
 				</h2>
 
 				<ul class="footer-snslist">
-					<li class="footer-snsitem">
-					<a class="footer-snslink" href="javascript:void(0)"> 
-					<img src="./icon/ico_instagram_white.svg" alt="인스타그램">
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="./icon/ico_instagram_white.svg" alt="인스타그램">
 					</a></li>
-					<li class="footer-snsitem">
-					<a class="footer-snslink" href="javascript:void(0)"> 
-					<img src="./icon/ico_youtube_white.svg" alt="유튜브">
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="./icon/ico_youtube_white.svg" alt="유튜브">
 					</a></li>
-					<li class="footer-snsitem">
-					<a class="footer-snslink" href="javascript:void(0)">
-					<img src="./icon/ico_facebook_white.svg" alt="페이스북">
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="./icon/ico_facebook_white.svg" alt="페이스북">
 					</a></li>
 				</ul>
 				<ul class="footer-menugroup">
@@ -229,13 +229,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
