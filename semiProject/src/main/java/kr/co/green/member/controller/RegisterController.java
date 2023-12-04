@@ -80,10 +80,13 @@ public class RegisterController extends HttpServlet {
 //		}else if(!pwdMatcher.matches()) {
 //			validationAlert(response,"비밀번호가 정책에 맞지 않습니다");
 //		}
-	
+		
 
 	}
-
+	
+	
+//////////////////////////////////
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -92,7 +95,7 @@ public class RegisterController extends HttpServlet {
 
 		// 값받기
 		String email = request.getParameter("email");
-		String pwd = request.getParameter("pwd");
+		String pwd = request.getParameter("password");
 		String pwdCheck = request.getParameter("pwdCheck");
 		String name = request.getParameter("name");
 		String phone =request.getParameter("phone");
@@ -117,7 +120,7 @@ public class RegisterController extends HttpServlet {
 		if (result==0) {
 			validationAlert(response,"회원가입에 실패했습니다.");
 		}else {
-			RequestDispatcher view =request.getRequestDispatcher("/views/member/map.jsp");
+			RequestDispatcher view =request.getRequestDispatcher("/views/member/login.jsp");
 			view.forward(request, response);
 			System.out.println("성공");
 		}
@@ -144,6 +147,10 @@ public class RegisterController extends HttpServlet {
 //		}
 		
 	}
+	
+	
+	////////////////////////////////////////
+	
 	private void validationAlert(HttpServletResponse response, String msg)throws IOException{
 		PrintWriter out = response.getWriter();
 		out.println("<script>"

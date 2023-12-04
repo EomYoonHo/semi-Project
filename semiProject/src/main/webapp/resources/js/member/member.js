@@ -14,8 +14,31 @@ function register(){
 }
 
 function memberDelete(){
-	const form = document.getElementById("profile-detail");
+	const form = document.getElementById("infodetail");
 	form.action = "/MemberDeleteController";
 	form.method = "post";
 	form.submit();
 }
+
+function memberUpdate(){
+	const form = document.getElementById("infoupdate");
+	form.action = "/UpdateController"
+	form.method = "post";
+	form.submit();
+}
+
+function myinfoForm(){
+	const form = document.getElementById("myinfo");
+	form.action = "/Myinfo.do";
+	form.method = "post";
+	form.submit();
+
+}
+
+function infoform(){
+	const form = document.getElementById("infodetail");
+	form.action = "/MyformController";
+	form.method = "post";
+	form.submit();
+	}
+	

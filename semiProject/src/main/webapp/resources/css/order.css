@@ -8,16 +8,13 @@
 
 .product-list{
     width: 735px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
-.products h3{
-    font-size: 24px;
-    color: #545454;
-    margin-top:60px;
-    margin-bottom: 60px;
-    text-align: center;
+.pptt {
+  font-family: 'Noto Sans KR', sans-serif;
 }
+
+
 
 .product{
     display: block;
@@ -26,10 +23,10 @@
     text-decoration:none;
     color: black;
     float:left;
+    justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 30px;
-    
 }
 
 .product-name{
@@ -95,4 +92,8 @@
 .img {
     width: 100%;
     height: auto;                                                        
+}
+.dfjc {
+  display: flex;
+  justify-content: center;
 }
