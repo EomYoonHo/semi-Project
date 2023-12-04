@@ -7,6 +7,16 @@
     margin-left: 340px;
     
 }
+.pp {
+    width: 15%;
+    position: absolute;
+    top:0%;
+    left: 0%;
+}
+.whwhwh {
+    width: 100%;
+    height: 100%;
+}
 .leftt {
     margin-left: 290px;
 }
@@ -24,8 +34,30 @@
     width: 31%;
 }
 .left5 {
-	margin-left: 0;
-    width: 60%;
+    width: 61%;
+}
+.wwwi {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+.wwwii {
+    display: block;
+    width:83%; 
+    padding:5px; 
+    margin: 0 auto;
+}
+
+.home-box {  
+    overflow: hidden; 
+    margin: 0px auto; 
+    position: absolute; 
+    display: inline-block; 
+}
+.home-text {
+    position: absolute;
+    top: 9.5%;
+    width: 100%;
+    left: 32%;
 }
 .iii {
     margin-left: 50px;
@@ -58,8 +90,7 @@
  .zzz {
     width: 25%;
  }
- 
-  .pagination a {
+ .pagination a {
     color: black;
     float: left;
     padding: 8px 16px;
@@ -77,6 +108,26 @@
   .wcct {
     display: flex;
     justify-content: center;
+    text-align: center;
   }
- 
- 
+  .gold {
+    font-size: 15px;
+    font-family: 'Tangerine', serif;
+  }
+  .ff {
+    font-family: 'Tangerine', serif;
+  }
+
+.whwh {
+    width: 40%;
+    height: 80%;
+}
+.mgl {
+    margin-left: 40px;
+}
+.bbdd {
+    border: double 10px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    background-color: rgb(236, 236, 236);
+}

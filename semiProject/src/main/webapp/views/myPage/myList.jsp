@@ -15,6 +15,30 @@
 <link rel="stylesheet" href="/resources/css/board/style.css">
 <link rel="stylesheet" href="/resources/css/board/yh.css">
 <link rel="stylesheet" href="/resources/css/board/table.css">
+<link rel="stylesheet" th:href="@{./css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{./css/custom.min.css}">
+<link
+	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+	rel="stylesheet">
+
+<!-- Web fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
+	rel="stylesheet">
+
+<!-- favicon.ico. Place these in the root directory. -->
+<link rel="shortcut icon" href="favicon.ico">
+<script src="/post_inc/jquerys/jquery-barcode.min.js"></script>
+<!-- 잡것 -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link
 	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
 	rel="stylesheet">
@@ -23,7 +47,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
 	rel="stylesheet">
-<script src="/resources/js/board.js"></script>
 </head>
 
 <body>
@@ -104,109 +127,95 @@
 	<br>
 	<section class="notice">
 		<div class="page-title">
+			<br>
+			<br>
+			<br>
 			<div class="container">
 				<h3 class="pgc" style="font-size: 100px;">
-					<b>Community</b>
+					<b>My Page</b>
 				</h3>
 				<br>
-				<h3 class="pgc">Feel free to write your opinions.</h3>
+				<br>
+				<h3 class="pgc">Thank you always.</h3>
 			</div>
-		</div>
-		<br> <br>
-		<!-- board seach area -->
-		<div id="board-search">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<div class="container">
-				<div class="search-window">
-					<form action="/boardList.do" method="get">
-						<div class="search-wrap">
-							<input type="hidden" name="cpage" value="1"> <label
-								for="search" class="blind">공지사항 내용 검색</label> <input id="search"
-								type="search" name="searchText" placeholder="제목을 입력해주세요."
-								value="">
-							<button type="submit" class="btn btn-dark">검색</button>
-						</div>
-					</form>
-				</div>
+				<h3 class="pgc" style="font-size: 50px;">
+					<b>Purchase History</b>
+				</h3>
+				<br>
+				<h3 class="pgc">Thank you for your purchase.</h3>
 			</div>
 		</div>
+		</div>
+		<form action="">
+			<div id="board-list">
+				<div class="container">
 
-		<!-- board list area -->
-		<div id="board-list">
-			<div class="container">
-				<table class="board-table">
-					<thead>
-						<tr>
-							<th scope="col" class="th-num">번호</th>
-							<th scope="col" class="th-title">제목</th>
-							<th scope="col" class="th-date">작성자</th>
-							<th scope="col" class="th-date">조회수</th>
-						</tr>
-					</thead>
-					<tbody>
+
+					<table class="board-table iipp3">
+						<thead>
+							<tr>
+								<th width=30% scope="col" class="th-title">패키지</th>
+								<th width=20% scope="col" class="th-title">가격</th>
+								<th width=20% scope="col" class="th-title">기간</th>
+								<th width=20% scope="col" class="th-title">예약자</th>
+								<th width=20% scope="col" class="th-title">구매날짜</th>
+							</tr>
+						</thead>
+
+
 						<c:choose>
 							<c:when test="${empty list}">
 								<tr>
-									<td colspan="4" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
+									<td colspan="5" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
 									<tr>
-										<td>${row}</td>
-										<td onclick="detailPage(${item.b_idx}, ${row} )">${item.b_title}</td>
-										<td>${item.m_nickname}</td>
-										<td>${item.b_views}</td>
+										<td width=30%><a href="">${item.o_name}</a></td>
+										<td width=20%>${item.o_paid_amount}</td>
+										<td width=20%>${item.o_period}</td>
+										<td width=20%>${item.o_buyer_name}</td>
+										<td width=20%>${item.o_paid_at}</td>
 									</tr>
+
 									<c:set var="row" value="${row-1}" />
 								</c:forEach>
 							</c:otherwise>
 						</c:choose>
-					</tbody>
-				</table>
+					</table>
+
+
+
+
+
+				</div>
 			</div>
-		</div>
-		<a href="/views/board/list2.jsp">
-			<div class="pt-1">
-				<button class="custom-btn btn-6"
-					onclick="window.location.href = '/views/board/list2.jsp">
-					<span>글작성</span>
+			<br>
+			<div class="pt-1 wwwii dfjc">
+				<button class="custom-btn btn-6" formaction="infoUpdate.html">
+					<span>수정완료</span>
+					<button class="custom-btn btn-6" formaction="myPage.html">
+						<span>돌아가기</span>
 			</div>
-		</a>
-		<div class="pagination wcct">
-
-			<c:choose>
-				<c:when test="${pi.currentPage == 1}">
-					<a href="#">&laquo;</a>
-				</c:when>
-				<c:otherwise>
-					<a
-						href="/boardList.do?cpage=${pi.currentPage-1}&searchText=${searchText}">&laquo;</a>
-				</c:otherwise>
-			</c:choose>
-
-
-			<c:forEach var="page" begin="${pi.startPage}" end="${pi.endPage}">
-				<a href="/boardList.do?cpage=${page}&searchText=${searchText}">${page}</a>
-			</c:forEach>
-
-
-			<c:choose>
-				<c:when test="${pi.currentPage == pi.maxPage}">
-					<a href="#">&raquo;</a>
-				</c:when>
-				<c:otherwise>
-					<a
-						href="/boardList.do?cpage=${pi.currentPage+1}&searchText=${searchText}">&raquo;</a>
-				</c:otherwise>
-			</c:choose>
-		</div>
+		</form>
 	</section>
+	<br>
+	<br>
 	<div class="page-title">
 		<div class="container">
 			<h3 class="pgc" style="font-size: 50px;">Thank you for using [
 				Pess-Port ] travel agency.</h3>
 		</div>
 	</div>
+	<br>
 	<!-- [E]glamping-N9 -->
 	<!-- [S]glamping-N3 -->
 	<footer class="glamping-N3" data-bid="hNLPJ5jFl2">
@@ -265,5 +274,6 @@
 	<script src="./js/template.js"></script>
 	<script src="./js/common.js"></script>
 	<script src="./js/script.js"></script>
+
 
 </body>

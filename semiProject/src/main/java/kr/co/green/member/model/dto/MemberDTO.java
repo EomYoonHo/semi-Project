@@ -15,6 +15,7 @@ public class MemberDTO {
 	
 
 
+
 	public int getM_no() {
 		return m_no;
 	}
