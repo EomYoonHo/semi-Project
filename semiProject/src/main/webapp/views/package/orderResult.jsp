@@ -1,44 +1,18 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
 <meta charset="UTF-8">
-
 <title>semi-Project</title>
-<link rel="stylesheet" href="/resources/css/board/setting.css">
-<link rel="stylesheet" href="/resources/css/boards/plugin.css">
-<link rel="stylesheet" href="/resources/css/board/semi.css">
-<link rel="stylesheet" href="/resources/css/board/common.css">
-<link rel="stylesheet" href="/resources/css/board/style.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
-<link rel="stylesheet" th:href="@{./css/bootstrap.css}">
-<link rel="stylesheet" th:href="@{./css/custom.min.css}">
-<link
-	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
-	rel="stylesheet">
+<link rel="stylesheet" href="/resources/css/setting.css">
+<link rel="stylesheet" href="/resources/css/plugin.css">
+<link rel="stylesheet" href="/resources/css/semi.css">
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/yh.css">
+<link rel="stylesheet" href="/resources/css/table.css">
 
-<!-- Web fonts -->
-<link
-	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
-	rel="stylesheet">
-
-<!-- favicon.ico. Place these in the root directory. -->
-<link rel="shortcut icon" href="favicon.ico">
-<script src="/post_inc/jquerys/jquery-barcode.min.js"></script>
-<!-- 잡것 -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link
 	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
 	rel="stylesheet">
@@ -47,8 +21,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
 	rel="stylesheet">
-</head>
 
+</head>
 <body>
 	<!-- [S]glamping-N1 -->
 	<header class="glamping-N1" data-bid="jILPJ5JfH5">
@@ -117,131 +91,109 @@
 			</div>
 		</div>
 	</header>
-	<div class="glamping-N3">
-		<img class="footer-backimg img-pc" src="./img/airplane2.jpg"
-			alt="PC 푸터 비주얼">
-	</div>
+	<img src="./img/airplane2.jpg" alt="">
 	<!-- [E]glamping-N1 -->
 	<br>
 	<br>
 	<br>
 	<section class="notice">
 		<div class="page-title">
-			<br>
-			<br>
-			<br>
 			<div class="container">
 				<h3 class="pgc" style="font-size: 100px;">
-					<b>My Page</b>
+					<b>Order Result</b>
 				</h3>
 				<br>
-				<br>
-				<h3 class="pgc">Thank you always.</h3>
-			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="container">
-				<h3 class="pgc" style="font-size: 50px;">
-					<b>Purchase History</b>
-				</h3>
-				<br>
-				<h3 class="pgc">Thank you for your purchase.</h3>
 			</div>
 		</div>
+		<br>
+		<br>
+		<!-- board list area -->
+		<div id="board-list">
+			<div class="container iipp3">
+				<table class="board-table">
+					<tr>
+						<th>주문번호</th>
+						<td>${orderDTO.o_idx}</td>
+					</tr>
+					<tr>
+						<th>상품이름</th>
+						<td>${orderDTO.o_name}</td>
+					</tr>
+					<tr>
+						<th>상품가격</th>
+						<td>${getPrice.p_price} 원</td>
+					</tr>
+					<tr>
+						<th>예약인원</th>
+						<td>${people} 명</td>
+					</tr>
+					<tr>
+						<th>결제하실 금액</th>
+						<td>${orderDTO.o_paid_amount} 원</td>
+					</tr>
+					<tr>
+						<th>구매자전화번호</th>
+						<td>${orderDTO.o_buyer_phone}</td>
+					</tr>
+					<tr>
+						<th>구매자이름</th>
+						<td>${orderDTO.o_buyer_name}</td>
+					</tr>
+					<tr>
+						<th>구매자이메일</th>
+						<td>${orderDTO.o_buyer_email}</td>
+					</tr>
+					<tr>
+						<th>여행기간</th>
+						<td>${orderDTO.o_period}</td>
+					</tr>
+					<tr>
+						<th>구매일자</th>
+						<td>${orderDTO.o_paid_at}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 		<form action="">
-			<div id="board-list">
-				<div class="container">
-
-
-					<table class="board-table iipp3">
-						<thead>
-							<tr>
-								<th width=30% scope="col" class="th-title">패키지</th>
-								<th width=20% scope="col" class="th-title">가격</th>
-								<th width=20% scope="col" class="th-title">기간</th>
-								<th width=20% scope="col" class="th-title">예약자</th>
-								<th width=20% scope="col" class="th-title">구매날짜</th>
-							</tr>
-						</thead>
-
-
-						<c:choose>
-							<c:when test="${empty list}">
-								<tr>
-									<td colspan="5" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
-								</tr>
-							</c:when>
-							<c:otherwise>
-								<c:forEach var="item" items="${list}">
-									<tr>
-										<td width=30%><a href="">${item.o_name}</a></td>
-										<td width=20%>${item.o_paid_amount}</td>
-										<td width=20%>${item.o_period}</td>
-										<td width=20%>${item.o_buyer_name}</td>
-										<td width=20%>${item.o_paid_at}</td>
-									</tr>
-
-									<c:set var="row" value="${row-1}" />
-								</c:forEach>
-							</c:otherwise>
-						</c:choose>
-					</table>
-
-
-
-
-
-				</div>
-			</div>
-			<br>
-			<div class="pt-1 wwwii dfjc">
-				<button class="custom-btn btn-6" formaction="infoUpdate.html">
-					<span>수정완료</span>
-					<button class="custom-btn btn-6" formaction="myPage.html">
-						<span>돌아가기</span>
+			<div class="pt-1 wwwii">
+				<button class="custom-btn btn-6" formaction="review2.html">
+					<span>확인</span>
 			</div>
 		</form>
 	</section>
-	<br>
-	<br>
+
+
 	<div class="page-title">
 		<div class="container">
 			<h3 class="pgc" style="font-size: 50px;">Thank you for using [
 				Pess-Port ] travel agency.</h3>
 		</div>
 	</div>
-	<br>
 	<!-- [E]glamping-N9 -->
 	<!-- [S]glamping-N3 -->
 	<footer class="glamping-N3" data-bid="hNLPJ5jFl2">
 		<div class="footer-container">
 			<!-- <audio src="./music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio> -->
-			<img class="footer-backimg img-pc" src="./img/apl.jpg"
-				alt="PC 푸터 비주얼">
+			<img class="footer-backimg img-pc" src="./img/apl.jpg" alt="PC 푸터 비주얼">
 			<div class="footer-body container-md">
 				<h2 class="footer-logo">
-					<a href="javascript:void(0)"> <img src="./img/pessport.png"
-						alt="로고">
+					<a href="javascript:void(0)">
+					 <img src="./img/pessport.png" alt="로고">
 					</a>
 				</h2>
 
 				<ul class="footer-snslist">
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="./icon/ico_instagram_white.svg" alt="인스타그램">
+					<li class="footer-snsitem">
+					<a class="footer-snslink" href="javascript:void(0)"> 
+					<img src="./icon/ico_instagram_white.svg" alt="인스타그램">
 					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="./icon/ico_youtube_white.svg" alt="유튜브">
+					<li class="footer-snsitem">
+					<a class="footer-snslink" href="javascript:void(0)"> 
+					<img src="./icon/ico_youtube_white.svg" alt="유튜브">
 					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="./icon/ico_facebook_white.svg" alt="페이스북">
+					<li class="footer-snsitem">
+					<a class="footer-snslink" href="javascript:void(0)">
+					<img src="./icon/ico_facebook_white.svg" alt="페이스북">
 					</a></li>
 				</ul>
 				<ul class="footer-menugroup">
@@ -275,5 +227,15 @@
 	<script src="./js/common.js"></script>
 	<script src="./js/script.js"></script>
 
-
 </body>
+</html>
+
+
+
+
+
+
+
+
+
+

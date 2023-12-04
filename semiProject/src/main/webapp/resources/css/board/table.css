@@ -136,7 +136,7 @@ table {
     text-transform: uppercase;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
-    border-radius: 0;
+    border-radius: 5px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -170,8 +170,85 @@ table {
     clear: both;
   }
   .container {
-    width: 1100px;
+    width: 100%;
     margin: 0 auto;
+  }
+  .wsm {
+    width: 80%
+  }
+  .wsmm {
+    width: 60%;
+  }
+  .tltl {
+    text-align: left;
+  }
+  .iipp {
+    display: block;
+    width:60%; 
+    padding:5px; 
+    background-color: white;
+    border-radius: 3px;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 5px double;
+    border-right: 5px double;
+    margin: 0 auto;
+  }
+  .iipp2 {
+    display: block; 
+    padding:5px; 
+    background-color: white;
+    border-radius: 3px;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 5px double;
+    border-right: 5px double;
+    margin: 0 auto;
+  }
+  .iipp3 {
+    width:80%; 
+    padding:5px; 
+    background-color: white;
+    border-radius: 3px;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 5px double;
+    border-right: 5px double;
+    margin: 0 auto;
+  }
+  .iipp4 {
+    display: block;
+    width:40%; 
+    padding:5px; 
+    background-color: white;
+    border-radius: 3px;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 5px double;
+    border-right: 5px double;
+    margin: 0 auto;
+  }
+  .iipp4 tr td {
+    padding-left: 110px;
+    text-align: center;
+  }
+  .iipp5 {
+    display: block;
+    width:40%; 
+    padding:5px; 
+    background-color: white;
+    border-radius: 3px;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 5px double;
+    border-right: 5px double;
+    margin: 0 auto;
+  }
+  .iipp6 {
+    border-top: 3px solid;
+    border-bottom: 7px solid;
+    border-left: 5px double;
+    border-right: 5px double;
   }
   .blind {
     position: absolute;
@@ -180,6 +257,17 @@ table {
     margin: -1px;
     width: 1px;
     height: 1px;
+  }
+  .pgc {
+    font-family: 'Ephesis', cursive;
+    text-align: center;
+  }
+  .dfjc {
+    display: flex;
+    justify-content: center;
+  }
+  .wwwww {
+    width: 100%;
   }
 
   .btn-s {
@@ -255,8 +343,160 @@ table {
     font-size: 17px;
   }
   
+  
   .fts {
     font-size: 15px;
   }
 
-  
+
+ 
+ 
+  /* 6 */
+.btn-6 {
+  background: #000;
+ color: #fff;
+ line-height: 42px;
+ padding: 0;
+ border: none;
+ width: 100px;
+ height: 42px;
+ margin: 20px;
+ 
+}
+.btn-6 span {
+ position: relative;
+ display: block;
+ width: 100%;
+ height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+ position: absolute;
+ content: "";
+ height: 0%;
+ width: 2px;
+ background: #000;
+}
+.btn-6:before {
+ right: 0;
+ top: 0;
+ transition: all 500ms ease;
+}
+.btn-6:after {
+ left: 0;
+ bottom: 0;
+ transition: all 500ms ease;
+}
+.btn-6:hover{
+ color: #000;
+ background: transparent;
+}
+.btn-6:hover:before {
+ transition: all 500ms ease;
+ height: 100%;
+}
+.btn-6:hover:after {
+ transition: all 500ms ease;
+ height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+ position: absolute;
+ content: "";
+ background: #000;
+}
+.btn-6 span:before {
+ left: 0;
+ top: 0;
+ width: 0%;
+ height: 2px;
+ transition: all 500ms ease;
+}
+.btn-6 span:after {
+ right: 0;
+ bottom: 0;
+ width: 0%;
+ height: 2px;
+ transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+ width: 100%;
+}
+.btn-6 span:hover:after {
+ width: 100%;
+}
+
+ /* 6-1 */
+ .btn-6-1 {
+  background: #c20101;
+ color: #fff;
+ line-height: 42px;
+ padding: 0;
+ border: none;
+ width: 100px;
+ height: 42px;
+ margin: 20px;
+ 
+}
+.btn-6-1 span {
+ position: relative;
+ display: block;
+ width: 100%;
+ height: 100%;
+}
+.btn-6-1:before,
+.btn-6-1:after {
+ position: absolute;
+ content: "";
+ height: 0%;
+ width: 2px;
+ background: #000;
+}
+.btn-6-1:before {
+ right: 0;
+ top: 0;
+ transition: all 500ms ease;
+}
+.btn-6-1:after {
+ left: 0;
+ bottom: 0;
+ transition: all 500ms ease;
+}
+.btn-6-1:hover{
+ color: #c20101;
+ background: transparent;
+}
+.btn-6-1:hover:before {
+ transition: all 500ms ease;
+ height: 100%;
+}
+.btn-6-1:hover:after {
+ transition: all 500ms ease;
+ height: 100%;
+}
+.btn-6-1 span:before,
+.btn-6-1 span:after {
+ position: absolute;
+ content: "";
+ background: #c20101;
+}
+.btn-6-1 span:before {
+ left: 0;
+ top: 0;
+ width: 0%;
+ height: 2px;
+ transition: all 500ms ease;
+}
+.btn-6-1 span:after {
+ right: 0;
+ bottom: 0;
+ width: 0%;
+ height: 2px;
+ transition: all 500ms ease;
+}
+.btn-6-1 span:hover:before {
+ width: 100%;
+}
+.btn-6-1 span:hover:after {
+ width: 100%;
+}

@@ -50,6 +50,7 @@ public class PackageController extends HttpServlet {
 		
 		System.out.println(member.getM_email());
 		System.out.println(member.getM_name());
+		System.out.println(member.getM_phone());
 		
 		request.setAttribute("member", member);
 		

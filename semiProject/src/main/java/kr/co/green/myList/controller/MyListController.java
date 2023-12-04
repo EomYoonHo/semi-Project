@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.co.green.board.model.dto.BoardDTO;
-import kr.co.green.board.model.service.BoardServiceImpl;
 import kr.co.green.common.PageInfo;
 import kr.co.green.common.Pagination;
+import kr.co.green.myList.model.dto.MyListDTO;
+import kr.co.green.myList.model.service.MyListServiceImpl;
 
 
 @WebServlet("/MyList.do")
@@ -30,11 +30,11 @@ public class MyListController extends HttpServlet {
 		// cpage = 현재 페이지
 		int cpage = Integer.parseInt(request.getParameter("cpage"));
 		System.out.println(cpage);
-		BoardServiceImpl boardService = new BoardServiceImpl();
+		MyListServiceImpl myListService = new MyListServiceImpl();
 		// 게시글 검색
 		String searchText = request.getParameter("searchText");
 		// 전체 게시글 수
-		int listCount = boardService.boardListCount(searchText);
+		int listCount = myListService.myListCount(searchText);
 		System.out.println(listCount);
 		// 보여질 페이지 수
 		int pageLimit = 10;
@@ -47,14 +47,14 @@ public class MyListController extends HttpServlet {
 		PageInfo pi = page.getPageInfo(listCount, cpage, pageLimit, boardLimit);
 
 		// 목록 불러오기
-		ArrayList<BoardDTO> list = boardService.boardList(pi, searchText);
+		ArrayList<MyListDTO> list = myListService.myList(pi, searchText);
 		int row = listCount - (cpage - 1) * boardLimit;
 		request.setAttribute("row", row);
 		request.setAttribute("searchText", searchText);
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 
-		RequestDispatcher view = request.getRequestDispatcher("/views/board/list.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/views/myPage/myList.jsp");
 		view.forward(request, response);
 	}
 

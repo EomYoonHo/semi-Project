@@ -19,10 +19,10 @@ public class MyListDAO {
 
 			// 쿼리작성
 
-			String query = "SELECT o_idx," 
+			String query = "SELECT o_name," 
 					+ "			o_paid_amount,"
 					+ "			o_period," 
-					+ "			o_buyer_name" 
+					+ "			o_buyer_name," 
 					+ "			o_paid_at"
 					+ "		FROM orders"
 					+ "	 	ORDER BY o_paid_at DESC";
@@ -35,14 +35,14 @@ public class MyListDAO {
 				ResultSet rs = pstmt.executeQuery();
 
 				while (rs.next()) {
-					int o_idx = rs.getInt("o_idX");
+					String o_name = rs.getString("o_name");
 					String o_paid_amount = rs.getString("o_paid_amount");
 					String o_period = rs.getString("o_period");
 					String o_buyer_name = rs.getString("o_buyer_name");
 					String o_paid_at = rs.getString("o_paid_at");
 
 					MyListDTO myList = new MyListDTO();
-					myList.setO_idx(o_idx);
+					myList.setO_name(o_name);
 					myList.setO_paid_amount(o_paid_amount);
 					myList.setO_period(o_period);
 					myList.setO_buyer_name(o_buyer_name);
