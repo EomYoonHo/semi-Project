@@ -18,10 +18,14 @@ function boardDelete() {
 		form.method = "post";
 		form.submit();
 	}
-
-function boardBack() {
-	const page = '/boardList.do?cpage=1';
-	window.location.href = page;
 }
 
-}
+
+  function boardEnroll(){
+     const form = document.getElementById("detail-form");
+     const content = document.getElementById("summernote").value;
+     console.log(content);
+     form.action = "/boardUpdate.do";
+     form.method = "post";
+     form.submit();
+  }

@@ -54,6 +54,9 @@ table {
     width: 100%;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    border-top: groove;
+    border-bottom: groove;
+    margin-bottom: 10px;
   }
   
   .board-table a {
@@ -80,10 +83,23 @@ table {
     width: 200px;
   }
   
-  .board-table th, .board-table td {
+  .board-table th {
     padding: 14px 0;
+    
   }
-  
+  .board-table td {
+    padding: 0;
+  }
+  .www {
+    background-color: white;
+  }
+ .bs {
+  border: none;
+ }
+ .hhh {
+   margin: 0;
+   padding: 0;
+ }
   .board-table tbody td {
     border-top: 1px solid #e7e7e7;
     text-align: center;
@@ -205,6 +221,42 @@ table {
     background: gray;
     border-color: gray;
     color: #fff;
+  }
+
+  .minsu {
+    border-radius: 5px;
+    width: 100%;
+    border-width: 0;
+    background-color: #ededed;
+  }
+  .minsu2 {
+    border-radius: 5px;
+    width: 30%;
+    border-width: 0;
+    text-align: center;
+    background-color: #ededed;
+  }
+  select {
+    font-family: cursive, sans-serif;
+    outline: 0;
+    background: #ededed;
+    color: #303030;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0px;
+    border-radius: 5px;
+    font-style: initial;
+  }
+  option {
+    font-style: initial;
+    font-size: 15px;
+  }
+
+  .pts {
+    font-size: 17px;
+  }
+  
+  .fts {
+    font-size: 15px;
   }
 
   

@@ -3,12 +3,29 @@
     
 }
 .left {
-    margin-left: 80px;
-    padding: 1px;
+    
+    margin-left: 340px;
+    
+}
+.leftt {
+    margin-left: 290px;
 }
 .left2 {
     margin-left: 0;
-    width: 62%;
+    width: 63%;
+}
+
+.left3 {
+    margin-left: 0;
+    width: 20%;
+}
+.left4 {
+    margin-left: 0;
+    width: 31%;
+}
+.left5 {
+	margin-left: 0;
+    width: 60%;
 }
 .iii {
     margin-left: 50px;
@@ -17,6 +34,12 @@
     height: 50px;
     padding: 0px;
 }
+.lee {
+    text-align: left;
+}
+.wwww {
+    width: 90%;
+}
 .ddd {
     background-color: rgb(71, 69, 69);
     color: white;
@@ -24,3 +47,36 @@
     margin: 0px;
     padding: 0px;
  }
+
+ .bbb {
+    background-color: #f9f7f9;
+ }
+
+ .ct {
+    text-align: center;
+ }
+ .zzz {
+    width: 25%;
+ }
+ 
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+  
+  .pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+  .wcct {
+    display: flex;
+    justify-content: center;
+  }
+ 
+ 
