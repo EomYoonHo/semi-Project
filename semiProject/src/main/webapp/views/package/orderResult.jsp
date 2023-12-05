@@ -121,16 +121,31 @@
 					</tr>
 					<tr>
 						<th>상품가격</th>
-						<td>${getPrice.p_price} 원</td>
+						<td>${packageDTO.p_price} 원</td>
 					</tr>
 					<tr>
 						<th>예약인원</th>
-						<td>${people} 명</td>
+						<td>${orderDTO.o_people} 명</td>
 					</tr>
 					<tr>
-						<th>결제하실 금액</th>
+						<th>사용한 마일리지</th>
+						<td>${selectPM.pm_amount}원</td>
+					</tr>
+					
+					<tr>
+						<th>결제 금액</th>
 						<td>${orderDTO.o_paid_amount} 원</td>
 					</tr>
+			
+					<tr>
+						<th>추가된 포인트</th>
+						<td>+ ${orderDTO.o_point} 포인트</td>
+					</tr>
+					<tr>
+						<th>사용가능 포인트</th>
+						<td>총 ${allpoint.p_balance} 포인트 사용가능</td>
+					</tr>
+					
 					<tr>
 						<th>구매자전화번호</th>
 						<td>${orderDTO.o_buyer_phone}</td>
@@ -143,6 +158,7 @@
 						<th>구매자이메일</th>
 						<td>${orderDTO.o_buyer_email}</td>
 					</tr>
+					
 					<tr>
 						<th>여행기간</th>
 						<td>${orderDTO.o_period}</td>
@@ -151,13 +167,14 @@
 						<th>구매일자</th>
 						<td>${orderDTO.o_paid_at}</td>
 					</tr>
+					
 				</table>
 			</div>
 		</div>
 		<form action="">
 			<div class="pt-1 wwwii">
-				<button class="custom-btn btn-6" formaction="review2.html">
-					<span>확인</span>
+				<button class="custom-btn btn-6" formaction="review2.html" type="button">
+					<a href="/views/common/home.jsp" >확인</a>
 			</div>
 		</form>
 	</section>
