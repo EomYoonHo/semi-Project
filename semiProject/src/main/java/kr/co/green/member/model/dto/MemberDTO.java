@@ -12,7 +12,7 @@ public class MemberDTO {
 	private String m_nickname;
 	private String m_phone;
 	private String m_in_date;
-	
+	private String m_type;
 
 
 
@@ -70,6 +70,14 @@ public class MemberDTO {
 
 	public void setM_in_date(String m_in_date) {
 		this.m_in_date = m_in_date;
+	}
+
+	public String getM_type() {
+		return m_type;
+	}
+
+	public void setM_type(String m_type) {
+		this.m_type = m_type;
 	}
 
 	
