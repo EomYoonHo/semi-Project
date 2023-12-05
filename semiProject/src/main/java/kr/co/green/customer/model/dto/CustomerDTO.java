@@ -2,6 +2,7 @@ package kr.co.green.customer.model.dto;
 
 public class CustomerDTO {
 
+
     private int cs_idx;
     private String cs_title;
     private String cs_content;
