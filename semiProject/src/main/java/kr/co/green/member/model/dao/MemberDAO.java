@@ -79,9 +79,6 @@ public class MemberDAO {
 
 			result = pstmt.executeUpdate();
 
-			pstmt.close();
-			con.close();
-
 		} catch (SQLException e) {
 
 			e.printStackTrace();

@@ -11,7 +11,6 @@ tmp/
 *~.nib
 local.properties
 .settings/
-.classpath
 semiProject/.classpath
 semiProject/.settings/
 .loadpath
