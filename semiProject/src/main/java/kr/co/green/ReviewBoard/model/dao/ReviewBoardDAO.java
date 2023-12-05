@@ -195,9 +195,7 @@ public class ReviewBoardDAO {
 
 
 	public int boardUpdate(Connection con, int idx, String title, String content, String star) {
-			System.out.println(idx);
-			System.out.println(title);
-			System.out.println(content);
+
 		String query = "UPDATE review"
 				+ "		SET"
 				+ "		r_title = ?,"

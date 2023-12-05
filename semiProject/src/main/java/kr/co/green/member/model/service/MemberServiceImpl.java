@@ -47,4 +47,10 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.retrieveMember(con,email);
 	}
 
+	@Override
+	public int memberUpdate(MemberDTO memberdto) {
+		
+		return memberDAO.memberUpdate(con,memberdto);
+	}
+
 }

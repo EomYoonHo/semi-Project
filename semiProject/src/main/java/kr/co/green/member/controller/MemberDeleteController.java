@@ -32,20 +32,24 @@ public class MemberDeleteController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		
 		HttpSession session = request.getSession();
-		String name =(String)session.getAttribute("name");
-		String nickname = (String)session.getAttribute("nickname");
+		String name =(String)session.getAttribute("m_name");
+		String nickname = (String)session.getAttribute("m_nickname");
 		
 		MemberServiceImpl memberService =new MemberServiceImpl();
 		int result = memberService.memberDelete(name,nickname);
 		
 		if (result != 0) {
-			session.removeAttribute("name");
-			session.removeAttribute("nickname");
+			session.removeAttribute("m_name");
+			session.removeAttribute("m_nickname");
 			session.invalidate();
+			System.out.println("삭제가 완료되었습니다.");
+		}else {
+			System.out.println("에러");
 		}
-		RequestDispatcher view =request.getRequestDispatcher("/");
+		
+		RequestDispatcher view =request.getRequestDispatcher("/views/member/login.jsp");
 		view.forward(request, response);
 		
 	}

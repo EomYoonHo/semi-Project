@@ -84,8 +84,10 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("m_email", member.getM_email());
 			session.setAttribute("m_nickname", member.getM_nickname());
 			session.setAttribute("m_no", member.getM_no());
-
-			RequestDispatcher view = request.getRequestDispatcher("/views/common/map.jsp");
+			session.setAttribute("m_phone", member.getM_phone());
+			
+			System.out.println(member.getM_phone());
+			RequestDispatcher view = request.getRequestDispatcher("/views/customer/customerService.jsp");
 			view.forward(request, response);
 		}
 

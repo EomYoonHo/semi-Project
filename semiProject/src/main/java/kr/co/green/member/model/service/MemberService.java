@@ -12,7 +12,11 @@ public interface MemberService {
 	public boolean duplicateEmail(String email);
 
 	public void selectMember(MemberDTO memberDTO);
+	
 	public MemberDTO retrieveMember(String email);
+
+	public int memberUpdate(MemberDTO memberdto);
+
 }
 
 

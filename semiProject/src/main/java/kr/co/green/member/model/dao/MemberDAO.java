@@ -13,12 +13,14 @@ public class MemberDAO {
 	// 로그인
 	public MemberDTO memberLogin(Connection con, String email, String pwd) {
 
-		String query = "SELECT M_NO,"
+
+
+		String query = "	 SELECT M_NO,"
 				+ "					M_NAME,"
 				+ "					M_EMAIL,"
 				+ "					M_PWD,"
+				+ "					M_PHONE,"
 				+ "					M_NICKNAME,"
-				+ "										"
 				+ "					M_IN_DATE" 
 				+ "		FROM MEMBER"
 				+ "		WHERE M_EMAIL=?" 
@@ -38,12 +40,15 @@ public class MemberDAO {
 				String resultEmail = rs.getString("M_EMAIL");
 				String resultPwd = rs.getString("M_PWD");
 				String resultNickname = rs.getString("M_NICKNAME");
+				String resultPhone = rs.getString("M_PHONE");
 				String resultIndate = rs.getString("M_IN_DATE");
+				
 				result.setM_no(resultNo);
 				result.setM_name(resultName);
 				result.setM_email(resultEmail);
 				result.setM_pwd(resultPwd);
 				result.setM_nickname(resultNickname);
+				result.setM_phone(resultPhone);
 				result.setM_in_date(resultIndate);
 
 			}
@@ -86,10 +91,11 @@ public class MemberDAO {
 
 	// 멤버삭제
 	public int memberDelete(Connection con, String name, String nickname) {
-		String query = "DELETE "
-				+ "		  FROM MEMBER" 
-				+ "		  WHERE M_NAME=?" 
-				+ "		  AND M_NICKNAME=?";
+
+		String query = "DELETE FROM MEMBER" 
+				+ "		WHERE M_NAME = ?" 
+				+ "		AND M_NICKNAME = ?";
+
 		
 		int result = 0;
 		try {
@@ -197,6 +203,32 @@ public class MemberDAO {
 		}
 
 		return memberInfo;
+	}
+
+	public int memberUpdate(Connection con, MemberDTO memberDTO) {
+		String query = "UPDATE MEMBER"
+				+ "		SET M_NAME = ?,"
+				+ "			M_PHONE = ?,"
+				+ "			M_NICKNAME = ?"
+				+ "		WHERE M_NO = ?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, memberDTO.getM_name());
+			pstmt.setString(2, memberDTO.getM_phone());
+			pstmt.setString(3, memberDTO.getM_nickname());
+			pstmt.setInt(4, memberDTO.getM_no());
+		
+			return pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		
+		return 0;
 	}
 
 

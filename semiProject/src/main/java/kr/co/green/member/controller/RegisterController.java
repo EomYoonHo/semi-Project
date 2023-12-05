@@ -112,7 +112,7 @@ public class RegisterController extends HttpServlet {
 		memberDTO.setM_name(name);
 		memberDTO.setM_phone(phone);
 		memberDTO.setM_nickname(nickname);
-
+		memberDTO.setM_phone(phone);
 		
 		//회원가입
 		MemberServiceImpl memberService = new MemberServiceImpl();
