@@ -454,10 +454,15 @@
 										</figure>
 										<div class="cardset-profile">
 											<script>
-												$.getJSON(
+												$
+														.getJSON(
 																'https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=0ad6b5563ac41e400483a568e90cfe26&units=metric',
 																function(result) {
-																	$('.ctemp1').append(result.main.temp).append("℃");
+																	$('.ctemp1')
+																			.append(
+																					result.main.temp)
+																			.append(
+																					"℃");
 																	$(
 																			'.chumidity1')
 																			.append(
