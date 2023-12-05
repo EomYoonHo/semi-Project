@@ -1,23 +1,24 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
+  <script src="/resources/js/customer/customer.js"></script>
+	
   <meta charset="UTF-8">
   
   <title>semi-Project</title>
-  <link rel="stylesheet" href="/resources/css/board/setting.css">
-  <link rel="stylesheet" href="/resources/css/board/plugin.css">
-  <link rel="stylesheet" href="/resources/css/board/semi.css">
-  <link rel="stylesheet" href="/resources/css/board/common.css">
-  <link rel="stylesheet" href="/resources/css/board/style.css">
-  <link rel="stylesheet" href="/resources/css/board/yh.css">
-  <link rel="stylesheet" href="/resources/css/board/table.css">
+  <link rel="stylesheet" href="/resources/css/setting.css">
+  <link rel="stylesheet" href="/resources/css/plugin.css">
+  <link rel="stylesheet" href="/resources/css/semi.css">
+  <link rel="stylesheet" href="/resources/css/common.css">
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <link rel="stylesheet" href="/resources/css/yh.css">
+  <link rel="stylesheet" href="/resources/css/table.css">
   <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
-        <link rel="stylesheet" th:href="@{./css/custom.min.css}">
-        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{./css/custom.min.css}">
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
   <!-- Web fonts -->
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
@@ -31,8 +32,8 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
       <div class="header-left">
         <h1 class="header-title">
           <a href="home.html">
-            <img src="./img/pessport.png" alt="로고">
+            <img src="/resources/img/pessport.png" alt="로고">
           </a>
         </h1>
       </div>
@@ -148,54 +149,89 @@
       </div>
     </header>
     <div class="glamping-N3">
-      <img class="footer-backimg img-pc" src="./img/airplane2.jpg" alt="PC 푸터 비주얼">
+      <img class="footer-backimg img-pc" src="/resources/img/airplane2.jpg" alt="PC 푸터 비주얼">
     </div>
     <!-- [E]glamping-N1 -->
-    <br><br><br>
+    <br><br>
     <section class="notice">
         <div class="page-title">
-          <br><br><br>
-          <div class="container">
-                  <h3 class="pgc" style="font-size: 100px;"><b>Customet Service Center</b></h3>
-                  <br>
-                  <h3 class="pgc">
-                    Please tell us about your inconvenience.</h3>
+            
+            <div class="container">
+                    <h3 class="pgc" style="font-size: 100px;"><b>Customer Service Center</b></h3>
+                    <br>
+                    <h3 class="pgc">
+                      Please tell us about your inconvenience.</h3>
+            </div>
           </div>
+          <br><br><br>
+    <form id= "customer-form">          
+      <div id="board-list">
+        <div class="container iipp3">
+            <table class="board-table">
+                   <input type="hidden" name="idx" value="${customerDTO.cs_idx}"></input>
+                   <input type = "hidden" name = "reply3" value="${customerDTO.cs_reply}"></input>
+                   <input type = "hidden" name = "replyCheck" value="${customerDTO.cs_reply_check}"></input>
+                    
+                   
+                    <!-- 
+                   <td type = "hidden" name = "indate" value="${customer.cs_indate}">
+                   <td type = "hidden" name = "name" value="${customer.cs_name}">
+                   <td type = "hidden" name = "views" value="${customer.cs_views}">
+                   <td type = "hidden" name = "title" value="${customer.cs_title}">
+                   <td type = "hidden" name = "contents" value="${customer.cs_contents}">
+                     -->
+                      
+                   <tr>
+                    <th width=20% class="text-center warning">번호</th>
+                    <td width=30% class="text-center www">${customerDTO.cs_idx}</td>
+                    <th width=20% class="text-center warning">작성일</th>
+                    <td width=30% class="text-center www">${customerDTO.cs_in_date}</td>
+                   </tr>
+                   <tr>
+                    <th width=20% class="text-center warning">작성자</th>
+                    <td width=30% class="text-center www">${customerDTO.m_name}</td>
+                    <th width=20% class="text-center warning">조회수</th>
+                    <td width=30% class="text-center www">${customerDTO.cs_views}</td>
+                   </tr>
+                   <tr>
+                    <th width=20% class="text-center warning">제목</th>
+                    <td colspan="3" width=30% class="text-center www" style="text-align: left;">${customerDTO.cs_title}</td>
+                   </tr>
+                   <tr>
+                   <tr>
+                    <th width=20% class="text-center warning">내용</th>
+                     <td colspan="4" class="text-left www" valign="top" height="200">
+                      <pre style="white-space: pre-wrap;border:none;background-color: white; text-align: left;">${customerDTO.cs_content}</pre>
+                     </td>
+                   </tr>
+                   
+                </table>
+            </div>
+            <br><br>
+      
+              <div class="container">
+                  <table class="board-table iipp3">
+                         <tr>
+                          <th width=20% class="text-center warning">답변</th>
+                           <td colspan="4" class="text-left www" valign="top" height="100">
+                             <input name="reply" style="white-space: pre-wrap;border:none;background-color: white; text-align: left;">${customerDTO.cs_reply}</input>
+                             
+                          </td>
+                         </tr>
+                      </table>
+                      <div class="pt-1 wwwii dfjc">
+                        <button class="custom-btn btn-6" onclick = "customerUpdate()"><span>답변</span>
+                      </div>
+                  </div>
+          </div>
+      
+        <div class="pt-1 wwwii">
+          <button class="custom-btn btn-6-1" onclick = "customerDelete()"><span>삭제</span>
+          <button class="custom-btn btn-6" onclick= "window.location.href = '/customerList.do?cpage=1'"><span>취소</span>
         </div>
-        <br><br><br><br>
-        <main role="main" class="container wsm">
-          <form name="form" id="enroll-form" action="/customerEnroll.do" method="POST">
-              <div class="container page-title pgc">
-                  <h3 style="font-size: 70px;"><b>Title</b></h3>
-              </div>
-              <br><br>
-              <div class="pt-1">
-                  <input class="iipp" type="text" name="cs_title" placeholder="제목을 입력하세요">
-              </div>
-              <br><br>
-              <div class="container page-title pgc">
-                  <h3 style="font-size: 70px;"><b>Content</b></h3>
-              </div>
-              <br><br>
-              <div class="pt-1 bbb iipp2" style="background-color: white;">
-                  <textarea id="summernote" name="cs_content"></textarea>
-              </div>    
-              <script>
-                  $('#summernote').summernote({
-                    placeholder: '내용을 입력해주세요',
-                    tabsize: 2,
-                    height: 250
-                  });
-                </script>
-                <br>
-              <div class="pt-1">
-                  <button type="submit" class="custom-btn btn-6" style="margin-left: 0;"><span>작성</span></button>
-                  <button class="custom-btn btn-6" type="reset"
-                  onclick="window.location.href = '/customerList.do?cpage=1'"><span>취소</span></button>
-              </div>    
-          </form>
-      </main>
-</section>
+    
+    </form>    
+  </section>
 <div class="page-title">
   <div class="container">
       <h3 class="pgc" style="font-size: 50px;">
@@ -207,28 +243,28 @@
   <footer class="glamping-N3" data-bid="hNLPJ5jFl2">
     <div class="footer-container">
       <!-- <audio src="./music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio> -->
-      <img class="footer-backimg img-pc" src="./img/apl.jpg" alt="PC 푸터 비주얼">
+      <img class="footer-backimg img-pc" src="/resources/img/apl.jpg" alt="PC 푸터 비주얼">
       <div class="footer-body container-md">
         <h2 class="footer-logo">
           <a href="javascript:void(0)">
-            <img src="./img/pessport.png" alt="로고">
+            <img src="/resources/img/pessport.png" alt="로고">
           </a>
         </h2>
        
         <ul class="footer-snslist">
           <li class="footer-snsitem">
             <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./icon/ico_instagram_white.svg" alt="인스타그램">
+              <img src="/resources/icon/ico_instagram_white.svg" alt="인스타그램">
             </a>
           </li>
           <li class="footer-snsitem">
             <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./icon/ico_youtube_white.svg" alt="유튜브">
+              <img src="/resources/icon/ico_youtube_white.svg" alt="유튜브">
             </a>
           </li>
           <li class="footer-snsitem">
             <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./icon/ico_facebook_white.svg" alt="페이스북">
+              <img src="/resources/icon/ico_facebook_white.svg" alt="페이스북">
             </a>
           </li>
         </ul>
@@ -265,11 +301,10 @@
     </div>
   </footer>
   <!-- [E]glamping-N3 -->
-  <script src="resources/js/setting.js"></script>
-  <script src="resources/js/plugin.js"></script>
-  <script src="resources/js/template.js"></script>
-  <script src="resources/js/common.js"></script>
-  <script src="resources/js/script.js"></script>
+  <script src="/resources/js/setting.js"></script>
+  <script src="/resources/js/plugin.js"></script>
+  <script src="/resources/js/template.js"></script>
+  <script src="/resources/js/common.js"></script>
+  <script src="/resources/js/script.js"></script>
   
 </body>
-</html>

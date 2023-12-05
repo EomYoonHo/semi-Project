@@ -15,6 +15,7 @@ import kr.co.green.customer.model.service.CustomerServiceImpl;
 
 @WebServlet("/customerEnroll.do")
 public class CustomerEnrollController extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
     public CustomerEnrollController() {
@@ -56,3 +57,4 @@ public class CustomerEnrollController extends HttpServlet {
 	}
 
 }
+

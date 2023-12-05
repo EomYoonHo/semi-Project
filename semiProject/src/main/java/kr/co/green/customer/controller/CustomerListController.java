@@ -17,6 +17,7 @@ import kr.co.green.customer.model.service.CustomerServiceImpl;
 
 @WebServlet("/customerList.do")
 public class CustomerListController extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
 	public CustomerListController() {
@@ -62,3 +63,4 @@ public class CustomerListController extends HttpServlet {
 	}
 
 }
+
