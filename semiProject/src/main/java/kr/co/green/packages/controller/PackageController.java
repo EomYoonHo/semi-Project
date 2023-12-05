@@ -16,6 +16,8 @@ import kr.co.green.member.model.dto.MemberDTO;
 import kr.co.green.member.model.service.MemberServiceImpl;
 import kr.co.green.packages.model.dto.PackageDTO;
 import kr.co.green.packages.model.service.PackageServiceImpl;
+import kr.co.green.point.model.dto.PointDTO;
+import kr.co.green.point.model.service.PointServiceImpl;
 
 @WebServlet("/packageControll.do")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, // 1mb
@@ -37,6 +39,7 @@ public class PackageController extends HttpServlet {
 		
 		PackageServiceImpl packageService = new PackageServiceImpl();
 		MemberServiceImpl memberService = new MemberServiceImpl();
+		PointServiceImpl pointService = new PointServiceImpl();
 		MemberDTO member = new MemberDTO();
 		HttpSession session = request.getSession();
 		
@@ -47,20 +50,25 @@ public class PackageController extends HttpServlet {
 		//패키지 정보 받기
 		member.setM_email(m_email);
 		memberService.selectMember(member);
+		PointDTO PointBalance = pointService.selectPoint(member.getM_no());
+		System.out.println(PointBalance.getP_no());
+		System.out.println(PointBalance.getP_balance());
+		System.out.println(PointBalance.getM_no());
 		
-		System.out.println(member.getM_email());
-		System.out.println(member.getM_name());
-		System.out.println(member.getM_phone());
+//		System.out.println(member.getM_email());
+//		System.out.println(member.getM_name());
+//		System.out.println(member.getM_phone());
 		
 		request.setAttribute("member", member);
+		request.setAttribute("PointBalance", PointBalance);
 		
 		
 		if (p_idx > 0) {
 			PackageDTO pack = new PackageDTO();
 			pack.setP_idx(p_idx);
 			packageService.packageSelect(pack);
-			System.out.println(pack.getP_name());
-			System.out.println(pack.getP_price());
+//			System.out.println(pack.getP_name());
+//			System.out.println(pack.getP_price());
 
 			// 3.orderDetail.jsp로 포워딩
 			if (!Objects.isNull(pack.getP_idx())) {
