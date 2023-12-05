@@ -34,12 +34,12 @@ public class PaymentController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 
-		boolean success = Boolean.parseBoolean(request.getParameter("success"));
-		String currency = request.getParameter("currency");
-		String status = request.getParameter("status");
-		String pg_provider = request.getParameter("pg_provider");
-		String pay_method = request.getParameter("pay_method");
-		int paid_at = Integer.valueOf(request.getParameter("paid_at"));
+//		boolean success = Boolean.parseBoolean(request.getParameter("success"));
+//		String currency = request.getParameter("currency");
+//		String status = request.getParameter("status");
+//		String pg_provider = request.getParameter("pg_provider");
+//		String pay_method = request.getParameter("pay_method");
+//		int paid_at = Integer.valueOf(request.getParameter("paid_at"));
 
 		String o_imp_uid = request.getParameter("imp_uid");
 		String o_merchant_uid = request.getParameter("merchant_uid");
