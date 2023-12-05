@@ -1,8 +1,10 @@
 package kr.co.green.customer.model.service;
 
-import kr.co.green.customer.model.dto.CustomerDTO;
+
 import java.util.ArrayList;
+
 import kr.co.green.common.PageInfo;
+import kr.co.green.customer.model.dto.CustomerDTO;
 
 public interface CustomerService {
 
@@ -26,4 +28,5 @@ public interface CustomerService {
 	public void customerSelect(CustomerDTO customerDTO);
 	
 	
+
 }

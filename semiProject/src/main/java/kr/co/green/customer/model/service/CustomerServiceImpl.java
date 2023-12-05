@@ -2,6 +2,7 @@ package kr.co.green.customer.model.service;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+
 import kr.co.green.common.DatabaseConnection;
 import kr.co.green.common.PageInfo;
 import kr.co.green.customer.model.dao.CustomerDAO;
@@ -60,13 +61,6 @@ public class CustomerServiceImpl implements CustomerService{
 		customerDAO.customerSelect(con,customerDTO);
 	}
 	
-	
-	
-	
-	
-	
-	
 
-	
 	
 }
