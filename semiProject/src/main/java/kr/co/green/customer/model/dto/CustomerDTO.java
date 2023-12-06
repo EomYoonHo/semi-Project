@@ -14,7 +14,7 @@ public class CustomerDTO {
     private String cs_reply_check;
     private int m_no;
     private String m_name;
-		   
+    private String m_type;
     
 	public int getCs_idx() {
 		return cs_idx;
@@ -92,6 +92,13 @@ public class CustomerDTO {
     public void setM_name(String m_name) {
       this.m_name = m_name;
     }
-
+	public String getM_type() {
+		return m_type;
+	}
+	public void setM_type(String m_type) {
+		this.m_type = m_type;
+	}
+    
+    
 	
 }

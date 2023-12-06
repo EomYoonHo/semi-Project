@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.green.customer.model.dto.CustomerDTO;
 import kr.co.green.customer.model.service.CustomerServiceImpl;
+import kr.co.green.member.model.dto.MemberDTO;
 
 
 @WebServlet("/customerDetail.do")
@@ -29,15 +31,24 @@ public class CustomerDetailController extends HttpServlet {
 		
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		
+		
 		CustomerServiceImpl customerService = new CustomerServiceImpl();
 		int result = customerService.customerView(idx);  // 조회수
 		
 		if(result > 0) {
+			MemberDTO member = new MemberDTO();
+
+			
 			CustomerDTO customerDTO = new CustomerDTO();
 			customerDTO.setCs_idx(idx);
-			
 			customerService.customerSelect(customerDTO);
+			HttpSession session = request.getSession();
+			String m_type = (String) session.getAttribute("m_type");
 			
+			
+			
+			System.out.println(idx);
+			System.out.println(m_type);
 			
 			if(!Objects.isNull(customerDTO.getCs_idx())) {
 				request.setAttribute("customerDTO", customerDTO);
