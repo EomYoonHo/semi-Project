@@ -69,7 +69,7 @@ public class MemberDAO {
 		String query = "INSERT INTO MEMBER "
 				+ "							VALUES(member_seq.NEXTVAL,"
 				+ "										?,?,?,?,?,"
-				+ "										SYSDATE)";
+				+ "										SYSDATE,default)";
 		int result = 0;
 		try {
 			pstmt = con.prepareStatement(query);
@@ -78,8 +78,9 @@ public class MemberDAO {
 			pstmt.setString(2, memberDTO.getM_email());
 			pstmt.setString(3, memberDTO.getM_pwd());
 			pstmt.setString(4, memberDTO.getM_nickname());
-			pstmt.setString(5,memberDTO.getM_phone());
-
+			pstmt.setString(5, memberDTO.getM_phone());
+			
+			
 			result = pstmt.executeUpdate();
 
 
