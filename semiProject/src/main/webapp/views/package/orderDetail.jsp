@@ -1,115 +1,184 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en-us">
-
+<!DOCTYPE html>
+<html lang="ko">
 
 <head>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-	crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  
+  <title>semi-Project</title>
+  <link rel="stylesheet" href="/resources/css/board/setting.css">
+  <link rel="stylesheet" href="/resources/css/board/plugin.css">
+  <link rel="stylesheet" href="/resources/css/board/semi.css">
+  <link rel="stylesheet" href="/resources/css/board/common.css">
+  <link rel="stylesheet" href="/resources/css/board/style.css">
+  <link rel="stylesheet" href="/resources/css/board/yh.css">
+  <link rel="stylesheet" href="/resources/css/board/table.css">
+  <link rel="stylesheet" href="/resources/css/board/order.css">
+  <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
+        <link rel="stylesheet" th:href="@{./css/custom.min.css}">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
-<!-- 포트원 sdk -->
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/v1/iamport.js"></script>
-<!-- Meta -->
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Web fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
 
-<title>Viking Tours</title>
-<meta name="description" content="">
+  <!-- favicon.ico. Place these in the root directory. -->
+  <link rel="shortcut icon" href="favicon.ico">
 
-<!-- The compiled CSS file -->
-<link rel="stylesheet" href="/resources/css/board/production.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/order.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
-
-<!-- 부트스트랩 -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-	crossorigin="anonymous"></script>
-
-
-<!-- Web fonts -->
-<link
-	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
-	rel="stylesheet">
-
-<!-- favicon.ico. Place these in the root directory. -->
-<link rel="shortcut icon" href="favicon.ico">
-
+  <!-- 잡것 -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
-	<!-- ㅇㅇ -->
-	<div class="container">
-		<!-- 중반부 전체를 감싸는 div 태그-->
-		<div class="page-title left5">
-			<div class="container">
-				<h3 style="font-size: 50px;">Tour Package</h3>
+  <!-- [S]glamping-N1 -->
+	<header class="glamping-N1" data-bid="jILPJ5JfH5">
+		<div class="header-container container-lg">
+			<div class="header-left">
+				<h1 class="header-title">
+					<a href="/views/common/home.jsp"> <img src="/resources/image/pessport.png" alt="로고">
+					</a>
+				</h1>
+			</div>
+			<div class="header-center">
+				<ul class="header-gnblist">
+					<li class="header-gnbitem"><a class="header-gnblink" href="">
+							<span>여행지추천</span>
+					</a>
+						<ul class="header-sublist">
+							<li class="header-subitem"><a class="header-sublink"
+								href="/views/common/map.jsp"> <span>지도로 이동</span>
+							</a></li>
+						</ul></li>
+					<li class="header-gnbitem"><a class="header-gnblink" href="">
+							<span>게시판</span>
+					</a>
+						<ul class="header-sublist">
+							<li class="header-subitem"><a class="header-sublink"
+								href="boardList.do?cpage=1"> <span>커뮤니티</span>
+							</a></li>
+							<li class="header-subitem"><a class="header-sublink"
+								href="/views/board/list2.jsp"> <span>게시글 작성</span>
+							</a></li>
+							<li class="header-subitem"><a class="header-sublink"
+								href="/reviewBoardList.do?cpage=1"> <span>리뷰</span>
+							</a></li>
+							<li class="header-subitem"><a class="header-sublink"
+								href="/views/reviewboard/reviewEnroll.jsp"> <span>리뷰 작성</span>
+							</a></li>
+						</ul></li>
+					<li class="header-gnbitem"><a class="header-gnblink" href="">
+							<span>여행패키지</span>
+					</a>
+						<ul class="header-sublist">
+							<li class="header-subitem">
+							<a class="header-sublink" href="/views/package/orderList.jsp"> <span>패키지 상품</span>
+							</a></li>
+						</ul></li>
+					<li class="header-gnbitem"><a class="header-gnblink" href="">
+							<span>고객문의센터</span>
+					</a>
+						<ul class="header-sublist">
+							<li class="header-subitem"><a class="header-sublink"
+								onclick="window.location.href = '/customerList.do?cpage=1'">
+									<span>고객문의</span>
+							</a></li>
+							<li class="header-subitem"><a class="header-sublink"
+								href="/views/customer/customerEnroll.jsp"> <span>문의하기</span>
+							</a></li>
+						</ul></li>
+					<li class="header-gnbitem"><a class="header-gnblink" href="">
+							<span>마이페이지</span>
+					</a>
+						<ul class="header-sublist">
+							<li class="header-subitem"><a class="header-sublink"
+								href="/views/myPage/myPage.jsp"> <span>마이페이지</span>
+							</a></li>
+							<li class="header-subitem"><a class="header-sublink"
+								onclick="myinfoForm()"> <span>내정보</span>
+							</a></li>
+							<li class="header-subitem"><a class="header-sublink"
+								href="/MyList.do"> <span>구매목록</span>
+							</a></li>
+						</ul></li>
+					<a class="header-gnblink log" href="/form/loginform.do"> <span>로그인</span>
+					</a>
+					<a class="header-gnblink log1" href="/form/registerform.do"> <span>회원가입</span>
+					</a>
 			</div>
 		</div>
-		<!--중반부 를 두개의 div태그로 나누어 오른쪾 절반의 구역으로 나눠줌-->
-		<div class="left2">
-			<div class="product-list">
-				<div class="slider">
-					<div class="slide img">
-						<img src="${pack.p_file_path1}" alt="이미지 1">
-					</div>
-					<div class="slide img">
-						<img src="${pack.p_file_path2}" alt="이미지 1">
-					</div>
-					<div class="slide img">
-						<img src="${pack.p_file_path3}" alt="이미지 1">
-					</div>
-				</div>
-			</div>
-		</div>
-		<br> <br>
-		<div id="fifth">
-			<div>
+	</header>
+    <!-- [E]glamping-N1 -->
+    <div class="glamping-N3">
+      <img class="footer-backimg img-pc" src="./img/airplane2.jpg" alt="PC 푸터 비주얼">
+    </div>
+    <br><br><br><br><br><br>
+
+    <div class="container wsmm"> <!-- 중반부 전체를 감싸는 div 태그-->
+      <div class="page-title">
+        <div class="container">
+            <h3 class="pgc" style="font-size: 100px;"><b>Tour Package</b></h3>
+            <br>
+            <h3 class="pgc">Enjoy the perfect trip.</h3>
+        </div>
+      </div>
+        <!--중반부 를 두개의 div태그로 나누어 오른쪾 절반의 구역으로 나눠줌-->
+        
+        <div class="product-list">
+          <div class="slider">
+            <div class="slide img">
+              <img src="${pack.p_file_path1}" alt="이미지 1">
+            </div>
+            <div class="slide img">
+              <img src="${pack.p_file_path2}" alt="이미지 1">
+            </div>
+            <div class="slide img">
+              <img src="${pack.p_file_path3}" alt="이미지 1">
+            </div>
+        </div>
+      </div><br><br>
+        <div id="fifth">
+        	<div>
 				<p class="packagename">${pack.p_name}</p>
 			</div>
-			<div id="heart2">
-				<a href="#"><i class="far fa-heart" id="heart3"></i></a>
-			</div>
-		</div>
-
-		<p class="detail left2">${pack.p_content}</p>
-		<div class="productdetail left4">
-			<span>기간</span> <select class="pts" name="period" id="period" onclick="choosePeriod()">
-				<option value="">기간을 선택해주세요.</option>
-				<option value="2023-11-23~2023-12-23">2023-11-23 ~
-					2023-12-23</option>
-				<option value="2023-11-25~2023-12-25">2023-11-25 ~
-					2023-12-25</option>
-				<option value="2023-11-27~2023-12-27">2023-11-27 ~
-					2023-12-27</option>
-				<option value="2023-11-29~2023-12-29">2023-11-29 ~
-					2023-12-29</option>
-			</select>
-		</div>
-		<div class="productdetail left3">
-			<span>1인가격</span> <span>${pack.p_price}</span>
-		</div>
-		<div class="productdetail left3">
-			<span>인원수</span> <input class="minsu2 pts" type="number" onclick="multiplication()" onkeyup="multiplication()" id="mulkey" >
-		</div>
-		<div class="productdetail left3">
-			<span>총가격</span> <span id="totalPrice"></span>
-		</div>
-		<div>
+                      <p class="packagename ct">여행 패키지</p>
+                      <p class="packagename2 ct">Travel Package</p>
+         </div>
+                 
+              
+                  <p class="detail ct">이 패키지는 개씹지리는 여행 패키지입니다.</p>
+                  <div class="iipp2">
+              <div class="productdetail dfjc">
+                <span>기간</span>
+              <select class="www pgc pptt">
+                <option value="">기간을 선택해주세요.</option>
+                <option value="2023-11-23~2023-12-23">2023-11-23 ~ 2023-12-23</option>
+                <option value="2023-11-25~2023-12-25">2023-11-25 ~ 2023-12-25</option>
+                <option value="2023-11-27~2023-12-27">2023-11-27 ~ 2023-12-27</option>
+                <option value="2023-11-29~2023-12-29">2023-11-29 ~ 2023-12-29</option>
+              </select>
+            </div>
+              <div class="productdetail dfjc">
+                  <span>1인가격</span>
+                  <span>${pack.p_price}</span>
+              </div>
+              <div class="productdetail dfjc">
+                <span>인원수</span>
+                <input class="minsu2 pts" value="1" type="number" onclick="multiplication()" onkeyup="multiplication()" id="mulkey" style="background-color: white; width: 5%;">
+              </div>
+              <div class="iipp6">
+                <div class="productdetail dfjc">
+                  <span>최종가격</span>
+                  <span id="totalPrice"></span>
+                </div>
+              </div>
+              		<div>
 			<span>포인트 사용</span> <input type="number" id="pointUse"
 				value="${PointBalance.p_balance}" disabled>
 			<button onclick="pointUse()">전부 사용</button>
@@ -117,83 +186,83 @@
 		<div class="productdetail left3">
 			<span>결제하실금액</span> <span id="payPrice"></span>
 		</div>
-		<br>
-		<button onclick="requestPay()" style="margin: 0px;"
-			class="btn-s btn-s-dark">구매</button>
+              
+              
+      </div>
+  </div>
+          <br>
 
+          <div class="pt-1 dfjc">
+            <button class="custom-btn btn-6" onclick="requestPay()"><span>구매</span>
+          </div>
 
-		<br> <br> <br> <br>
-		<div class="page-title left2">
-			<div class="container">
-				<h3 style="font-size: 30px;">Thank you for purchasing our
-					product.</h3>
+          <br><br>
+          <div class="page-title">
+                <div class="container">
+                    <h3 class="pgc" style="font-size: 50px;">Thank you for using [ Pess-Port ] travel agency.</h3>
+                </div>
+              </div>
+            
+        <!-- [E]glamping-N9 -->
+        <!-- [S]glamping-N3 -->
+        <footer class="glamping-N3" data-bid="hNLPJ5jFl2">
+          <div class="footer-container">
+      <!-- <audio src="./music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio> -->
+<img class="footer-backimg img-pc" src="/resources/image/apl.jpg"
+				alt="PC 푸터 비주얼">
+			<div class="footer-body container-md">
+				<h2 class="footer-logo">
+					<a href="javascript:void(0)"> <img src="/resources/image/pessport.png"
+						alt="로고">
+					</a>
+				</h2>
+
+				<ul class="footer-snslist">
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="https://www.instagram.com/"> <img
+							src="/resources/icon/ico_instagram_white.svg" alt="인스타그램">
+					</a></li>
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="https://www.youtube.com"> <img
+							src="/resources/icon/ico_youtube_white.svg" alt="유튜브">
+					</a></li>
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="https://www.facebook.com"> <img
+							src="/resources/icon/ico_facebook_white.svg" alt="페이스북">
+					</a></li>
+				</ul>
+				<ul class="footer-menugroup">
+					<li class="footer-menulink"><a href="javascript:void(0)">
+							<span>이용약관</span>
+					</a></li>
+					<li class="footer-menulink"><a href="javascript:void(0)">
+							<span>개인정보처리방침</span>
+					</a></li>
+					<li class="footer-menulink"><a href="/views/common/home1.jsp"> <span>이스터에그</span>
+					</a></li>
+				</ul>
+				<div class="footer-txtgroup">
+					<div class="footer-txt">
+						<p>경기도 안양시 만안구 안양로 303 안양메쎄타워 8층</p>
+						<p>
+							<span>T. 010-1234-5678</span> <span>E. pessport@naver.com</span>
+						</p>
+					</div>
+					<div class="footer-txt">
+						<p>2023 BY SEMI-PROJECT "PESS-PORT"</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- ㅇㅇ -->
-	<div class="grid-row">
-
-		<div class="body full-width pt1 pr2 pb2 pl2">
-			<!-- Navigation -->
-			<nav class="navigation border--bottom pt1">
-				<a href="/form/loginform.do" class="link link--text left">로그인</a> <a
-					href="/form/registerform.do" class="link link--text">회원가입</a>
-			</nav>
-
-			<nav class="navigation border--bottom pt1">
-				<a href="/views/common/map.jsp" class="link link--text">지도<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-globe-americas"
-						viewBox="0 0 16 16">
-                    <path
-							d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
-                  </svg></a> <a href="/reviewBoardList.do?cpage=1"
-					class="link link--text">리뷰<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                    <path
-							d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                  </svg></a> <a href="/boardList.do?cpage=1"
-					class="link link--text">게시판<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-                    <path
-							d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-                    <path
-							d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                  </svg></a> <a href="/views/package/orderList.jsp"
-					class="link link--text">여행 패키지<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
-                    <path
-							d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z" />
-                  </svg></a>
-				<!-- <c:if test="${!empty sessionScope.name}"><a href="#" class="link link--text">마이페이지</a></c:if> -->
-			</nav>
-
-
-			<!-- Page Content -->
-			<main class="content pt2 pb2">
-				<h2>여행 패키지 상세</h2>
-
-			</main>
-			<!-- Footer -->
-			<footer class="border--top pt1 pb1">
-				<!-- <video muted autoplay loop>
-                    <source src="../video/ppp.mp4" type="video/mp4">
-                </video> -->
-				<p class="text--gray small mb0">
-					&copy; PESS-PORT | 조장 : 엄윤호 <a href="https://www.eatapapaya.com"
-						class="link link--text"></a>.
-				</p>
-			</footer>
-		</div>
-		<!-- end Body -->
-
-	</div>
-
+  </footer>
+  <!-- [E]glamping-N3 -->
+	<script src="/resources/js/setting.js"></script>
+	<script src="/resources/js/plugin.js"></script>
+	<script src="/resources/js/template.js"></script>
+	<script src="/resources/js/common.js"></script>
+	<script src="/resources/js/script.js"></script>
+  
 </body>
-
 <script>
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slide');
@@ -219,115 +288,3 @@
       setInterval(nextSlide, 3000); // 3초마다 자동 슬라이드
   });
 </script>
-<script type="text/javascript">
-	var IMP = window.IMP;
-	IMP.init('imp88413461');
-
-	var today = new Date();
-	var hours = today.getHours();
-	var minutes = today.getMinutes();
-	var seconds = today.getSeconds();
-	var milliseconds = today.getMilliseconds();
-	var makeMerchantUid = hours + minutes + seconds + milliseconds;
-	let amount;
-	let mulkey = 0;
-	let period;
-	let point = 0;
-	
-	function choosePeriod(){
-		period = document.getElementById("period").value ;
-	}
-	
-	function multiplication(){
-		mulkey=document.getElementById("mulkey").value;
-		let totalPrice =document.getElementById("totalPrice");
-		totalPrice.innerHTML = mulkey * "${pack.p_price}"+"원";
-		let payPrice =document.getElementById("payPrice");
-		payPrice.innerHTML =mulkey * "${pack.p_price}"+"원";
-		amount =mulkey * "${pack.p_price}";
-		}
-	
-	function pointUse(){
-		point = document.getElementById("pointUse").value;
-		let payPrice =document.getElementById("payPrice");
-		payPrice.innerHTML = ((mulkey * "${pack.p_price}")- point) +"원";
-		amount=((mulkey * "${pack.p_price}")- point);
-	}
-
-	
-	function requestPay() {
-		IMP.request_pay(
-	        {
-	            pg: 'kakaopay.TC0ONETIME',//pg사
-	            pay_method: 'kakaopay',//결제수단
-	            merchant_uid: "IMP" + makeMerchantUid,//가맹점 주문번호
-	            name: "${pack.p_name}",//결제대상 제품명
-	            amount : amount, //결제금액
-	            //custom_data /object//사용자 정의 데이타
-	            buyer_email: "${member.m_email}",//주문자이메일
-	            buyer_name: "${member.m_name}",//주문자명
-	            buyer_tel: "${member.m_phone}",//주문자 연락처
-	            buyer_addr: '서울특별시 강남구 삼성동',//주문자 주소
-	            buyer_postcode: '123-456',//주문자 우편
-	        },function (rsp){
-	            if(rsp.success){
-	            	console.log(rsp);	             	                
-	                console.log("성공");
-	                
-	                new Promise((succ, fail) => {
-
-	                    $.ajax({
-	                        type : "POST",
-	                        url : "/payment.do",
-	                        data : {
-	                                imp_uid : rsp.imp_uid,//포트원 고유 결제 번호
-	                        		people : mulkey,
-	                                paid_amount : rsp.paid_amount,//결제금액/number
-	                                plus_point : Math.ceil(rsp.paid_amount/100),
-	                                p_idx : ${pack.p_idx},
-	                                name : rsp.name, // 상품명
-	                                m_no : ${member.m_no},
-	                                buyer_tel : rsp.buyer_tel,//주문자 연락처
-	                                buyer_name : rsp.buyer_name,//주문자명
-	                                buyer_email : rsp.buyer_email,//주문자 email
-	                                period : period
-	                           
-	                    },
-	                    success : function(result){
-	                    	succ(result);
-	                        console.log(rsp.imp_uid);
-	                    },
-	                    fail :  function(result){
-	                    	fail(error);
-	                    	console.log("실패띠");
-	                    }
-	                });
-
-	                }).then((arg) => {
-
-	                    $.ajax({
-	                        type : 'POST',
-	                        url : '/pointMinus.do',
-	                        data : { 
-	                        		  point : point,
-	                        		  p_no : ${PointBalance.p_no},
-	                        		  m_no : ${member.m_no}
-	                        		},
-	                        success: function () {
-	                        	location.href= "/orderResult.do?imp_uid="+ rsp.imp_uid;
-	                        },
-	                        error : function(){
-	                        }
-	                    });
-	                });
-	                
-	            }else{
-	                console.log(rsp);
-	                console.log("실패");	   
-	                alert("결제에 실패했습니다. 에러 내용 : " + rsp.error_msg);
-	            }
-	        }
-	    );
-	}
-</script>
-</html>
