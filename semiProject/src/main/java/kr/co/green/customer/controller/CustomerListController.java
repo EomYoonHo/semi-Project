@@ -28,13 +28,13 @@ public class CustomerListController extends HttpServlet {
 			throws ServletException, IOException {
 		// cpage = 현재 페이지
 		int cpage = Integer.parseInt(request.getParameter("cpage"));
-		System.out.println(cpage);
+//		System.out.println(cpage);
 		CustomerServiceImpl customerService = new CustomerServiceImpl();
 		// 게시글 검색
 		String searchText = request.getParameter("searchText");
 		// 전체 게시글 수
 		int listCount = customerService.customerListCount(searchText);
-		System.out.println(listCount);
+//		System.out.println(listCount);
 		// 보여질 페이지 수
 		int pageLimit = 10;
 		// 한 페이지에 들어갈 게시글 수(0~4)5개
