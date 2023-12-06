@@ -85,11 +85,12 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("m_nickname", member.getM_nickname());
 			session.setAttribute("m_no", member.getM_no());
 			session.setAttribute("m_phone", member.getM_phone());
+			session.setAttribute("m_type", member.getM_type());
 			
 			System.out.println(member.getM_phone());
-
+			System.out.println(member.getM_type());
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/home.jsp");
-
+			
 
 			view.forward(request, response);
 		}

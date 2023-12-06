@@ -21,7 +21,8 @@ public class CustomerDAO {
 
 	      String query = "SELECT c.cs_idx," 
 	            + "         c.cs_title," 
-	            + "         m.m_name," 
+	            + "         m.m_name,"
+	            + "			m.m_type," 
 	            + "         c.cs_reply_check"
 	            + "      FROM customer c"
 	            + "      JOIN MEMBER m"
@@ -40,19 +41,21 @@ public class CustomerDAO {
 	            int cs_idx = rs.getInt("cs_idx");
 	            String cs_title = rs.getString("cs_title");
 	            String m_name = rs.getString("m_name");
+	            String m_type = rs.getString("m_type");
 	            String cs_reply_check = rs.getString("cs_reply_check");
 
 	            CustomerDTO customer = new CustomerDTO();
 	            customer.setCs_idx(cs_idx);
 	            customer.setCs_title(cs_title);
 	            customer.setM_name(m_name);
+	            customer.setM_type(m_type);
 	            customer.setCs_reply_check(cs_reply_check);
 	            list.add(customer);
 	         }
 	         pstmt.close();
 	         con.close();
 	      } catch (SQLException e) {
-	         // TODO Auto-generated catch block
+	         
 	         e.printStackTrace();
 	      }
 
@@ -117,7 +120,8 @@ public class CustomerDAO {
 				+ "		CS_DELETE_DATE,"
 				+ "		CS_REPLY,"
 				+ "		CS_REPLY_CHECK,"
-				+ "		M_NAME"
+				+ "		M_NAME,"
+				+ "		M_TYPE"
 				+ "		FROM CUSTOMER CS"
 				+ "		JOIN MEMBER M ON CS.M_NO = M.M_NO"
 				+ "		WHERE CS_IDX =?";
@@ -137,7 +141,7 @@ public class CustomerDAO {
 				String reply = rs.getString("CS_REPLY");
 				String replyCheck = rs.getString("CS_REPLY_CHECK");
 				String name = rs.getString("M_NAME");
-				
+				String mtype = rs.getString("M_TYPE");
 				
 				customerDTO.setCs_idx(idx);
 				customerDTO.setCs_title(title);
@@ -149,6 +153,7 @@ public class CustomerDAO {
 				customerDTO.setCs_reply(reply);
 				customerDTO.setCs_reply_check(replyCheck);
 				customerDTO.setM_name(name);
+				customerDTO.setM_type(mtype);
 			}			
 			
 		} catch (SQLException e) {

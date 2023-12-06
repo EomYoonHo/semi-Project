@@ -184,7 +184,7 @@
            
             <!-- Page Content -->
             <main class="content pt2 pb2">
-                <a href="/MyList.do?cpage=1"><h2>여행 패키지</h2></a>
+                <h2>여행 패키지</h2>
             
             </main>
                         <!-- Footer -->

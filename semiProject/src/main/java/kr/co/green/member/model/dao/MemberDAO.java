@@ -21,7 +21,8 @@ public class MemberDAO {
 				+ "					M_PWD,"
 				+ "					M_PHONE,"
 				+ "					M_NICKNAME,"
-				+ "					M_IN_DATE" 
+				+ "					M_IN_DATE,"
+				+ "					M_TYPE" 
 				+ "		FROM MEMBER"
 				+ "		WHERE M_EMAIL=?" 
 				+ "		AND M_PWD=?";
@@ -42,6 +43,7 @@ public class MemberDAO {
 				String resultNickname = rs.getString("M_NICKNAME");
 				String resultPhone = rs.getString("M_PHONE");
 				String resultIndate = rs.getString("M_IN_DATE");
+				String resultMtype = rs.getString("M_TYPE");
 				
 				result.setM_no(resultNo);
 				result.setM_name(resultName);
@@ -50,6 +52,7 @@ public class MemberDAO {
 				result.setM_nickname(resultNickname);
 				result.setM_phone(resultPhone);
 				result.setM_in_date(resultIndate);
+				result.setM_type(resultMtype);
 
 			}
 
@@ -79,7 +82,6 @@ public class MemberDAO {
 
 			result = pstmt.executeUpdate();
 
-			
 
 		} catch (SQLException e) {
 
@@ -139,7 +141,8 @@ public class MemberDAO {
 				+ "					m_pwd,"
 				+ "					m_nickname,"
 				+ "					m_phone,"
-				+ "					m_in_date"
+				+ "					m_in_date,"
+				+ "					m_type"
 				+ "		 FROM member"
 				+ "		 WHERE m_email=?";
 		
@@ -158,6 +161,8 @@ public class MemberDAO {
 				String nickname =rs.getString("m_nickname");
 				String phone =rs.getString("m_phone");
 				String indate =rs.getString("m_in_date");
+				String type = rs.getString("m_type");
+				
 				memberDTO.setM_no(no);
 				memberDTO.setM_name(name);
 				memberDTO.setM_email(email);
@@ -165,6 +170,7 @@ public class MemberDAO {
 				memberDTO.setM_nickname(nickname);
 				memberDTO.setM_phone(phone);
 				memberDTO.setM_in_date(indate);
+				memberDTO.setM_type(type);
 			}
 			
 		} catch (SQLException e) {
