@@ -13,12 +13,160 @@
 <link rel="stylesheet" href="/resources/css/board/semi.css">
 <link rel="stylesheet" href="/resources/css/board/common.css">
 <link rel="stylesheet" href="/resources/css/board/style.css">
-</head>
-
-<body>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
 		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 		crossorigin="anonymous"></script>
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+   crossorigin="anonymous"></script>
+ <script
+   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+   crossorigin="anonymous"></script>
+   
+   <script type="text/javascript">
+   $(function() {
+
+	    get_rate();
+	    get_czk();
+	    get_nok();
+	    get_jpy();
+	    get_cnh();
+	    get_mxn();
+	    get_bob();
+	    get_lak();
+	    
+	 }); 
+	function get_rate() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response);
+	                  let now_rate = response[0].basePrice;
+	                  console.log(now_rate);
+	                  let nowrate = document.getElementsByClassName("now_rate");
+	                  nowrate[0].innerHTML = now_rate+"₩"
+	                  nowrate[1].innerHTML = now_rate+"₩"
+	                  nowrate[2].innerHTML = now_rate+"₩"
+	               }
+	            })
+	   }
+	   
+	   function get_czk() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/czk.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['czk'])
+	                  let now_rate = response['czk'].krw;
+	                  let get_czk = document.getElementsByClassName("get_czk")
+	                  get_czk[0].innerHTML = Math.round(now_rate)+"₩"
+	                  get_czk[1].innerHTML = Math.round(now_rate)+"₩"
+	                  get_czk[2].innerHTML = Math.round(now_rate)+"₩"
+	               }
+	            })
+	   }
+	   function get_nok() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/nok.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['nok'])
+	                  let now_rate = response['nok'].krw;
+	                  let get_nok = document.getElementsByClassName("get_nok")
+	                  get_nok[0].innerHTML = Math.round(now_rate)+"₩"
+	                  get_nok[1].innerHTML = Math.round(now_rate)+"₩"
+	                  get_nok[2].innerHTML = Math.round(now_rate)+"₩"
+	               }
+	            })
+	   }
+	   function get_jpy() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/jpy.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['jpy'])
+	                  let now_rate = response['jpy'].krw;
+	                  let get_jpy = document.getElementsByClassName("get_jpy")
+	                  get_jpy[0].innerHTML = Math.round((now_rate*100))+"₩"
+	                  get_jpy[1].innerHTML = Math.round((now_rate*100))+"₩"
+	                  get_jpy[2].innerHTML = Math.round((now_rate*100))+"₩"
+	               }
+	            })
+	   }
+	   function get_cnh() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/cnh.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['cnh'])
+	                  let now_rate = response['cnh'].krw;
+	                  let get_cnh = document.getElementsByClassName("get_cnh")
+	                  get_cnh[0].innerHTML = Math.round(now_rate)+"₩"
+	                  get_cnh[1].innerHTML = Math.round(now_rate)+"₩"
+	                  get_cnh[2].innerHTML = Math.round(now_rate)+"₩"
+	               }
+	            })
+	   }
+
+	   function get_mxn() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/mxn.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['mxn'])
+	                  let now_rate = response['mxn'].krw;
+	                  let get_mxn = document.getElementsByClassName("get_mxn")
+	                  get_mxn[0].innerHTML = Math.round(now_rate)+"₩"
+	                  get_mxn[1].innerHTML = Math.round(now_rate)+"₩"
+	                  get_mxn[2].innerHTML = Math.round(now_rate)+"₩"
+	               }
+	            })
+	   }
+	   function get_bob() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/bob.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['bob'])
+	                  let now_rate = response['bob'].krw;
+	                  let get_bob = document.getElementsByClassName("get_bob")
+	                  get_bob[0].innerHTML = Math.round(now_rate)+"₩"
+	                  get_bob[1].innerHTML = Math.round(now_rate)+"₩"
+	                  get_bob[2].innerHTML = Math.round(now_rate)+"₩"
+	               }
+	            })
+	   }
+	   function get_lak() {
+	      $.ajax({
+	               type : "GET",
+	               url : "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/lak.json",
+	               data : {},
+	               success : function(response) {
+	                  console.log(response['lak'])
+	                  let now_rate = response['lak'].krw;
+	                  let get_lak = document.getElementsByClassName("get_lak")
+	                  get_lak[0].innerHTML = (now_rate*1000).toFixed(2)+"₩"
+	                  get_lak[1].innerHTML = (now_rate*1000).toFixed(2)+"₩"
+	                  get_lak[2].innerHTML = (now_rate*1000).toFixed(2)+"₩"
+	               }
+	            })
+	   }
+   </script>
+</head>
+
+<body>
 	<!-- [S]glamping-N1 -->
 	<header class="glamping-N1" data-bid="jILPJ5JfH5">
 		<div class="header-container container-lg">
@@ -43,7 +191,7 @@
 					</a>
 						<ul class="header-sublist">
 							<li class="header-subitem"><a class="header-sublink"
-								href="boardList.do?cpage=1"> <span>커뮤니티</span>
+								href="/boardList.do?cpage=1"> <span>커뮤니티</span>
 							</a></li>
 							<li class="header-subitem"><a class="header-sublink"
 								href="/views/board/list2.jsp"> <span>게시글 작성</span>
@@ -68,8 +216,7 @@
 					</a>
 						<ul class="header-sublist">
 							<li class="header-subitem"><a class="header-sublink"
-								onclick="window.location.href = '/customerList.do?cpage=1'">
-									<span>고객문의</span>
+								onclick="window.location.href = '/customerList.do?cpage=1'"><span>고객문의</span>
 							</a></li>
 							<li class="header-subitem"><a class="header-sublink"
 								href="/views/customer/customerEnroll.jsp"> <span>문의하기</span>
@@ -82,11 +229,14 @@
 							<li class="header-subitem"><a class="header-sublink"
 								href="/views/myPage/myPage.jsp"> <span>마이페이지</span>
 							</a></li>
+							<form id="myinfo">
 							<li class="header-subitem"><a class="header-sublink"
 								onclick="myinfoForm()"> <span>내정보</span>
 							</a></li>
-							<li class="header-subitem"><a class="header-sublink"
-								href="/MyList.do"> <span>구매목록</span>
+							</form>
+							
+							<li class="header-subitem"><a class="header-sublink" 
+								onclick="window.location.href = '/MyList.do?cpage=1'"> <span>구매목록</span>
 							</a></li>
 						</ul></li>
 					<a class="header-gnblink log" href="/form/loginform.do"> <span>로그인</span>
@@ -171,7 +321,7 @@
               <div class="cardset-body">
                 <h2 class="cardset-tit"> <p style="font-size: 80px;">BEST 1</p> <br> 동유럽 패키지 <br> [체코/오스트리아/헝가리] </h2>
                 <p class="cardset-desc"> 체코와인시음, <br> 동유럽 3대도시 자유시간 제공, <br> 국적기 왕복직항 <br><br>PESS-PORT가 여러분들과 함께합니다. </p>
-                <a href="orderDetail.html" class="btnset btnset-round btnset-line btnset-black">상품보기</a>
+                <a href="/packageControll.do?p_idx=2" class="btnset btnset-round btnset-line btnset-black">상품보기</a>
               </div>
             </div>
             <div class="cardset cardset-xl cardset-deco cardset-hor hover07">
@@ -181,7 +331,7 @@
               <div class="cardset-body">
                 <h2 class="cardset-tit"> <p style="font-size: 80px;">BEST 2</p> <br> 서유럽 패키지 <br> [프랑스/스위스/이탈리아] </h2>
                 <p class="cardset-desc"> [국적기] 서유럽 스테디셀러 상품! <br> 한번의 상품으로 서유럽을 알차게 보고싶다면 이상품! <br><br>PESS-PORT가 여러분들과 함께합니다. </p>
-                <a href="orderDetail.html" class="btnset btnset-round btnset-line btnset-black">상품보기</a>
+                <a href="/packageControll.do?p_idx=1" class="btnset btnset-round btnset-line btnset-black">상품보기</a>
               </div>
             </div>
             <div class="cardset cardset-xl cardset-deco cardset-hor row-rever hover06">
@@ -191,7 +341,7 @@
               <div class="cardset-body">
                 <h2 class="cardset-tit"> <p style="font-size: 80px;">BEST 3</p> <br> 미동부 패키지 <br> [캐나다/미국] </h2>
                 <p class="cardset-desc"> 미동부 대표도시와 세계 3대 폭포 나이아가라 폭포를 포함해 <br> 캐나다 동부 대표도시들을 아우르는 미주 대표상품! <br><br>PESS-PORT가 여러분들과 함께합니다. </p>
-                <a href="orderDetail.html" class="btnset btnset-round btnset-line btnset-black">상품보기</a>
+                <a href="/packageControll.do?p_idx=6" class="btnset btnset-round btnset-line btnset-black">상품보기</a>
               </div>
             </div>
           </div>
@@ -210,7 +360,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=1" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package파리투어1.PNG" alt="이미지">
                     </figure>
@@ -223,7 +373,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=2" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package동유럽2.PNG" alt="이미지">
                     </figure>
@@ -236,7 +386,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=3" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package북유럽3.PNG" alt="이미지">
                     </figure>
@@ -249,7 +399,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=4" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package삿포로4.PNG" alt="이미지">
                     </figure>
@@ -262,7 +412,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=5" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package장가계5.PNG" alt="이미지">
                     </figure>
@@ -275,7 +425,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=6" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package미동부6.PNG" alt="이미지">
                     </figure>
@@ -288,7 +438,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=7" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package칸쿤7.PNG" alt="이미지">
                     </figure>
@@ -301,7 +451,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=8" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package남미투어8.PNG" alt="이미지">
                     </figure>
@@ -314,7 +464,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="contents-slide-group container-md hover01">
-                  <a href="javascript:void(0);" class="cardset">
+                  <a href="/packageControll.do?p_idx=9" class="cardset">
                     <figure class="cardset-figure">
                       <img class="cardset-img" src="/resources/image/package라오스9.PNG" alt="이미지">
                     </figure>
@@ -331,7 +481,7 @@
           </div>
           <div class="contents-control">
             <div class="swiper-pagination"></div>
-            <a href="orderList.html" class="btnset btnset-text btnset-icon">자세히보기 <div class="btnset-img">
+            <a href="/views/package/orderList.jsp" class="btnset btnset-text btnset-icon">자세히보기 <div class="btnset-img">
                 <img src="/resources/icon/ico_more_black.svg" alt="자세히보기 아이콘">
               </div>
             </a>
@@ -381,8 +531,8 @@
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset">
-						<h2 class="textset-tit">PESS-PORT의 세계날씨</h2>
-						<p class="textset-desc">세계날씨를 확인해 보세요!</p>
+						<h2 class="textset-tit">PESS-PORT의 세계날씨 & 환율</h2>
+						<p class="textset-desc">실시간 정보를 확인해 보세요!</p>
 					</div>
 					<div class="contents-control">
 						<div class="swiper-button-prev">
@@ -429,6 +579,7 @@
 											<p class="chumidity1">습도 :</p>
 											<p class="icon1"></p>
 											<p class="cardset-info">서울</p>
+											
 										</div>
 									</div>
 								</div>
@@ -466,6 +617,7 @@
 											<p class="chumidity2">습도 :</p>
 											<p class="icon2"></p>
 											<p class="cardset-info">프라하</p>
+											<p class="rate">1코루나 = <span id="get_czk" class="get_czk"></span></p>
 										</div>
 									</div>
 								</div>
@@ -503,6 +655,7 @@
 											<p class="chumidity3">습도 :</p>
 											<p class="icon3"></p>
 											<p class="cardset-info">오슬로</p>
+											<p class="rate">1크로네 = <span id="get_nok" class="get_nok">()</span></p>
 										</div>
 									</div>
 								</div>
@@ -540,6 +693,7 @@
 											<p class="chumidity4">습도 :</p>
 											<p class="icon4"></p>
 											<p class="cardset-info">삿포로</p>
+											<p class="rate">100엔 = <span id="get_jpy" class="get_jpy"></span></p>
 										</div>
 									</div>
 								</div>
@@ -577,6 +731,7 @@
 											<p class="chumidity5">습도 :</p>
 											<p class="icon5"></p>
 											<p class="cardset-info">장가계</p>
+											<p class="rate">1위안 = <span id="get_cnh" class="get_cnh"></span></p>
 										</div>
 									</div>
 								</div>
@@ -614,6 +769,8 @@
 											<p class="chumidity6">습도 :</p>
 											<p class="icon6"></p>
 											<p class="cardset-info">뉴욕</p>
+											<p class="rate">1달러 = <span id="now_rate" class="now_rate"></span></p>
+											
 										</div>
 									</div>
 								</div>
@@ -651,6 +808,7 @@
 											<p class="chumidity7">습도 :</p>
 											<p class="icon7"></p>
 											<p class="cardset-info">칸쿤</p>
+											<p class="rate">1페소 = <span id="get_mxn" class="get_mxn"></span></p>
 										</div>
 									</div>
 								</div>
@@ -688,6 +846,7 @@
 											<p class="chumidity8">습도 :</p>
 											<p class="icon8"></p>
 											<p class="cardset-info">유우니</p>
+											<p class="rate">1볼리비아노 = <span id="get_bob" class="get_bob"></span></p>
 										</div>
 									</div>
 								</div>
@@ -725,6 +884,7 @@
 											<p class="chumidity9">습도 :</p>
 											<p class="icon9"></p>
 											<p class="cardset-info">방비엔</p>
+											 <p class="rate">1000킵 = <span id="get_lak" class="get_lak"></span></p>
 										</div>
 									</div>
 								</div>
@@ -798,4 +958,8 @@
 	<script src="/resources/js/template.js"></script>
 	<script src="/resources/js/common.js"></script>
 	<script src="/resources/js/script.js"></script>
+	<script src="/resources/js/member/member.js"></script>	
 </body>
+
+
+</html>

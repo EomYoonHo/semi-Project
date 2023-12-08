@@ -28,7 +28,7 @@
 <body>
    <div class="jb-box">
       <video muted autoplay loop>
-         <source src="/resources/video/plane.mp4" type="video/mp4">
+         <source src="/resources/video/ocean.mp4" type="video/mp4">
       </video>
       <div class="jb-text login-signup">
          <a href="/form/mapform.do" class="link link--text" style="color: white;">지도
