@@ -68,6 +68,9 @@
         <table class="board-table iipp5">
         	<div>
               <tr class="iipp6">
+              	<input type = "hidden" name = "m_no" value= "${sessionScope.m_no}">     	
+              	<input type = "hidden" name="p_balance" class="bs ww www wwww" type="text" value="${points.p_balance}" disabled>
+                
                 <th width=40% class="text-center warning">이름</th>
                 <td width=20% class="text-center www"><input class="www bs ct" name="name" type="text" value="${sessionScope.m_name}" disabled></td>
                 <th width=40% class="text-center warning">닉네임</th>
@@ -93,7 +96,7 @@
 
                 <tr>
                 <th width=40% class="text-center warning ff">마일리지</th>
-                <td colspan="3" width=60% class="www wwww ctct"><input name="nickName" class="bs ww www wwww" type="text" value="${sessionScope.m_nickname}" disabled></td>
+                <td colspan="3" width=60% class="www wwww ctct"><input name="p_balance" class="bs ww www wwww" type="text" value="${points.p_balance}" disabled></td>
                </tr>
                
             </table>
