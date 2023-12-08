@@ -28,6 +28,7 @@ function memberUpdate(){
 }
 
 function myinfoForm(){
+	console.log("aaaa")
 	const form = document.getElementById("myinfo");
 	form.action = "/Myinfo.do";
 	form.method = "post";

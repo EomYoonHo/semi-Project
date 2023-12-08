@@ -25,13 +25,13 @@
    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
    crossorigin="anonymous"></script>
 <link rel="shortcut icon" href="favicon.ico">
-<script type="text/javascript" src="../../resources/js/member.js"></script>
+<script type="text/javascript" src="/resources/js/member.js"></script>
 </head>
 <body>
    <div class="jb-box">
 
       <video muted="" autoplay="" loop="">
-         <source src="/resources/video/plane.mp4" type="video/mp4">
+         <source src="/resources/video/ocean.mp4" type="video/mp4">
       </video>
       <div class="jb-text login-signup">
          <a href="/form/mapform.do" class="link link--text"
