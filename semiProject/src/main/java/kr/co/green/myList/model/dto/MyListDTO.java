@@ -7,8 +7,22 @@ public class MyListDTO {
 	private String o_period;
 	private String o_buyer_name;
 	private String o_paid_at;
+	private int m_no;
+	private String m_type;
+
+	public String getM_type() {
+		return m_type;
+	}
+	public void setM_type(String m_type) {
+		this.m_type = m_type;
+	}
 	
-	
+	public int getM_no() {
+		return m_no;
+	}
+	public void setM_no(int m_no) {
+		this.m_no = m_no;
+	}
 	public int getO_idx() {
 		return o_idx;
 	}

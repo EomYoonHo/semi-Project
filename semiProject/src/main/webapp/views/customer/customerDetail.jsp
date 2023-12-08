@@ -130,8 +130,9 @@
 								<tr>
 									<th width=20% class="text-center warning">답변</th>
 									<td colspan="4" class="text-left www" valign="top" height="100">
-										<input name="reply"
-										style="white-space: pre-wrap; border: none; background-color: white; text-align: left;">${customerDTO.cs_reply}</input>
+										<input class="www wwww dfjc" name="reply" type="text" 
+										style= "hegiht: 100%; width:100%; white-space: pre-wrap; border: none; 
+										background-color: white; text-align: left;"value="${customerDTO.cs_reply}">
 
 									</td>
 								</tr>
@@ -143,6 +144,7 @@
 						</c:when>
 
 						<c:otherwise>
+							
 							<p>관리자 계정만 답변할수 있습니다</p>
 						</c:otherwise>
 
@@ -153,7 +155,7 @@
 			<div class="pt-1 wwwii">
 				<button class="custom-btn btn-6-1" onclick="customerDelete()">
 					<span>삭제</span>
-					<button class="custom-btn btn-6"
+					<button class="custom-btn btn-6" type="reset"
 						onclick="window.location.href = '/customerList.do?cpage=1'">
 						<span>취소</span>
 			</div>

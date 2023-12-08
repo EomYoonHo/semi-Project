@@ -84,7 +84,7 @@
 			<div class="container">
 				<input type="hidden" name="idx" value="${reviewboard.idx}">
 				<input type="hidden" name="title" value="${reviewboard.title}">
-				<input type="hidden" name="content" value="${reviewboard.content}">
+				<input type="hidden" name="content">
 				<input type="hidden" name="star" value="${reviewboard.star}">
 				<input type="hidden" name="indate" value="${reviewboard.indate}">
 				<input type="hidden" name="views" value="${reviewboard.views}">
@@ -126,9 +126,13 @@
 			<div class="pt-1 wwwii">
 				<button class="custom-btn btn-6" onclick="reviewForm()">수정페이지</button>
 				<button class="custom-btn btn-6-1" onclick="reviewDelete()">삭제</button>
-				<button class="custom-btn btn-6"
-					onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소</button>
+				
+				<button class="custom-btn btn-6" type="reset"
+					onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소
+				</button>
 			</div>
+				
+				
 		</form>
 	</section>
 	<div class="page-title">
