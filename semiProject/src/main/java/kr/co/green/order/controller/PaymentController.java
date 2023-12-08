@@ -58,6 +58,7 @@ public class PaymentController extends HttpServlet {
 		String o_buyer_email = request.getParameter("buyer_email");
 		
 		String o_period = request.getParameter("period");
+		System.out.println(o_period);
 
 		System.out.println("오더에 저장");
 //		System.out.println("패키지 키 : "+p_idx);

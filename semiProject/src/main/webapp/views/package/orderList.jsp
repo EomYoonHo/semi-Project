@@ -1,204 +1,309 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en-us">
-    
+<!DOCTYPE html>
+<html lang="ko">
 
-    <head>
+<head>
+<meta charset="UTF-8">
 
-        <!-- Meta -->
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>semi-Project</title>
+<link rel="stylesheet" href="/resources/css/board/setting.css">
+<link rel="stylesheet" href="/resources/css/board/plugin.css">
+<link rel="stylesheet" href="/resources/css/board/semi.css">
+<link rel="stylesheet" href="/resources/css/board/common.css">
+<link rel="stylesheet" href="/resources/css/board/style.css">
+<link rel="stylesheet" href="/resources/css/board/yh.css">
+<link rel="stylesheet" href="/resources/css/board/table.css">
+<link rel="stylesheet" href="/resources/css/board/order.css">
+<link rel="stylesheet" th:href="@{./css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{./css/custom.min.css}">
+<link
+	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+	rel="stylesheet">
 
-        <title>Viking Tours</title>
-        <meta name="description" content="">
+<!-- Web fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
+	rel="stylesheet">
 
-        <!-- The compiled CSS file -->
-		<link rel="stylesheet" href="/resources/css/board/production.css">
-		<link rel="stylesheet" href="/resources/css/board/yh.css">
-		<link rel="stylesheet" href="/resources/css/board/btn.css">
-        <link rel="stylesheet" href="/resources/css/board/order.css">
+<!-- favicon.ico. Place these in the root directory. -->
+<link rel="shortcut icon" href="favicon.ico">
 
-        <!-- 부트스트랩 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        
+<!-- 잡것 -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
+	rel="stylesheet">
+</head>
 
-        <!-- Web fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
+<body>
+	<!-- [S]glamping-N1 -->
+	<header class="glamping-N1" data-bid="jILPJ5JfH5">
+		<%@ include file="/views/common/header.jsp"%>
+	</header>
+	<!-- [E]glamping-N1 -->
+	<div class="glamping-N3">
+		<img class="footer-backimg img-pc"
+			src="/resources/image/airplane2.jpg" alt="PC 푸터 비주얼">
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<h3 class="pgc" style="font-size: 100px;">
+			<b>Tour Package</b>
+		</h3>
+		<br>
+		<br>
+		<h3 class="pgc">Discover 9 carefully selected travel packages!!</h3>
+	</div>
+	<div class="glamping-N5" data-bid="KmLpj5JFIP">
+		<div class="contents-inner">
+			<div class="contents-container container-md">
+				<div class="cardset-wrap">
+					<div class="cardset cardset-xl cardset-deco cardset-hor row-rever">
+						<!-- 패키지 리스트 -->
+						<figure class="cardset-figure"
+							style="width: 70%; padding-left: 100p0x;">
+							<div class="product-list">
+								<a href="/packageControll.do?p_idx=1" class="product"> <img
+									src="/resources/image/package파리투어1.PNG" width="225">
+									<p class="packagename">파리 패키지</p>
+									<p class="packagename2">Paris Tour</p>
+									<div class="product-price">3,699,000 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=2" class="product"> <img
+									src="/resources/image/package동유럽2.PNG" width="225">
+									<p class="packagename">동유럽 패키지</p>
+									<p class="packagename2">Eastern Europe Tour</p>
+									<div class="product-price">2,599,000 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=3" class="product"> <img
+									src="/resources/image/package북유럽3.PNG" width="225">
+									<p class="packagename">북유럽 패키지</p>
+									<p class="packagename2">North Europe Tour</p>
+									<div class="product-price">4,699,000 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=4" class="product"> <img
+									src="/resources/image/package삿포로4.PNG" width="225">
+									<p class="packagename">삿포로 패키지</p>
+									<p class="packagename2">Sapporo Tour</p>
+									<div class="product-price">1,299,000 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=5" class="product"> <img
+									src="/resources/image/package장가계5.PNG" width="225">
+									<p class="packagename">장가계 패키지</p>
+									<p class="packagename2">Jangjiaji Tour</p>
+									<div class="product-price">569,000 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=6" class="product"> <img
+									src="/resources/image/package미동부6.PNG" width="225">
+									<p class="packagename">미동부 패키지</p>
+									<p class="packagename2">Eastern U.S Tour</p>
+									<div class="product-price">4,340,200 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=7" class="product"> <img
+									src="/resources/image/package칸쿤7.PNG" width="225">
+									<p class="packagename">칸쿤 패키지</p>
+									<p class="packagename2">Cancun Tour</p>
+									<div class="product-price">5,326,200 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=8" class="product"> <img
+									src="/resources/image/package남미투어8.PNG" width="225">
+									<p class="packagename">남미 패키지</p>
+									<p class="packagename2">South America Tour</p>
+									<div class="product-price">19,900,000 ₩</div>
+								</a> <a href="/packageControll.do?p_idx=9" class="product"> <img
+									src="/resources/image/package라오스9.PNG" width="225">
+									<p class="packagename">라오스 패키지</p>
+									<p class="packagename2">Laos Tour</p>
+									<div class="product-price">619,900 ₩</div>
+								</a>
 
-        <!-- favicon.ico. Place these in the root directory. -->
-        <link rel="shortcut icon" href="favicon.ico">
+							</div>
+						</figure>
+						<!-- 패키지 소개 -->
+						<div class="cardset-body" style="width: 30%;">
+							<div class="glamping-N4" data-bid="VALpJ5jfI7">
+								<div class="contents-container">
+									<div class="contents-swiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/파파리.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">파리 패키지</h2>
+														<p class="textset-desc">
+															문화와 예술의 중심, <br> 빛의도시 파리. <br> PESS-PORT 에서
+															자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/동동유럽.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">동유럽 패키지</h2>
+														<p class="textset-desc">
+															역사와 문화가 깊이 깃든, <br> 동유럽의 매혹적인 미스테리. <br>
+															PESS-PORT 에서 자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/북북유럽.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">북유럽 패키지</h2>
+														<p class="textset-desc">
+															자연과 평화가 어우러진, <br> 북유럽의 신비로운 아름다움. <br>
+															PESS-PORT 에서 자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/삿삿포로.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">삿포로 패키지</h2>
+														<p class="textset-desc">
+															눈의 도시, <br> 화이트 판타지 삿포로. <br> PESS-PORT 에서 자신있게
+															초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/장장가계.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">장가계 패키지</h2>
+														<p class="textset-desc">
+															자연의 품에서 숨쉬는, <br> 평온한 천국 장가계. <br> PESS-PORT 에서
+															자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/미미동부.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">미동부 패키지</h2>
+														<p class="textset-desc">
+															다채로운 문화와 역사가 공존하는, <br> 미국 동부의 끝없는 도전. <br>
+															PESS-PORT 에서 자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/칸칸쿤.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">칸쿤 패키지</h2>
+														<p class="textset-desc">
+															푸른 바다와 하얀 모래가 만나는, <br> 카리브의 낙원 칸쿤. <br>
+															PESS-PORT 에서 자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/남남미.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">남미 패키지</h2>
+														<p class="textset-desc">
+															열정과 모험이 가득한, <br> 라틴의 불꽃 남미. <br> PESS-PORT 에서
+															자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<img class="contents-backimg img-pc"
+													src="/resources/image/라라오스.jpg" alt="PC 메인 비주얼 이미지">
+												<div class="contents-slide-group container-md">
+													<div class="textset textset-visual">
+														<h2 class="textset-tit">라오스 패키지</h2>
+														<p class="textset-desc">
+															미스테리한 문화와 숨겨진 자연의 아름다움, <br> 낭만적인 라오스. <br>
+															PESS-PORT 에서 자신있게 초대합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="contents-control">
+											<div class="swiper-pagination"></div>
+											<div class="swiper-button-pause">
+												<img src="/resources/icon/ico_pause_white.svg"
+													alt="스와이퍼 멈춤버튼">
+											</div>
+											<div class="swiper-button-play">
+												<img src="/resources/icon/ico_play_white.svg"
+													alt="스와이퍼 재생버튼">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-    </head>
-    
 
-    <body>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="page-title">
+		<div class="container">
+			<h3 class="pgc" style="font-size: 50px;">Thank you for
+				purchasing our product.</h3>
+		</div>
+	</div>
+	<br>
+	<br>
 
-    <!-- ㅇㅇ -->
-    <div class="hero-header left5"></div>
+	<!-- [E]glamping-N9 -->
+	<!-- [S]glamping-N3 -->
+	<footer class="glamping-N3" data-bid="hNLPJ5jFl2">
+		<%@ include file="/views/common/footer.jsp"%>
+	</footer>
 
-    <div class="products left2">
-        <div class="page-title">
-            <div class="container">
-                <h3 style="font-size: 50px;">Tour Package</h3>
-            </div>
-        </div>
 
-        <div class="product-list">
-            <a href="/packageControll.do?p_idx=1" class="product">
-                <img src="/resources/image/package파리투어1.PNG" width="225">
-                <p class="packagename">서유럽 패키지</p>
-                <p class="packagename2">Paris Tour</p>
-                <div class="product-price">
-                    3,699,000 ₩
-                </div>
-            </a>
-
-            
-            <a href="/packageControll.do?p_idx=2" class="product">
-                <img src="/resources/image/package동유럽2.PNG" width="225">
-                <p class="packagename">동유럽 패키지</p>
-                <p class="packagename2">Eastern Europe Tour</p>
-                <div class="product-price">
-                    2,599,000 ₩
-                </div>
-            </a>
-
-            <a href="/packageControll.do?p_idx=3" class="product">
-                <img src="/resources/image/package북유럽3.PNG" width="225">
-                <p class="packagename">북유럽 패키지</p>
-                <p class="packagename2">North Europe Tour</p>
-                <div class="product-price">
-                    4,699,000 ₩
-                </div>
-            </a>
-            
-            <a href="/packageControll.do?p_idx=4" class="product">
-                <img src="/resources/image/package삿포로4.PNG" width="225">
-                <p class="packagename">삿포로 패키지</p>
-                <p class="packagename2">Sapporo Tour</p>
-                <div class="product-price">
-                    1,299,000 ₩
-                </div>
-            </a>
-            
-            <a href="/packageControll.do?p_idx=5" class="product">
-                <img src="/resources/image/package장가계5.PNG" width="225">
-                <p class="packagename">장가계 패키지</p>
-                <p class="packagename2">Jangjiaji Tour</p>
-                <div class="product-price">
-                    569,000 ₩
-                </div>
-            </a>
-
-            
-            <a href="/packageControll.do?p_idx=6" class="product">
-                <img src="/resources/image/package미동부6.PNG" width="225">
-                <p class="packagename">미동부 패키지</p>
-                <p class="packagename2">Eastern U.S Tour</p>
-                <div class="product-price">
-                    4,340,200 ₩
-                </div>
-            </a>
-
-            <a href="/packageControll.do?p_idx=7" class="product">
-                <img src="/resources/image/package칸쿤7.PNG" width="225">
-                <p class="packagename">칸쿤 패키지</p>
-                <p class="packagename2">Cancun Tour</p>
-                <div class="product-price">
-                    5,326,200 ₩
-                </div>
-            </a>
-            
-            <a href="/packageControll.do?p_idx=8" class="product">
-                <img src="/resources/image/package남미투어8.PNG" width="225">
-                <p class="packagename">남미 패키지</p>
-                <p class="packagename2">South America Tour</p>
-                <div class="product-price">
-                    19,900,000 ₩
-                </div>
-            </a>
-            
-            <a href="/packageControll.do?p_idx=9" class="product">
-                <img src="/resources/image/package라오스9.PNG" width="225">
-                <p class="packagename">라오스 패키지</p>
-                <p class="packagename2">Laos Tour</p>
-                <div class="product-price">
-                    619,900 ₩
-                </div>
-            </a>
-            <div class="clearfix"></div>
-            <div class="page-title">
-                <div class="container">
-                    <h3 style="font-size: 30px;">Thank you for purchasing our product.</h3>
-                </div>
-            </div>
-        </div>
-
-        
-    <!-- ㅇㅇ -->
-
-    <div class="grid-row">
-
-        <!-- Body -->
-        <div class="body full-width pt1 pr2 pb2 pl2">
-            <!-- Navigation -->
-			<nav class="navigation border--bottom pt1">
-				<a href="/form/loginform.do" class="link link--text left">로그인</a> <a
-					href="/form/registerform.do" class="link link--text">회원가입</a>
-			</nav>
-
-			<nav class="navigation border--bottom pt1">
-				<a href="/views/common/map.jsp" class="link link--text">지도<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-globe-americas"
-						viewBox="0 0 16 16">
-                    <path
-							d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
-                  </svg></a> <a href="/reviewBoardList.do?cpage=1"
-					class="link link--text">리뷰<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                    <path
-							d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                  </svg></a> <a href="/boardList.do?cpage=1"
-					class="link link--text">게시판<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-                    <path
-							d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-                    <path
-							d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                  </svg></a> <a href="/views/package/orderList.jsp"
-					class="link link--text">여행 패키지<svg
-						xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
-                    <path
-							d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z" />
-                  </svg></a>
-				<!-- <c:if test="${!empty sessionScope.name}"><a href="#" class="link link--text">마이페이지</a></c:if> -->
-			</nav>
-           
-            <!-- Page Content -->
-            <main class="content pt2 pb2">
-                <h2>여행 패키지</h2>
-            
-            </main>
-                        <!-- Footer -->
-            <footer class="border--top pt1 pb1">
-                <!-- <video muted autoplay loop>
-                    <source src="../video/ppp.mp4" type="video/mp4">
-                </video> -->
-                <p class="text--gray small mb0">&copy; PESS-PORT | 조장 : 엄윤호 <a href="https://www.eatapapaya.com" class="link link--text"></a>.</p>
-            </footer>
-        </div><!-- end Body -->
-
-    </div>
-
-    </body>
+</body>
 </html>
-
-

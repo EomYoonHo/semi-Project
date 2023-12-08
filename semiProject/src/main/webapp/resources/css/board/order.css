@@ -7,8 +7,14 @@
     }
 
 .product-list{
-    width: 735px;
-    margin: 0 auto;
+    display: block;
+    text-align: center;
+    text-decoration:none;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    width: 100%;
 }
 .pptt {
   font-family: 'Noto Sans KR', sans-serif;
@@ -80,18 +86,18 @@
     
   }
   .slider {
-    width: 100%;                                 
+    width: 100%;   
+    height: auto;                              
     overflow: hidden;
     position: relative;
 }
 .slide {
-    float: left;
     width: 100%;
     position: relative;
 }
 .img {
     width: 100%;
-    height: auto;                                                        
+    height: auto;
 }
 .dfjc {
   display: flex;
