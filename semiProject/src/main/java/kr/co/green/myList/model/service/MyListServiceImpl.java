@@ -20,8 +20,8 @@ public class MyListServiceImpl {
 	}
 
 	// 게시글 목록 조회
-	public ArrayList<MyListDTO> myList(PageInfo pi, String searchText) {
-		return myListDAO.myList(con, pi, searchText);
+	public ArrayList<MyListDTO> myList(PageInfo pi, String searchText, int m_no, String m_type) {
+		return myListDAO.myList(con, pi, searchText, m_no, m_type);
 	}
 
 	// 전체 게시글 수
