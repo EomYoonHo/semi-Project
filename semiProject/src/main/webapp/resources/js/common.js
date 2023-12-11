@@ -10,6 +10,14 @@ $('.btn_gotop').click(function(){
 	return false;
 });
 
+$(window).scroll(function(){
+   if ($(this).scrollTop() > 300){
+      $('.btn_gotop2').show();
+   } else{
+      $('.btn_gotop2').hide();
+   }
+});
+
 const toggles = document.querySelectorAll(".faq-toggle");
 
 toggles.forEach((toggle) => {
@@ -17,6 +25,8 @@ toggles.forEach((toggle) => {
     toggle.parentNode.classList.toggle("active");
   });
 });
+
+
 
 
  

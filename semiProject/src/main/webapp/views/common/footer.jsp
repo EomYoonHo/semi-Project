@@ -2,9 +2,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- footer시작 -->
-	<a href="#" class="btn_gotop"> <span
-		class="glyphicon glyphicon-chevron-up"> <img
-			src="/resources/image/top.png" alt="" width="20">
+<a href="#" class="btn_gotop2"> 
+	<span class="glyphicon glyphicon-chevron-up"> 
+		<img src="/resources/image/chatBot1.png" alt="" width="100">
+	</span>
+	</a>
+	<a href="#" class="btn_gotop"> 
+	<span class="glyphicon glyphicon-chevron-up"> 
+		<img src="/resources/image/top.png" alt="" width="20">
 	</span>
 	</a>
 	<div class="footer-container">
@@ -33,9 +38,9 @@
 				</a></li>
 			</ul>
 			<ul class="footer-menugroup">
-				<li class="footer-menulink"><a href="javascript:void(0)"> <span>이용약관</span>
+				<li class="footer-menulink"><a href="/views/common/use.jsp"> <span>이용약관</span>
 				</a></li>
-				<li class="footer-menulink"><a href="javascript:void(0)"> <span>개인정보처리방침</span>
+				<li class="footer-menulink"><a href="/views/common/privacy.jsp"> <span>개인정보처리방침</span>
 				</a></li>
 				<li class="footer-menulink"><a href="/views/common/home1.jsp">
 						<span>이스터에그</span>
