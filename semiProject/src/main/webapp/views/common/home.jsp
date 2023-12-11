@@ -819,17 +819,10 @@
 				</div>
 			</div>
 		</div>
-		<!-- [E]glamping-N9 -->
 	</main>
-	<a href="#" class="btn_gotop"> <span
-		class="glyphicon glyphicon-chevron-up"> <img
-			src="/resources/image/top.png" alt="" width="20">
-	</span>
-	</a>
-	<!-- [S]glamping-N3 -->
-	<footer class="glamping-N3" data-bid="hNLPJ5jFl2">
+<footer class="glamping-N3" data-bid="hNLPJ5jFl2">
 		<%@ include file="/views/common/footer.jsp"%>
-	</footer>
+</footer>
 
 </body>
 
