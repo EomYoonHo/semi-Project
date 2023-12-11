@@ -16,11 +16,10 @@
     margin-bottom: 30px;
     width: 100%;
 }
+
 .pptt {
   font-family: 'Noto Sans KR', sans-serif;
 }
-
-
 
 .product{
     display: block;
@@ -74,7 +73,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0;
-    
   }
   
   .productdetail span {
@@ -86,13 +84,13 @@
     
   }
   .slider {
-    width: 100%;   
-    height: auto;                              
+    width: 100%;                                 
     overflow: hidden;
     position: relative;
 }
 .slide {
     width: 100%;
+    height: auto;
     position: relative;
 }
 .img {
