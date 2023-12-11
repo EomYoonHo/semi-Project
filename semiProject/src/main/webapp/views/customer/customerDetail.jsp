@@ -57,8 +57,8 @@
 		<%@ include file="/views/common/header.jsp"%>
 	</header>
 	<div class="glamping-N3">
-		<img class="footer-backimg img-pc" src="/resources/image/airplane2.jpg"
-			alt="PC 푸터 비주얼">
+		<img class="footer-backimg img-pc"
+			src="/resources/image/airplane2.jpg" alt="PC 푸터 비주얼">
 	</div>
 	<!-- [E]glamping-N1 -->
 	<br>
@@ -123,16 +123,16 @@
 				</div>
 				<br> <br>
 
-				<div class="container">
+				<div class="container dfjc fhg">
 					<c:choose>
 						<c:when test="${sessionScope.m_type == 0}">
 							<table class="board-table iipp3">
 								<tr>
 									<th width=20% class="text-center warning">답변</th>
 									<td colspan="4" class="text-left www" valign="top" height="100">
-										<input class="www wwww dfjc" name="reply" type="text" 
-										style= "hegiht: 100%; width:100%; white-space: pre-wrap; border: none; 
-										background-color: white; text-align: left;"value="${customerDTO.cs_reply}">
+										<input class="www wwww dfjc" name="reply" type="text"
+										style="hegiht: 100%; width: 100%; white-space: pre-wrap; border: none; background-color: white; text-align: left;"
+										value="${customerDTO.cs_reply}">
 
 									</td>
 								</tr>
@@ -144,7 +144,7 @@
 						</c:when>
 
 						<c:otherwise>
-							
+
 							<p>관리자 계정만 답변할수 있습니다</p>
 						</c:otherwise>
 

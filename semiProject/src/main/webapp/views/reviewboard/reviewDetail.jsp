@@ -107,7 +107,7 @@
 						</tr>
 						<tr>
 							<th width=20% class="text-center warning">제목</th>
-							<td width=30% class="text-center">${reviewboard.title}</td>
+							<td width=30% class="text-center www" style="text-align: left;">${reviewboard.title}</td>
 							<th width=20% class="text-center warning">별점</th>
 							<td width=30% class="text-center">${reviewboard.star}</td>
 						</tr>
@@ -115,8 +115,7 @@
 						<tr>
 							<th width=20% class="text-center warning">내용</th>
 							<td colspan="4" class="text-left www" valign="top" height="280">
-								<pre
-									style="white-space: pre-wrap; border: none; background-color: white; font-size: 20px;">${reviewboard.content}</pre>
+								<pre style="white-space: pre-wrap; border: none; background-color: white; text-align: left;">${reviewboard.content}</pre>
 							</td>
 						</tr>
 

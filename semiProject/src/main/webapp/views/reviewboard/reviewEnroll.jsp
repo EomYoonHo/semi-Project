@@ -109,7 +109,7 @@
 				<br>
 				<br>
 			</div>
-			<main role="main" class="container">
+			<main role="main" class="container wsm">
 				<div class="container page-title pgc">
 					<h3 style="font-size: 70px;">
 						<b>Title</b>
@@ -131,22 +131,21 @@
 				<br>
 				<br>
 
-				<div class="pt-1 bbb iipp" style="background-color: white;">
+				<div class="pt-1 bbb iipp2" style="background-color: white;">
 					<textarea id="summernote" name="content"></textarea>
 				</div>
 				<script>
 					$('#summernote').summernote({
 						placeholder : '내용을 입력해주세요',
 						tabsize : 2,
-						height : 250
+						height : 300
 					});
 				</script>
-
+				<br>
 				</div>
 				<div class="pt-1">
-					<button style="margin: 20px;" class="custom-btn btn-6">작성</button>
-					<button type="button" style="margin: 20px;"
-						class="custom-btn btn-6"
+					<button class="custom-btn btn-6" style="margin-left:0;">작성</button>
+					<button class="custom-btn btn-6" type="button"
 						onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소</button>
 				</div>
 		</form>
