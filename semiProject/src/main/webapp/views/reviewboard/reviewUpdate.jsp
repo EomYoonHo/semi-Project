@@ -106,7 +106,7 @@
 						</tr>
 						<tr>
 							<th width=20% class="text-center warning">제목</th>
-							<td width=30% class="text-center"><input class="minsu"
+							<td width=30% class="text-center www"><input class="minsu"
 								type="text" name="title" value="${reviewboard.title}"></td>
 							<th width=20% class="text-center warning">별점</th>
 							<td width=30% class="text-center"><input class="minsu"
@@ -115,12 +115,11 @@
 						<tr>
 							<th width=20% class="text-center warning">내용</th>
 							<td colspan="4" class="text-left www" valign="top" height="200"
-								style="text-align: left;"><textarea class="minsu"
-									style="height: 230px;" id="summernote" cols="30" rows="10"
+								style="text-align: left;"><textarea id="summernote"
 									name="content">${reviewboard.content}</textarea> <script>
 										$('#summernote').summernote({
 											tabsize : 2,
-											height : 300
+											height : 180
 										});
 									</script></td>
 						</tr>

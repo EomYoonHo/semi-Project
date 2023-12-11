@@ -87,9 +87,9 @@
 				<h3 class="pgc">Check your information.</h3>
 			</div>
 		</div>
-		</div>
+
 		<form id="myinfo">
-			<div class="wcct">
+		<div class="wcct">
 				<div class="bbdd">
 					<img class="whwh" src="/resources/image/my.png" alt=""><br>
 					<br>
@@ -103,11 +103,21 @@
 		<div class="bbdd">
 			<img class="whwh mgl" src="/resources/image/cart.png" alt=""><br>
 			<br>
-			<h3 style="font-size: 15px;">My List</h3>
+			<h3 style="font-size: 15px;">Order List</h3>
 			<div class="pt-1 wwwii dfjc">
 				<button type="button" class="custom-btn btn-6"
 					onclick="window.location.href = '/MyList.do?cpage=1'">
 					<span>구매목록</span></button>
+			</div>
+		</div>
+		<div class="bbdd">
+			<img class="whwh" src="/resources/image/airplane4.png" alt=""><br>
+			<br>
+			<h3 style="font-size: 15px;">Flight Reservation</h3>
+			<div class="pt-1 wwwii dfjc">
+				<button type="button" class="custom-btn btn-6"
+					onclick="window.location.href = '/MyList.do?cpage=1'">
+					<span>항공예약목록</span></button>
 			</div>
 		</div>
 		</div>

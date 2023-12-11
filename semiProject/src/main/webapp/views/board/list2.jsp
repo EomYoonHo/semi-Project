@@ -93,7 +93,7 @@
 					</h3>
 				</div>
 				<br> <br>
-				<div class="pt-1 bbb iipp" style="background-color: white;">
+				<div class="pt-1 bbb iipp2" style="background-color: white;">
 					<textarea id="summernote" name="b_content"></textarea>
 				</div>
 				<script>

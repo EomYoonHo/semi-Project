@@ -90,6 +90,7 @@ public class LoginController extends HttpServlet {
 			System.out.println(member.getM_phone());
 			System.out.println(member.getM_type());
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/home.jsp");
+			System.out.println(member.getM_name());
 			
 
 			view.forward(request, response);

@@ -123,7 +123,7 @@
 				</div>
 				<br> <br>
 
-				<div class="container">
+				<div class="container dfjc fhg">
 					<c:choose>
 						<c:when test="${sessionScope.m_type == 0}">
 							<table class="board-table iipp3">
@@ -152,10 +152,10 @@
 
 			<div class="pt-1 wwwii">
 				<button class="custom-btn btn-6-1" onclick="customerDelete()">
-					<span>삭제</span>
-					<button class="custom-btn btn-6"
+					<span>삭제</span></button>
+				<button class="custom-btn btn-6" type="reset" 
 						onclick="window.location.href = '/customerList.do?cpage=1'">
-						<span>취소</span>
+						<span>취소</span></button>
 			</div>
 
 		</form>
