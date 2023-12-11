@@ -9,7 +9,7 @@
 
 <title>semi-Project</title>
 <link rel="stylesheet" href="/resources/css/board/setting.css">
-<link rel="stylesheet" href="/resources/css/board/plugin.css">
+<link rel="stylesheet" href="/resources/css/boards/plugin.css">
 <link rel="stylesheet" href="/resources/css/board/semi.css">
 <link rel="stylesheet" href="/resources/css/board/common.css">
 <link rel="stylesheet" href="/resources/css/board/style.css">
@@ -55,8 +55,8 @@
 		<%@ include file="/views/common/header.jsp"%>
 	</header>
 	<div class="glamping-N3">
-		<img class="footer-backimg img-pc"
-			src="/resources/image/airplane2.jpg" alt="PC 푸터 비주얼">
+		<img class="footer-backimg img-pc" src="/resources/image/airplane2.jpg"
+			alt="PC 푸터 비주얼">
 	</div>
 	<!-- [E]glamping-N1 -->
 	<br>
@@ -64,64 +64,83 @@
 	<br>
 	<section class="notice">
 		<div class="page-title">
-			<br>
+			<br> <br> <br>
 			<div class="container">
 				<h3 class="pgc" style="font-size: 100px;">
 					<b>My Page</b>
 				</h3>
-				<br>
-				<br>
+				<br> <br>
 				<h3 class="pgc">Thank you always.</h3>
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+			<br> <br> <br> <br> <br> <br>
 			<div class="container">
 				<h3 class="pgc" style="font-size: 50px;">
-					<b>Wellcome to "Pess-Port"</b>
+					<b>Flight Reservation </b>
 				</h3>
 				<br>
-				<h3 class="pgc">Check your information.</h3>
+				<h3 class="pgc">Thank you for your purchase.</h3>
 			</div>
 		</div>
+		</div>
+		<form action="">
+			<div id="board-list">
+				<div class="container">
 
-		<form id="myinfo">
-		<div class="wcct">
-				<div class="bbdd">
-					<img class="whwh" src="/resources/image/my.png" alt=""><br>
-					<br>
-					<h3 style="font-size: 15px;">My Info</h3>
-					<div class="pt-1 wwwii dfjc">
-						<button type="button" class="custom-btn btn-6" onclick="myinfoForm()">
-							<span>내정보</span></button>
-					</div>
+
+					<table class="board-table iipp3">
+						<thead>
+							<tr>
+								<th width=30% scope="col" class="th-title">항공사</th>
+								<th width=20% scope="col" class="th-title">가격</th>
+								<th width=20% scope="col" class="th-title">가는날</th>
+								<th width=20% scope="col" class="th-title">오는날</th>
+								<th width=20% scope="col" class="th-title">예약자</th>
+								<th width=20% scope="col" class="th-title">구매날짜</th>
+							</tr>
+						</thead>
+
+
+						<c:choose>
+							<c:when test="${empty list}">
+								<tr>
+									<td colspan="5" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
+								</tr>
+							</c:when>
+						
+							<c:otherwise>
+						
+								<c:forEach var="item" items="${list}">
+						
+									<tr>
+										<td width=30%><a href="">${item.o_name}</a></td>
+										<td width=20%>${item.o_paid_amount}</td>
+										<td width=20%>${item.o_period}</td>
+										<td width=20%>${item.o_buyer_name}</td>
+										<td width=20%>${item.o_paid_at}</td>
+									</tr>
+															
+									<c:set var="row" value="${row-1}" />
+								
+								</c:forEach>
+								
+							</c:otherwise>
+						
+						</c:choose>
+						
+					</table>
+
+
+
+
+
 				</div>
+			</div>
+			<br>
+			<div class="pt-1 wwwii dfjc">
+					<button class="custom-btn btn-6" type="reset" onclick="window.location.href = '/views/myPage/myPage.jsp'">
+						<span>돌아가기</span></button>
+			</div>
 		</form>
-		<div class="bbdd">
-			<img class="whwh mgl" src="/resources/image/cart.png" alt=""><br>
-			<br>
-			<h3 style="font-size: 15px;">Order List</h3>
-			<div class="pt-1 wwwii dfjc">
-				<button type="button" class="custom-btn btn-6"
-					onclick="window.location.href = '/MyList.do?cpage=1'">
-					<span>구매목록</span></button>
-			</div>
-		</div>
-		<div class="bbdd">
-			<img class="whwh" src="/resources/image/airplane4.png" alt=""><br>
-			<br>
-			<h3 style="font-size: 15px;">Flight Reservation</h3>
-			<div class="pt-1 wwwii dfjc">
-				<button type="button" class="custom-btn btn-6"
-					onclick="window.location.href = '/MyList.do?cpage=1'">
-					<span>항공예약목록</span></button>
-			</div>
-		</div>
-		</div>
-
 	</section>
 	<br>
 	<br>
