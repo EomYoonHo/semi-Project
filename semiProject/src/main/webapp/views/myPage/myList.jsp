@@ -105,8 +105,11 @@
 									<td colspan="5" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
 								</tr>
 							</c:when>
+						
 							<c:otherwise>
+						
 								<c:forEach var="item" items="${list}">
+						
 									<tr>
 										<td width=30%><a href="">${item.o_name}</a></td>
 										<td width=20%>${item.o_paid_amount}</td>
@@ -114,11 +117,15 @@
 										<td width=20%>${item.o_buyer_name}</td>
 										<td width=20%>${item.o_paid_at}</td>
 									</tr>
-
+															
 									<c:set var="row" value="${row-1}" />
+								
 								</c:forEach>
+								
 							</c:otherwise>
+						
 						</c:choose>
+						
 					</table>
 
 

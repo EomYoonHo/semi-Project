@@ -50,7 +50,6 @@ public class EnrollController extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		int mno = (int)session.getAttribute("m_no");
-		//int mno= 1;
 		String nickName = (String)session.getAttribute("nickName");
 		
 //		// ���� ���ε��Ҷ�
