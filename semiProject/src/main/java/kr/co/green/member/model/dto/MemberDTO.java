@@ -14,8 +14,6 @@ public class MemberDTO {
 	private String m_in_date;
 	private String m_type;
 
-
-
 	public int getM_no() {
 		return m_no;
 	}
@@ -55,11 +53,11 @@ public class MemberDTO {
 	public void setM_nickname(String m_nickname) {
 		this.m_nickname = m_nickname;
 	}
-	
+
 	public String getM_phone() {
 		return m_phone;
 	}
-	
+
 	public void setM_phone(String m_phone) {
 		this.m_phone = m_phone;
 	}
@@ -79,7 +77,5 @@ public class MemberDTO {
 	public void setM_type(String m_type) {
 		this.m_type = m_type;
 	}
-
-	
 
 }
