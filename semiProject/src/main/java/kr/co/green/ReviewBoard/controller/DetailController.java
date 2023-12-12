@@ -44,7 +44,13 @@ public class DetailController extends HttpServlet {
 				request.setAttribute("reviewboard", reviewboard);
 				RequestDispatcher view = request.getRequestDispatcher("/views/reviewboard/reviewDetail.jsp");
 				view.forward(request, response);
+			}else {
+				RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+				view.forward(request, response);
 			}
+			
+			
+			
 		}
 	}
 

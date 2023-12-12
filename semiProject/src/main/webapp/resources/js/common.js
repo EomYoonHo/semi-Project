@@ -1,13 +1,13 @@
 $(window).scroll(function(){
-	if ($(this).scrollTop() > 300){
-		$('.btn_gotop').show();
-	} else{
-		$('.btn_gotop').hide();
-	}
+   if ($(this).scrollTop() > 300){
+      $('.btn_gotop').show();
+   } else{
+      $('.btn_gotop').hide();
+   }
 });
 $('.btn_gotop').click(function(){
-	$('html, body').animate({scrollTop:0},500);
-	return false;
+   $('html, body').animate({scrollTop:0},500);
+   return false;
 });
 
 $(window).scroll(function(){
@@ -34,9 +34,11 @@ var index = 0;
 window.onload = function() {
 	document.getElementById('booking').style.backgroundImage = 'url(' + images[index] + ')';
 	index = (index + 1) % images.length;
+
   }
   
   setInterval(function () {
 	document.getElementById('booking').style.backgroundImage = 'url(' + images[index] + ')';
 	index = (index + 1) % images.length;
   }, 3000);
+

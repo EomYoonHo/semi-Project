@@ -97,8 +97,8 @@ public class BoardEnrollController extends HttpServlet {
 		if(result>0) {
 			response.sendRedirect("/boardList.do?cpage=1");
 		}else {
-			RequestDispatcher view = request.getRequestDispatcher("/");
-	        view.forward(request, response);
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 		}
 	}
 	

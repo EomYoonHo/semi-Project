@@ -44,7 +44,7 @@
         <!-- [S]glamping-N4 -->
         <main class="th-layout-main ">
             <div class="glamping-N3">
-                <img class="footer-backimg img-pc" src="/resources/img/airplane2.jpg" alt="PC 푸터 비주얼">
+                <img class="footer-backimg img-pc" src="/resources/image/airplane2.jpg" alt="PC 푸터 비주얼">
             </div>
             <br> <br> <br> <br>
             <div class="page-title">
@@ -87,7 +87,7 @@
                                                     <span class="form-label fhg">출발지</span> <select
                                                         class="form-control fhg ccct" name="starting_point"
                                                         id="starting_point" required>
-                                                        <option value="" value1="">출발선택</option>
+                                                        <option value="" value1="">출발지선택</option>
                                                         <option value="ICN" value1="인천">인천</option>
                                                         <option value="GMP" value1="김포">김포</option>
                                                     </select>
@@ -99,7 +99,7 @@
                                                     <span class="form-label fhg">도착지</span> <select
                                                         class="form-control fhg ccct" name="destination"
                                                         id="destination" required>
-                                                        <option value="" value1="" value2="">나라선택</option>
+                                                        <option value="" value1="" value2="">도착지선택</option>
                                                         <option value="CDG" value1="1260800" value2="파리">파리</option>
                                                         <option value="PRG" value1="1990800" value2="프라하">프라하</option>
                                                         <option value="OSL" value1="1901200" value2="오슬로">오슬로</option>
@@ -213,12 +213,12 @@
             function gogo() {
                 let value0 = $("#destination").val();     // 셀렉트 박스 기본 값인 value 값을 가져옴
                 let value1 = $("#destination > option:selected").attr("VALUE1");
-             	let value2 = $("#destination > option:selected").attr("VALUE2");
-               	let korean_startval = $("#starting_point > option:selected").attr("VALUE1");
+                let value2 = $("#destination > option:selected").attr("VALUE2");
+                  let korean_startval = $("#starting_point > option:selected").attr("VALUE1");
                 let allprice = document.getElementById("allprice");
                 let price_per = document.getElementById("price_per");
-              	let korean_destination = document.getElementById("korean_destination");
-              	let korean_start = document.getElementById("korean_start");
+                 let korean_destination = document.getElementById("korean_destination");
+                 let korean_start = document.getElementById("korean_start");
                 let people = $("#people").val();
                 price_per.value = value1;
                 korean_destination.value = value2;

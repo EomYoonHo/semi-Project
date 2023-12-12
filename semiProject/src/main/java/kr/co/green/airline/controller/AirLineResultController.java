@@ -61,7 +61,8 @@ public class AirLineResultController extends HttpServlet {
 			view.forward(request, response);
 
 		} else {
-			System.out.println("실패");
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 		}
 
 	}

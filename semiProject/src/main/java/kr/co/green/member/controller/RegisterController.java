@@ -141,6 +141,8 @@ public class RegisterController extends HttpServlet {
 		// 회원가입
 		if (result == 0) {
 			validationAlert(response, "회원가입에 실패했습니다.");
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 		} else {
 			int presult = pointService.pointEnroll(m_no);
 			if (presult == 0) {
