@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- footer시작 -->
+
 <p style="CURSOR: hand" onclick=window.open("http://pf.kakao.com/_SiVGG/chat")
 class="btn_gotop2"> 
 	<span class="glyphicon glyphicon-chevron-up"> 
@@ -67,3 +68,4 @@ class="btn_gotop2">
 	<script src="/resources/js/common.js"></script>
 	<script src="/resources/js/script.js"></script>
 	<script src="/resources/js/member/member.js"></script>	
+	
