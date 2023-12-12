@@ -46,6 +46,7 @@
 					</a></li>
 				</ul></li>
 			<li class="header-gnbitem"><a class="header-gnblink" href="">
+
 					<span>항공권</span>
 			</a>
 				<ul class="header-sublist">
@@ -75,5 +76,7 @@
 					<a class="header-gnblink log1" href="/form/registerform.do"> <span>회원가입</span></a>
 				</c:otherwise>
 			</c:choose>
+
+
 	</div>
 </div>
