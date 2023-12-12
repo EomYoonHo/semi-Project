@@ -62,7 +62,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="booking-cta">
-                                    <img src="/resources/img/" alt="">
+                                    <img src="" alt="">
                                     <h1 style="color: white; font-size: 60px;">
                                         <b>PESS-PORT</b>
                                     </h1>
@@ -210,8 +210,6 @@
                 changeReturn();
             }
             changeReturn();
-        </script>
-        <script>
             function gogo() {
                 let value0 = $("#destination").val();     // 셀렉트 박스 기본 값인 value 값을 가져옴
                 let value1 = $("#destination > option:selected").attr("VALUE1");
@@ -229,6 +227,7 @@
                 document.getElementById("goToTicket").click();
             }
         </script>
+        
     </body>
 
     </html>
