@@ -391,6 +391,7 @@
 	<script src="/resources/js/plugin.js"></script>
 	<script src="/resources/js/template.js"></script>
 	<script src="/resources/js/script.js"></script>
+	<script src="/resources/js/common.js"></script>
 </body>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"

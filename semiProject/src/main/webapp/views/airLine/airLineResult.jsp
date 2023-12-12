@@ -37,113 +37,80 @@
             <div class="header-container container-lg">
                 <div class="header-left">
                     <h1 class="header-title">
-                        <a href="home.html">
-                            <img src="/resources/img/pessport.png" alt="로고" style="margin-bottom: 40px;">
+                        <a href="home.html"> <img src="/resources/img/pessport.png" alt="로고"
+                                style="margin-bottom: 40px;">
                         </a>
                     </h1>
                 </div>
                 <div class="header-center">
                     <ul class="header-gnblist">
-                        <li class="header-gnbitem">
-                            <a class="header-gnblink" href="">
+                        <li class="header-gnbitem"><a class="header-gnblink" href="">
                                 <span>여행지추천</span>
                             </a>
                             <ul class="header-sublist">
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="map.html">
-                                        <span>지도로 이동</span>
-                                    </a>
-                                </li>
+                                <li class="header-subitem"><a class="header-sublink" href="map.html"> <span>지도로
+                                            이동</span>
+                                    </a></li>
                             </ul>
                         </li>
-                        <li class="header-gnbitem">
-                            <a class="header-gnblink" href="">
+                        <li class="header-gnbitem"><a class="header-gnblink" href="">
                                 <span>게시판</span>
                             </a>
                             <ul class="header-sublist">
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="list.html">
-                                        <span>커뮤니티</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="list2.html">
-                                        <span>커뮤니티 작성</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="review.html">
-                                        <span>리뷰</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="review2.html">
-                                        <span>리뷰 작성</span>
-                                    </a>
-                                </li>
+                                <li class="header-subitem"><a class="header-sublink" href="list.html"> <span>커뮤니티</span>
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="list2.html"> <span>커뮤니티
+                                            작성</span>
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="review.html"> <span>리뷰</span>
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="review2.html"> <span>리뷰
+                                            작성</span>
+                                    </a></li>
                             </ul>
                         </li>
-                        <li class="header-gnbitem">
-                            <a class="header-gnblink" href="">
+                        <li class="header-gnbitem"><a class="header-gnblink" href="">
                                 <span>여행패키지</span>
                             </a>
                             <ul class="header-sublist">
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="orderList.html">
-                                        <span>패키지 상품</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="airLine.html">
-                                        <span>항공권 예약</span>
-                                    </a>
-                                </li>
+                                <li class="header-subitem"><a class="header-sublink" href="orderList.html"> <span>패키지
+                                            상품</span>
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="airLine.html"> <span>항공권
+                                            예약</span>
+                                    </a></li>
                             </ul>
                         </li>
-                        <li class="header-gnbitem">
-                            <a class="header-gnblink" href="">
+                        <li class="header-gnbitem"><a class="header-gnblink" href="">
                                 <span>고객문의센터</span>
                             </a>
                             <ul class="header-sublist">
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="customerService.html">
+                                <li class="header-subitem"><a class="header-sublink" href="customerService.html">
                                         <span>고객문의</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="customerEnroll.html">
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="customerEnroll.html">
                                         <span>문의하기</span>
-                                    </a>
-                                </li>
+                                    </a></li>
                             </ul>
                         </li>
-                        <li class="header-gnbitem">
-                            <a class="header-gnblink" href="">
+                        <li class="header-gnbitem"><a class="header-gnblink" href="">
                                 <span>마이페이지</span>
                             </a>
                             <ul class="header-sublist">
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="myPage.html">
+                                <li class="header-subitem"><a class="header-sublink" href="myPage.html">
                                         <span>마이페이지</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="infoDetail.html">
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="infoDetail.html">
                                         <span>내정보</span>
-                                    </a>
-                                </li>
-                                <li class="header-subitem">
-                                    <a class="header-sublink" href="myList.html">
+                                    </a></li>
+                                <li class="header-subitem"><a class="header-sublink" href="myList.html">
                                         <span>구매목록</span>
-                                    </a>
-                                </li>
+                                    </a></li>
                             </ul>
                         </li>
-                        <a class="header-gnblink log" href="login.html">
-                            <span>로그인</span>
+                        <a class="header-gnblink log" href="login.html"> <span>로그인</span>
                         </a>
-                        <a class="header-gnblink log1" href="register.html">
-                            <span>회원가입</span>
+                        <a class="header-gnblink log1" href="register.html"> <span>회원가입</span>
                         </a>
                 </div>
             </div>
@@ -154,10 +121,12 @@
             <div class="glamping-N3">
                 <img class="footer-backimg img-pc" src="/resources/img/airplane2.jpg" alt="PC 푸터 비주얼">
             </div>
-            <br><br><br><br>
+            <br> <br> <br> <br>
             <div class="page-title">
                 <div class="container">
-                    <h3 class="pgc" style="font-size: 100px;"><b>Airplane Ticket</b></h3>
+                    <h3 class="pgc" style="font-size: 100px;">
+                        <b>Airplane Ticket</b>
+                    </h3>
                     <h3 class="pgc">Have a comfortable flight.</h3>
                 </div>
             </div>
@@ -175,8 +144,7 @@
                                         <header>
                                             <img class="logo" src="/resources/img/pessport.png" alt="">
                                             <div class="flight">
-                                                <small>flight</small>
-                                                <strong>AZ 356</strong>
+                                                <small>flight</small> <strong>AZ 356</strong>
                                             </div>
                                         </header>
                                         <section class="cities">
@@ -195,46 +163,37 @@
                                         <section class="infos">
                                             <div class="places">
                                                 <div class="box">
-                                                    <small>Terminal</small>
-                                                    <strong><em>W</em></strong>
+                                                    <small>Terminal</small> <strong><em>W</em></strong>
                                                 </div>
                                                 <div class="box">
-                                                    <small>Gate</small>
-                                                    <strong><em>C3</em></strong>
+                                                    <small>Gate</small> <strong><em>C3</em></strong>
                                                 </div>
                                                 <div class="box">
-                                                    <small>Seat</small>
-                                                    <strong>14B</strong>
+                                                    <small>Seat</small> <strong>14B</strong>
                                                 </div>
                                                 <div class="box">
-                                                    <small>Class</small>
-                                                    <strong>E</strong>
+                                                    <small>Class</small> <strong>E</strong>
                                                 </div>
                                             </div>
                                             <div class="times">
                                                 <div class="box">
-                                                    <small>Boarding</small>
-                                                    <strong>19:50</strong>
+                                                    <small>Boarding</small> <strong>19:50</strong>
                                                 </div>
                                                 <div class="box">
-                                                    <small>Departure</small>
-                                                    <strong>20:20</strong>
+                                                    <small>Departure</small> <strong>20:20</strong>
                                                 </div>
                                                 <div class="box">
-                                                    <small>Duration</small>
-                                                    <strong>01:10</strong>
+                                                    <small>Duration</small> <strong>01:10</strong>
                                                 </div>
                                                 <div class="box">
-                                                    <small>Arrival</small>
-                                                    <strong>21:30</strong>
+                                                    <small>Arrival</small> <strong>21:30</strong>
                                                 </div>
                                             </div>
                                         </section>
                                         <section class="strap">
                                             <div class="box">
                                                 <div class="passenger">
-                                                    <small>passenger</small>
-                                                    <strong>${memberInfo.m_name}</strong>
+                                                    <small>passenger</small> <strong>${memberInfo.m_name}</strong>
                                                 </div>
                                                 <div class="date">
                                                     <small>Date</small>
@@ -353,7 +312,9 @@
                                     <section class="notice" style="padding: 0;">
                                         <div class="iip6">
                                             <div class="container">
-                                                <h3 class="pgc" style="font-size: 70px;"><b>Receipt</b></h3>
+                                                <h3 class="pgc" style="font-size: 70px;">
+                                                    <b>Receipt</b>
+                                                </h3>
                                             </div>
                                             <form action="">
                                                 <div id="board-list">
@@ -363,42 +324,51 @@
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
                                                                     style="text-align: center;">주문번호</th>
-                                                                <td width=10% class="text-center www">${ariLineDTO.at_no}<b>번</b></td>
+                                                                <td width=10% class="text-center www">
+                                                                    <b>${ariLineDTO.at_no}번</b></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
                                                                     style="text-align: center;">패키지 이름</th>
-                                                                <td width=10% class="text-center www">${korean_start}-${korean_destination}</td>
+                                                                <td width=10% class="text-center www">
+                                                                    <b> ${korean_start}-${korean_destination}</b></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
-                                                                    style="text-align: center;">패키지 이름</th>
-                                                                <td width=10% class="text-center www">${ariLineDTO.at_godate}~${ariLineDTO.at_backdate}</td>
+                                                                    style="text-align: center;">기간</th>
+                                                                <td width=10% class="text-center www">
+                                                                    <b> ${ariLineDTO.at_godate}~${ariLineDTO.at_backdate}</b>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
-                                                                    style="text-align: center;">패키지 이름</th>
-                                                                <td width=10% class="text-center www">#${ariLineDTO.at_buydate}</td>
+                                                                    style="text-align: center;">구매일자</th>
+                                                                <td width=10% class="text-center www">
+                                                                    <b> ${ariLineDTO.at_buydate}</b></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
-                                                                    style="text-align: center;">패키지 이름</th>
-                                                                <td width=10% class="text-center www">#${ariLineDTO.at_airLine}</td>
+                                                                    style="text-align: center;">항공사</th>
+                                                                <td width=10% class="text-center www">
+                                                                    <b> ${ariLineDTO.at_airLine}</b></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
-                                                                    style="text-align: center;">패키지 이름</th>
-                                                                <td width=10% class="text-center www">#${ariLineDTO.at_price_per}</td>
+                                                                    style="text-align: center;">인당가격</th>
+                                                                <td width=10% class="text-center www">
+                                                                    <b>${ariLineDTO.at_price_per}</b></td>
                                                             </tr>
                                                             <tr>
                                                                 <th width=10% class="text-center warning"
-                                                                    style="text-align: center;">패키지 이름</th>
-                                                                <td width=10% class="text-center www">#${ariLineDTO.at_people}</td>
+                                                                    style="text-align: center;">사람수</th>
+                                                                <td width=10% class="text-center www">
+                                                                    <b> ${ariLineDTO.at_people}</b></td>
                                                             </tr>
                                                             <tr class="iipp6">
                                                                 <th width=10% class="text-center warning"
                                                                     style="text-align: center;">결제금액</th>
-                                                                <td width=10% class="text-center www">${ariLineDTO.at_all_price}<b>원</b></td>
+                                                                <td width=10% class="text-center www">
+                                                                    <b>${ariLineDTO.at_all_price} 원</b></td>
                                                             </tr>
                                                         </table>
                                                         <div class="dfjc">
@@ -417,19 +387,21 @@
                     </div>
                 </div>
             </div>
-            <br><br><br><br>
+            <br> <br> <br> <br>
             <form action="">
                 <div class="pt-1 wwwii dfjc">
-                    <button class="custom-btn btn-6" formaction="airLine.html"><span>돌아가기</span></button>
+                    <button class="custom-btn btn-6" formaction="airLine.html">
+                        <span>돌아가기</span>
+                    </button>
                 </div>
             </form>
 
             <!-- dd -->
-            <br><br><br><br><br>
+            <br> <br> <br> <br> <br>
             <div class="page-title">
                 <div class="container">
-                    <h3 class="pgc" style="font-size: 50px;">
-                        Thank you for using [ Pess-Port ] travel agency.</h3>
+                    <h3 class="pgc" style="font-size: 50px;">Thank you for using [
+                        Pess-Port ] travel agency.</h3>
                 </div>
             </div>
 
@@ -438,9 +410,8 @@
 
             <!-- [E]glamping-N9 -->
         </main>
-        <a href="#" class="btn_gotop link-7">
-            <span class="glyphicon glyphicon-chevron-up">
-                <img src="/resources/img/top.png" alt="" width="20">
+        <a href="#" class="btn_gotop link-7"> <span class="glyphicon glyphicon-chevron-up"> <img
+                    src="/resources/img/top.png" alt="" width="20">
             </span>
         </a>
         <!-- [S]glamping-N3 -->
@@ -450,51 +421,36 @@
                 <img class="footer-backimg img-pc" src="/resources/img/apl.jpg" alt="PC 푸터 비주얼">
                 <div class="footer-body container-md">
                     <h2 class="footer-logo">
-                        <a href="javascript:void(0)">
-                            <img src="/resources/img/pessport.png" alt="로고">
+                        <a href="javascript:void(0)"> <img src="/resources/img/pessport.png" alt="로고">
                         </a>
                     </h2>
 
                     <ul class="footer-snslist">
-                        <li class="footer-snsitem">
-                            <a class="footer-snslink" href="javascript:void(0)">
-                                <img src="/resources/icon/ico_instagram_white.svg" alt="인스타그램">
-                            </a>
-                        </li>
-                        <li class="footer-snsitem">
-                            <a class="footer-snslink" href="javascript:void(0)">
-                                <img src="/resources/icon/ico_youtube_white.svg" alt="유튜브">
-                            </a>
-                        </li>
-                        <li class="footer-snsitem">
-                            <a class="footer-snslink" href="javascript:void(0)">
-                                <img src="/resources/icon/ico_facebook_white.svg" alt="페이스북">
-                            </a>
-                        </li>
+                        <li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)"> <img
+                                    src="/resources/icon/ico_instagram_white.svg" alt="인스타그램">
+                            </a></li>
+                        <li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)"> <img
+                                    src="/resources/icon/ico_youtube_white.svg" alt="유튜브">
+                            </a></li>
+                        <li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)"> <img
+                                    src="/resources/icon/ico_facebook_white.svg" alt="페이스북">
+                            </a></li>
                     </ul>
                     <ul class="footer-menugroup">
-                        <li class="footer-menulink">
-                            <a href="javascript:void(0)">
+                        <li class="footer-menulink"><a href="javascript:void(0)">
                                 <span>이용약관</span>
-                            </a>
-                        </li>
-                        <li class="footer-menulink">
-                            <a href="javascript:void(0)">
+                            </a></li>
+                        <li class="footer-menulink"><a href="javascript:void(0)">
                                 <span>개인정보처리방침</span>
-                            </a>
-                        </li>
-                        <li class="footer-menulink">
-                            <a href="home1.html">
-                                <span>이스터에그</span>
-                            </a>
-                        </li>
+                            </a></li>
+                        <li class="footer-menulink"><a href="home1.html"> <span>이스터에그</span>
+                            </a></li>
                     </ul>
                     <div class="footer-txtgroup">
                         <div class="footer-txt">
-                            <p> 경기도 안양시 만안구 안양로 303 안양메쎄타워 8층 </p>
+                            <p>경기도 안양시 만안구 안양로 303 안양메쎄타워 8층</p>
                             <p>
-                                <span>T. 010-1234-5678</span>
-                                <span>E. pessport@naver.com</span>
+                                <span>T. 010-1234-5678</span> <span>E. pessport@naver.com</span>
                             </p>
                         </div>
                         <div class="footer-txt">
