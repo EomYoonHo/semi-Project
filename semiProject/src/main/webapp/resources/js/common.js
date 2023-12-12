@@ -11,11 +11,11 @@ $('.btn_gotop').click(function(){
 });
 
 $(window).scroll(function(){
-   if ($(this).scrollTop() > 300){
-      $('.btn_gotop2').show();
-   } else{
-      $('.btn_gotop2').hide();
-   }
+	if ($(this).scrollTop() > 300){
+		$('.btn_gotop2').show();
+	} else{
+		$('.btn_gotop2').hide();
+	}
 });
 
 
@@ -32,11 +32,13 @@ var images = ['/resources/image/비행기예약1.jpg', '/resources/image/비행�
 '/resources/image/비행기예약7.jpg', '/resources/image/비행기예약8.jpg', '/resources/image/비행기예약9.jpg', '/resources/image/비행기예약10.jpg', ];
 var index = 0;
 window.onload = function() {
-   document.getElementById('booking').style.backgroundImage = 'url(' + images[index] + ')';
-   index = (index + 1) % images.length;
+	document.getElementById('booking').style.backgroundImage = 'url(' + images[index] + ')';
+	index = (index + 1) % images.length;
+
   }
   
   setInterval(function () {
-   document.getElementById('booking').style.backgroundImage = 'url(' + images[index] + ')';
-   index = (index + 1) % images.length;
+	document.getElementById('booking').style.backgroundImage = 'url(' + images[index] + ')';
+	index = (index + 1) % images.length;
   }, 3000);
+

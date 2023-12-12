@@ -59,12 +59,12 @@
                         <div class="cardset-wrap">
                             <div class="cardset cardset-hor">
                                 <!-- 티켓 -->
-                                <div class="cardset-body" style="width: 30%; padding-left: 50px; padding-right: 100px;">
+                                <div class="cardset-body" style="width: 30%; padding-left: 50px; padding-right: 300px;">
 
                                     <div class="boarding-pass link-7">
 
                                         <header>
-                                            <img class="logo" src="/resources/img/pessport.png" alt="">
+                                            <img class="logo" src="/resources/image/pessport.png" alt="">
                                             <div class="flight">
                                                 <small>flight</small> <strong>AZ 356</strong>
                                             </div>
@@ -294,7 +294,7 @@
                                                             </tr>
                                                         </table>
                                                         <div class="dfjc">
-                                                            <img src="/resources/img/bcd.jpg" alt=""
+                                                            <img src="/resources/image/bcd.jpg" alt=""
                                                                 style="width: 200px;">
                                                         </div>
                                                     </div>

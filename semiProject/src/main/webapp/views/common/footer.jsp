@@ -4,7 +4,7 @@
 <!-- footer시작 -->
 
 <p style="CURSOR: hand" onclick=window.open("http://pf.kakao.com/_SiVGG/chat")
-class="btn_gotop2"> 
+class="btn_gotop2 link-7"> 
 	<span class="glyphicon glyphicon-chevron-up"> 
 		<img src="/resources/image/chatBot1.png" alt="" width="100">
 	</span>
