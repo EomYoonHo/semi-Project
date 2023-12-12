@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -8,13 +9,13 @@
   <meta charset="UTF-8">
   
   <title>semi-Project</title>
-  <link rel="stylesheet" href="/resources/css/board/setting.css">
-  <link rel="stylesheet" href="/resources/css/board/plugin.css">
-  <link rel="stylesheet" href="/resources/css/board/semi.css">
-  <link rel="stylesheet" href="/resources/css/board/common.css">
-  <link rel="stylesheet" href="/resources/css/board/style.css">
-  <link rel="stylesheet" href="/resources/css/board/yh.css">
-  <link rel="stylesheet" href="/resources/css/board/table.css">
+  <link rel="stylesheet" href="/resources/css/setting.css">
+  <link rel="stylesheet" href="/resources/css/plugin.css">
+  <link rel="stylesheet" href="/resources/css/semi.css">
+  <link rel="stylesheet" href="/resources/css/common.css">
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <link rel="stylesheet" href="/resources/css/yh.css">
+  <link rel="stylesheet" href="/resources/css/table.css">
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,23 +64,24 @@
                     <!-- 지도 -->
                 <div id="googleMap" style="width: 100%; height: 400px;"></div>
 
-				<script>
-					function myMap() {
+            <script>
+               function myMap() {
 
-						var mapOptions = {
-							center : new google.maps.LatLng(${map.l_gps}),
-							zoom : 15
-						};
+                  var mapOptions = {
+                     center : new google.maps.LatLng(${map.l_gps}),
+                     zoom : 15
+                  };
 
-						var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
-						
-						var marker = new google.maps.Marker({
-							position: new google.maps.LatLng(${map.l_gps}),
-							map: map
-						});
-					}
-				</script>
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4LoIjkvF7-JSdIatqJUxFwEqohzJqYU4&callback=myMap"></script>
+                  var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+                  
+                  var marker = new google.maps.Marker({
+                     position: new google.maps.LatLng(${map.l_gps}),
+                     map: map
+                  });
+               }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4LoIjkvF7-JSdIatqJUxFwEqohzJqYU4&callback=myMap"></script>
+
                     <br><br><br>
                     <a href="/views/common/map.jsp" class="btnset btnset-round btnset-line btnset-black dfjc">다른 여행지 보러가기</a>
                     <br><br><br><br><br><br><br>

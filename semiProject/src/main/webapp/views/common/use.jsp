@@ -8,12 +8,12 @@
   <meta charset="UTF-8">
   
   <title>semi-Project</title>
-  <link rel="stylesheet" href="/resources/css/board/setting.css">
-  <link rel="stylesheet" href="/resources/css/board/plugin.css">
-  <link rel="stylesheet" href="/resources/css/board/semi.css">
-  <link rel="stylesheet" href="/resources/css/board/common.css">
-  <link rel="stylesheet" href="/resources/css/board/style.css">
-  <link rel="stylesheet" href="/resources/css/board/table.css">
+  <link rel="stylesheet" href="/resources/css/setting.css">
+  <link rel="stylesheet" href="/resources/css/plugin.css">
+  <link rel="stylesheet" href="/resources/css/semi.css">
+  <link rel="stylesheet" href="/resources/css/common.css">
+  <link rel="stylesheet" href="/resources/css/style.css">
+  <link rel="stylesheet" href="/resources/css/table.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,14 +23,14 @@
   
    <!-- Custom stlylesheet -->
    <!-- Google font -->
-  <link type="text/css" rel="stylesheet" href="/resources/css/board/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="/resources/css/bootstrap.min.css" />
    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
 
    <!-- Bootstrap -->
 
   
    <!-- Custom stlylesheet -->
-   <link type="text/css" rel="stylesheet" href="/resources/css/board/style1.css" />
+   <link type="text/css" rel="stylesheet" href="/resources/css/style1.css" />
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
