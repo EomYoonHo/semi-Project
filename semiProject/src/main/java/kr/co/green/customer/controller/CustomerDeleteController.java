@@ -2,6 +2,7 @@ package kr.co.green.customer.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +38,9 @@ public class CustomerDeleteController extends HttpServlet {
 		
 		if(result > 0) {
 			response.sendRedirect("/customerList.do?cpage=1");
+		}else {
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 		}
 	}
 

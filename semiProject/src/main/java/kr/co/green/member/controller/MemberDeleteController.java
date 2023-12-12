@@ -45,12 +45,14 @@ public class MemberDeleteController extends HttpServlet {
 			session.removeAttribute("m_nickname");
 			session.invalidate();
 			System.out.println("삭제가 완료되었습니다.");
+			RequestDispatcher view =request.getRequestDispatcher("/views/member/login.jsp");
+			view.forward(request, response);
 		}else {
 			System.out.println("에러");
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 		}
 		
-		RequestDispatcher view =request.getRequestDispatcher("/views/member/login.jsp");
-		view.forward(request, response);
 		
 	}
 

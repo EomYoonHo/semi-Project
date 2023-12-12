@@ -58,6 +58,9 @@ public class MapController extends HttpServlet {
 				request.setAttribute("map",map);
 				RequestDispatcher view = request.getRequestDispatcher("/views/common/first.jsp");
 				view.forward(request, response);
+			}else {
+				RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+				view.forward(request, response);
 			}
 			
 		}

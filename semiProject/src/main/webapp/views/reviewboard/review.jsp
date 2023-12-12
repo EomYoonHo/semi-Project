@@ -9,13 +9,13 @@
 <meta charset="UTF-8">
 
 <title>semi-Project</title>
-<link rel="stylesheet" href="/resources/css/board/setting.css">
-<link rel="stylesheet" href="/resources/css/board/plugin.css">
-<link rel="stylesheet" href="/resources/css/board/semi.css">
-<link rel="stylesheet" href="/resources/css/board/common.css">
-<link rel="stylesheet" href="/resources/css/board/style.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
+<link rel="stylesheet" href="/resources/css/setting.css">
+<link rel="stylesheet" href="/resources/css/plugin.css">
+<link rel="stylesheet" href="/resources/css/semi.css">
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/yh.css">
+<link rel="stylesheet" href="/resources/css/table.css">
 
 <link
 	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"

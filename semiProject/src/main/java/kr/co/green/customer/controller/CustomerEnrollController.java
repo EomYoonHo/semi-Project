@@ -48,8 +48,8 @@ public class CustomerEnrollController extends HttpServlet {
 		if(result>0) {
 			response.sendRedirect("/customerList.do?cpage=1");
 		}else {
-			RequestDispatcher view = request.getRequestDispatcher("/");
-	        view.forward(request, response);
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 	        System.out.println("문의등록실패");
 		}
 		
