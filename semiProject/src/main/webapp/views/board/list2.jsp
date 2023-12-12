@@ -9,13 +9,13 @@
 <meta charset="UTF-8">
 
 <title>semi-Project</title>
-<link rel="stylesheet" href="/resources/css/board/setting.css">
-<link rel="stylesheet" href="/resources/css/boards/plugin.css">
-<link rel="stylesheet" href="/resources/css/board/semi.css">
-<link rel="stylesheet" href="/resources/css/board/common.css">
-<link rel="stylesheet" href="/resources/css/board/style.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
+<link rel="stylesheet" href="/resources/css/setting.css">
+<link rel="stylesheet" href="/resources/css/plugin.css">
+<link rel="stylesheet" href="/resources/css/semi.css">
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/yh.css">
+<link rel="stylesheet" href="/resources/css/table.css">
 <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
 <link rel="stylesheet" th:href="@{./css/custom.min.css}">
 <link
@@ -93,7 +93,7 @@
 					</h3>
 				</div>
 				<br> <br>
-				<div class="pt-1 bbb iipp" style="background-color: white;">
+				<div class="pt-1 bbb iipp2" style="background-color: white;">
 					<textarea id="summernote" name="b_content"></textarea>
 				</div>
 				<script>

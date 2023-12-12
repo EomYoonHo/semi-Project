@@ -8,13 +8,13 @@
 <meta charset="UTF-8">
 
 <title>semi-Project</title>
-<link rel="stylesheet" href="/resources/css/board/setting.css">
-<link rel="stylesheet" href="/resources/css/boards/plugin.css">
-<link rel="stylesheet" href="/resources/css/board/semi.css">
-<link rel="stylesheet" href="/resources/css/board/common.css">
-<link rel="stylesheet" href="/resources/css/board/style.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
+<link rel="stylesheet" href="/resources/css/setting.css">
+<link rel="stylesheet" href="/resources/css/plugin.css">
+<link rel="stylesheet" href="/resources/css/semi.css">
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/yh.css">
+<link rel="stylesheet" href="/resources/css/table.css">
 <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
 <link rel="stylesheet" th:href="@{./css/custom.min.css}">
 <link
@@ -105,8 +105,11 @@
 									<td colspan="5" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
 								</tr>
 							</c:when>
+						
 							<c:otherwise>
+						
 								<c:forEach var="item" items="${list}">
+						
 									<tr>
 										<td width=30%><a href="">${item.o_name}</a></td>
 										<td width=20%>${item.o_paid_amount}</td>
@@ -114,11 +117,15 @@
 										<td width=20%>${item.o_buyer_name}</td>
 										<td width=20%>${item.o_paid_at}</td>
 									</tr>
-
+															
 									<c:set var="row" value="${row-1}" />
+								
 								</c:forEach>
+								
 							</c:otherwise>
+						
 						</c:choose>
+						
 					</table>
 
 

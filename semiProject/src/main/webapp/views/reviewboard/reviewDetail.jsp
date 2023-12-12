@@ -84,7 +84,7 @@
 			<div class="container">
 				<input type="hidden" name="idx" value="${reviewboard.idx}">
 				<input type="hidden" name="title" value="${reviewboard.title}">
-				<input type="hidden" name="content" value="${reviewboard.content}">
+				<input type="hidden" name="content">
 				<input type="hidden" name="star" value="${reviewboard.star}">
 				<input type="hidden" name="indate" value="${reviewboard.indate}">
 				<input type="hidden" name="views" value="${reviewboard.views}">
@@ -107,7 +107,7 @@
 						</tr>
 						<tr>
 							<th width=20% class="text-center warning">제목</th>
-							<td width=30% class="text-center">${reviewboard.title}</td>
+							<td width=30% class="text-center www" style="text-align: left;">${reviewboard.title}</td>
 							<th width=20% class="text-center warning">별점</th>
 							<td width=30% class="text-center">${reviewboard.star}</td>
 						</tr>
@@ -115,8 +115,7 @@
 						<tr>
 							<th width=20% class="text-center warning">내용</th>
 							<td colspan="4" class="text-left www" valign="top" height="280">
-								<pre
-									style="white-space: pre-wrap; border: none; background-color: white; font-size: 20px;">${reviewboard.content}</pre>
+								<pre style="white-space: pre-wrap; border: none; background-color: white; text-align: left;">${reviewboard.content}</pre>
 							</td>
 						</tr>
 
@@ -126,9 +125,13 @@
 			<div class="pt-1 wwwii">
 				<button class="custom-btn btn-6" onclick="reviewForm()">수정페이지</button>
 				<button class="custom-btn btn-6-1" onclick="reviewDelete()">삭제</button>
-				<button class="custom-btn btn-6"
-					onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소</button>
+				
+				<button class="custom-btn btn-6" type="reset"
+					onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소
+				</button>
 			</div>
+				
+				
 		</form>
 	</section>
 	<div class="page-title">

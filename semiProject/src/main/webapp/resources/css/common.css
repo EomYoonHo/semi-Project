@@ -11,7 +11,7 @@
     width: 100%;
 }
 .btn_gotop {
-	display:none;
+	display:flex;
 	position:fixed;
 	bottom:30px;
 	right:30px;
@@ -24,7 +24,22 @@
 	padding:15px 20px;
 	border-radius:100%;
 }
- 
+
+.btn_gotop2 {
+   display:flex;
+   position:fixed;
+   bottom:90px;
+   right:0px;
+   z-index:999;
+   outline:none;
+   background-color:white;
+   color:#333;
+   cursor:pointer;
+   padding:15px 20px;
+   border-radius:100%;
+   background: none;
+}
+
 .hover01 figure img {
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);

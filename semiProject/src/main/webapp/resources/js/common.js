@@ -10,6 +10,14 @@ $('.btn_gotop').click(function(){
 	return false;
 });
 
+$(window).scroll(function(){
+   if ($(this).scrollTop() > 300){
+      $('.btn_gotop2').show();
+   } else{
+      $('.btn_gotop2').hide();
+   }
+});
+
 const toggles = document.querySelectorAll(".faq-toggle");
 
 toggles.forEach((toggle) => {
@@ -31,3 +39,5 @@ window.onload = function() {
 	document.getElementById("booking").style.backgroundImage = 'url(' + images[index] + ')';
 	index = (index + 1) % images.length;
   }, 3000);
+
+

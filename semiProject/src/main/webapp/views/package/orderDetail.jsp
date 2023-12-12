@@ -11,24 +11,19 @@
 	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
 	crossorigin="anonymous"></script>
 
-<!-- 포트원 sdk -->
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/v1/iamport.js"></script>
-<!-- Meta -->
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Viking Tours</title>
-<meta name="description" content="">
+<title>semi-Project</title>
+<link rel="stylesheet" href="/resources/css/setting.css">
+<link rel="stylesheet" href="/resources/css/plugin.css">
+<link rel="stylesheet" href="/resources/css/semi.css">
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/yh.css">
+<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="/resources/css/order.css">
+<link rel="stylesheet" th:href="@{./css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{./css/custom.min.css}">
 
-<!-- The compiled CSS file -->
-<link rel="stylesheet" href="/resources/css/board/production.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/order.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
-
-<!-- 부트스트랩 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"

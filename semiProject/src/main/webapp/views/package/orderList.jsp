@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 
 <title>semi-Project</title>
-<link rel="stylesheet" href="/resources/css/board/setting.css">
-<link rel="stylesheet" href="/resources/css/board/plugin.css">
-<link rel="stylesheet" href="/resources/css/board/semi.css">
-<link rel="stylesheet" href="/resources/css/board/common.css">
-<link rel="stylesheet" href="/resources/css/board/style.css">
-<link rel="stylesheet" href="/resources/css/board/yh.css">
-<link rel="stylesheet" href="/resources/css/board/table.css">
-<link rel="stylesheet" href="/resources/css/board/order.css">
+<link rel="stylesheet" href="/resources/css/setting.css">
+<link rel="stylesheet" href="/resources/css/plugin.css">
+<link rel="stylesheet" href="/resources/css/semi.css">
+<link rel="stylesheet" href="/resources/css/common.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/yh.css">
+<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="/resources/css/order.css">
 <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
 <link rel="stylesheet" th:href="@{./css/custom.min.css}">
 <link
@@ -81,54 +81,109 @@
 					<div class="cardset cardset-xl cardset-deco cardset-hor row-rever">
 						<!-- 패키지 리스트 -->
 						<figure class="cardset-figure"
-							style="width: 70%; padding-left: 100p0x;">
+							style="width: 70%; padding-left: 100px;">
 							<div class="product-list">
+							  <div class="hover01">
+                  				<figure>
 								<a href="/packageControll.do?p_idx=1" class="product"> <img
 									src="/resources/image/package파리투어1.PNG" width="225">
 									<p class="packagename">파리 패키지</p>
 									<p class="packagename2">Paris Tour</p>
 									<div class="product-price">3,699,000 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=2" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=2" class="product"> <img
 									src="/resources/image/package동유럽2.PNG" width="225">
 									<p class="packagename">동유럽 패키지</p>
 									<p class="packagename2">Eastern Europe Tour</p>
 									<div class="product-price">2,599,000 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=3" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=3" class="product"> <img
 									src="/resources/image/package북유럽3.PNG" width="225">
 									<p class="packagename">북유럽 패키지</p>
 									<p class="packagename2">North Europe Tour</p>
 									<div class="product-price">4,699,000 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=4" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=4" class="product"> <img
 									src="/resources/image/package삿포로4.PNG" width="225">
 									<p class="packagename">삿포로 패키지</p>
 									<p class="packagename2">Sapporo Tour</p>
 									<div class="product-price">1,299,000 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=5" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=5" class="product"> <img
 									src="/resources/image/package장가계5.PNG" width="225">
 									<p class="packagename">장가계 패키지</p>
 									<p class="packagename2">Jangjiaji Tour</p>
 									<div class="product-price">569,000 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=6" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=6" class="product"> <img
 									src="/resources/image/package미동부6.PNG" width="225">
 									<p class="packagename">미동부 패키지</p>
 									<p class="packagename2">Eastern U.S Tour</p>
 									<div class="product-price">4,340,200 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=7" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=7" class="product"> <img
 									src="/resources/image/package칸쿤7.PNG" width="225">
 									<p class="packagename">칸쿤 패키지</p>
 									<p class="packagename2">Cancun Tour</p>
 									<div class="product-price">5,326,200 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=8" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=8" class="product"> <img
 									src="/resources/image/package남미투어8.PNG" width="225">
 									<p class="packagename">남미 패키지</p>
 									<p class="packagename2">South America Tour</p>
 									<div class="product-price">19,900,000 ₩</div>
-								</a> <a href="/packageControll.do?p_idx=9" class="product"> <img
+								</a> 
+                  				</figure>
+                  				</div>
+                  				
+                  			<div class="hover01">
+                  				<figure>
+								<a href="/packageControll.do?p_idx=9" class="product"> <img
 									src="/resources/image/package라오스9.PNG" width="225">
 									<p class="packagename">라오스 패키지</p>
 									<p class="packagename2">Laos Tour</p>
 									<div class="product-price">619,900 ₩</div>
 								</a>
+                  				</figure>
+                  				</div>
+                  				
+                  				
+                  				
 
 							</div>
 						</figure>

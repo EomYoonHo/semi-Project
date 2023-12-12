@@ -15,9 +15,9 @@
         <meta name="description" content="">
 
         <!-- The compiled CSS file -->
-        <link rel="stylesheet" href="css/production.css">
-        <link rel="stylesheet" href="./css/yh.css">
-        <link rel="stylesheet" href="./css/table.css">
+        <link rel="stylesheet" href="/resources/css/production.css">
+        <link rel="stylesheet" href="/resources/css/yh.css">
+        <link rel="stylesheet" href="/resources/css/table.css">
         <link rel="stylesheet" th:href="@{./css/bootstrap.css}">
         <link rel="stylesheet" th:href="@{./css/custom.min.css}">
 

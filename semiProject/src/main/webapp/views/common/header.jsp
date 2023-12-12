@@ -46,6 +46,15 @@
 					</a></li>
 				</ul></li>
 			<li class="header-gnbitem"><a class="header-gnblink" href="">
+
+					<span>항공권</span>
+			</a>
+				<ul class="header-sublist">
+					<li class="header-subitem"><a class="header-sublink"
+						href="/views/package/orderList.jsp"> <span>항공권 예매</span>
+					</a></li>
+				</ul></li>	
+			<li class="header-gnbitem"><a class="header-gnblink" href="">
 					<span>고객문의센터</span>
 			</a>
 				<ul class="header-sublist">
@@ -56,26 +65,18 @@
 						href="/views/customer/customerEnroll.jsp"> <span>문의하기</span>
 					</a></li>
 				</ul></li>
-			<li class="header-gnbitem"><a class="header-gnblink" href="">
-					<span>마이페이지</span>
-			</a>
-				<ul class="header-sublist">
-					<li class="header-subitem"><a class="header-sublink"
-						href="/views/myPage/myPage.jsp"> <span>마이페이지</span>
-					</a></li>
-					<form id="myinfo">
-						<li class="header-subitem"><a class="header-sublink"
-							onclick="myinfoForm()"> <span>내정보</span>
-						</a></li>
-					</form>
 
-					<li class="header-subitem"><a class="header-sublink"
-						onclick="window.location.href = '/MyList.do?cpage=1'"> <span>구매목록</span>
-					</a></li>
-				</ul></li>
-			<a class="header-gnblink log" href="/form/loginform.do"> <span>로그인</span>
-			</a>
-			<a class="header-gnblink log1" href="/form/registerform.do"> <span>회원가입</span>
-			</a>
+			<c:choose>
+				<c:when test="${sessionScope.m_name != null}">
+					<a class="header-gnblink log" href="/views/myPage/myPage.jsp"> <span>마이페이지</span></a>
+					<a class="header-gnblink log1" href="/logout.do"> <span>로그아웃</span></a>
+				</c:when>
+				<c:otherwise>
+					<a class="header-gnblink log" href="/form/loginform.do"> <span>로그인</span></a>
+					<a class="header-gnblink log1" href="/form/registerform.do"> <span>회원가입</span></a>
+				</c:otherwise>
+			</c:choose>
+
+
 	</div>
 </div>
