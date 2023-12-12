@@ -13,7 +13,7 @@
 	</span>
 	</a>
 	<div class="footer-container">
-		<!--  <audio src="./music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio>-->
+		<!--  <audio src="/resources/music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio>-->
 		<img class="footer-backimg img-pc" src="/resources/image/apl.jpg"
 			alt="PC 푸터 비주얼">
 		<div class="footer-body container-md">
