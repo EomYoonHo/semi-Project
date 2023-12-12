@@ -62,7 +62,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="booking-cta">
-                                    <img src="/resources/img/" alt="">
+                                    <img src="" alt="">
                                     <h1 style="color: white; font-size: 60px;">
                                         <b>PESS-PORT</b>
                                     </h1>
@@ -210,17 +210,15 @@
                 changeReturn();
             }
             changeReturn();
-        </script>
-        <script>
             function gogo() {
                 let value0 = $("#destination").val();     // 셀렉트 박스 기본 값인 value 값을 가져옴
                 let value1 = $("#destination > option:selected").attr("VALUE1");
-             	let value2 = $("#destination > option:selected").attr("VALUE2");
-               	let korean_startval = $("#starting_point > option:selected").attr("VALUE1");
+                let value2 = $("#destination > option:selected").attr("VALUE2");
+                  let korean_startval = $("#starting_point > option:selected").attr("VALUE1");
                 let allprice = document.getElementById("allprice");
                 let price_per = document.getElementById("price_per");
-              	let korean_destination = document.getElementById("korean_destination");
-              	let korean_start = document.getElementById("korean_start");
+                 let korean_destination = document.getElementById("korean_destination");
+                 let korean_start = document.getElementById("korean_start");
                 let people = $("#people").val();
                 price_per.value = value1;
                 korean_destination.value = value2;
@@ -229,6 +227,7 @@
                 document.getElementById("goToTicket").click();
             }
         </script>
+        
     </body>
 
     </html>

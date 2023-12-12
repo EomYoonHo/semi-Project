@@ -54,6 +54,9 @@ public class CustomerDetailController extends HttpServlet {
 				request.setAttribute("customerDTO", customerDTO);
 				RequestDispatcher view = request.getRequestDispatcher("/views/customer/customerDetail.jsp");
 				view.forward(request, response);
+			}else {
+				RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+				view.forward(request, response);
 			}
 			
 		}

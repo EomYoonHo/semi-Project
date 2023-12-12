@@ -75,6 +75,9 @@ public class PackageController extends HttpServlet {
 				request.setAttribute("pack", pack);
 				RequestDispatcher view = request.getRequestDispatcher("/views/package/orderDetail.jsp");
 				view.forward(request, response);
+			}else {
+				RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+				view.forward(request, response);
 			}
 		}
 	}
