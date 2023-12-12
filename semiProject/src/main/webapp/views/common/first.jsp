@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -59,8 +60,10 @@
                   <h2 class="cardset-tit ct"><p style="font-size: 40px;">${map.l_content1}</p></h2>
                   <p class="cardset-desc">
                     ${map.l_content2}
-                    </p>
+                    </p> <br>
+                    <hr role="tournament1">
                     <!-- 지도 -->
+                    <br>
                 <div id="googleMap" style="width: 100%; height: 400px;"></div>
 
             <script>
@@ -80,6 +83,7 @@
                }
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4LoIjkvF7-JSdIatqJUxFwEqohzJqYU4&callback=myMap"></script>
+
                     <br><br><br>
                     <a href="/views/common/map.jsp" class="btnset btnset-round btnset-line btnset-black dfjc">다른 여행지 보러가기</a>
                     <br><br><br><br><br><br><br>

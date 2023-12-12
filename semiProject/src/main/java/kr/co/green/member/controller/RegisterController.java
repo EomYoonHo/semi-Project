@@ -148,9 +148,9 @@ public class RegisterController extends HttpServlet {
 			} else {
 				System.out.println("포인트 만듬");
 			}
+			System.out.println("회원가입 성공");
 			RequestDispatcher view = request.getRequestDispatcher("/views/member/login.jsp");
 			view.forward(request, response);
-			System.out.println("회원가입 성공");
 		}
 
 //		//유효성 검사
