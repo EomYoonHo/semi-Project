@@ -51,7 +51,7 @@
 			</a>
 				<ul class="header-sublist">
 					<li class="header-subitem"><a class="header-sublink"
-						href="/views/package/orderList.jsp"> <span>항공권 예매</span>
+						href="/views/airLine/airLine.jsp"> <span>항공권 예매</span>
 					</a></li>
 				</ul></li>	
 			<li class="header-gnbitem"><a class="header-gnblink" href="">
