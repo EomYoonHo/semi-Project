@@ -2,11 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- footer시작 -->
-<a href="#" class="btn_gotop2"> 
+<p style="CURSOR: hand" onclick=window.open("http://pf.kakao.com/_SiVGG/chat")
+class="btn_gotop2"> 
 	<span class="glyphicon glyphicon-chevron-up"> 
 		<img src="/resources/image/chatBot1.png" alt="" width="100">
 	</span>
-	</a>
+	</p>
 	<a href="#" class="btn_gotop"> 
 	<span class="glyphicon glyphicon-chevron-up"> 
 		<img src="/resources/image/top.png" alt="" width="20">
