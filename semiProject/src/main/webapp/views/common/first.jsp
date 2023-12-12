@@ -60,8 +60,10 @@
                   <h2 class="cardset-tit ct"><p style="font-size: 40px;">${map.l_content1}</p></h2>
                   <p class="cardset-desc">
                     ${map.l_content2}
-                    </p>
+                    </p> <br>
+                    <hr role="tournament1">
                     <!-- 지도 -->
+                    <br>
                 <div id="googleMap" style="width: 100%; height: 400px;"></div>
 
             <script>
