@@ -1,3 +1,4 @@
+
 package kr.co.green.order.controller;
 
 import java.io.IOException;
@@ -48,30 +49,16 @@ public class PaymentController extends HttpServlet {
 		int o_people = Integer.valueOf(request.getParameter("people"));
 		int o_paid_amount = Integer.valueOf(request.getParameter("paid_amount"));
 		int o_point = Integer.valueOf(request.getParameter("plus_point"));
-		
 		int p_idx = Integer.valueOf(request.getParameter("p_idx"));
 		String o_name = request.getParameter("name");
-		
 		int m_no = Integer.valueOf(request.getParameter("m_no"));
 		String o_buyer_phone = request.getParameter("buyer_tel");
 		String o_buyer_name = request.getParameter("buyer_name");
 		String o_buyer_email = request.getParameter("buyer_email");
-		
 		String o_period = request.getParameter("period");
-		System.out.println(o_period);
+		
 
 		System.out.println("오더에 저장");
-//		System.out.println("패키지 키 : "+p_idx);
-//		System.out.println("고유번호 : " + o_imp_uid);
-//		System.out.println("주문번호 : " + o_merchant_uid);
-//		System.out.println("상품 : " + o_name);
-//		System.out.println("결제금액 : " + o_paid_amount);
-//		System.out.println("포인트"+o_point);
-//		System.out.println("구매자 키"+m_no);
-//		System.out.println("buyer_tel : " + o_buyer_phone);
-//		System.out.println("buyer_name : " + o_buyer_name);
-//		System.out.println("buyer_email : " + o_buyer_email);
-//		System.out.println("여행기간 : " + o_period);
 
 		OrderDTO orderDTO = new OrderDTO();
 
@@ -79,17 +66,13 @@ public class PaymentController extends HttpServlet {
 		orderDTO.setO_people(o_people);	
 		orderDTO.setO_paid_amount(o_paid_amount);
 		orderDTO.setO_point(o_point);
-
 		orderDTO.setP_idx(p_idx);
 		orderDTO.setO_name(o_name);
-		
 		orderDTO.setM_no(m_no);
 		orderDTO.setO_buyer_phone(o_buyer_phone);
 		orderDTO.setO_buyer_name(o_buyer_name);
 		orderDTO.setO_buyer_email(o_buyer_email);
-		
 		orderDTO.setO_period(o_period);
-	
 //		orderDTO.setO_merchant_uid(o_merchant_uid);
 
 		PointServiceImpl pointService = new PointServiceImpl();
