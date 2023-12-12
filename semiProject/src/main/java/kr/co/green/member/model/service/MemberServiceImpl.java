@@ -18,8 +18,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO memberLogin(String email, String pwd) {
-		return memberDAO.memberLogin(con, email, pwd);
+	public MemberDTO memberLogin(String email) {
+		return memberDAO.memberLogin(con, email);
 	}
 
 	@Override
@@ -36,21 +36,21 @@ public class MemberServiceImpl implements MemberService {
 	public boolean duplicateEmail(String email) {
 		return memberDAO.duplicateEmail(con, email);
 	}
-	
+
 	@Override
 	public void selectMember(MemberDTO memberDTO) {
-		memberDAO.selectMember(con,memberDTO);
+		memberDAO.selectMember(con, memberDTO);
 	}
-	
+
 	@Override
 	public MemberDTO retrieveMember(String email) {
-		return memberDAO.retrieveMember(con,email);
+		return memberDAO.retrieveMember(con, email);
 	}
 
 	@Override
 	public int memberUpdate(MemberDTO memberdto) {
-		
-		return memberDAO.memberUpdate(con,memberdto);
+
+		return memberDAO.memberUpdate(con, memberdto);
 	}
 
 }
