@@ -8,7 +8,7 @@
 <script src="/resources/js/member/member.js"></script>
 <meta charset="utf-8">
 <title>LOGIN</title>
-<link rel="stylesheet" href="/resources/css/board/yonnho.css">
+<link rel="stylesheet" href="/resources/css/yonnho.css">
 <!-- Meta -->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
