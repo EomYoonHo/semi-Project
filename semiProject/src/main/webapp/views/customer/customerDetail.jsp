@@ -75,6 +75,7 @@
 			</div>
 		</div>
 		<br> <br> <br>
+		
 		<form id="customer-form">
 			<div id="board-list">
 				<div class="container iipp3">
@@ -129,12 +130,11 @@
 							<table class="board-table iipp3">
 								<tr>
 									<th width=20% class="text-center warning">답변</th>
-									<td colspan="4" class="text-left www" valign="top" height="100">
-										<input class="www wwww dfjc" name="reply" type="text"
-										style="hegiht: 100%; width: 100%; white-space: pre-wrap; border: none; background-color: white; text-align: left;"
-										value="${customerDTO.cs_reply}">
-
-									</td>
+										<td colspan="4" class="text-left www" valign="top" height="100">
+											<input class="www wwww dfjc" name="reply" type="text"
+											style="hegiht: 100%; width: 100%; white-space: pre-wrap; border: none; background-color: white; text-align: left;"
+											value="${customerDTO.cs_reply}">
+										</td>
 								</tr>
 							</table>
 							<div class="pt-1 wwwii dfjc">
@@ -149,8 +149,8 @@
 						</c:otherwise>
 
 					</c:choose>
+					</div>
 				</div>
-			</div>
 
 			<div class="pt-1 wwwii">
 				<button class="custom-btn btn-6-1" onclick="customerDelete()">
