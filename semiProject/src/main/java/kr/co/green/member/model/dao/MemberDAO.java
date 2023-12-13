@@ -11,28 +11,26 @@ public class MemberDAO {
 	private PreparedStatement pstmt;
 
 	// 로그인
-	public MemberDTO memberLogin(Connection con, String email, String pwd) {
+	public MemberDTO memberLogin(Connection con, String email) {
 
 
 
 		String query = "	 SELECT M_NO,"
-				+ "					M_NAME,"
-				+ "					M_EMAIL,"
-				+ "					M_PWD,"
-				+ "					M_PHONE,"
-				+ "					M_NICKNAME,"
-				+ "					M_IN_DATE,"
-				+ "					M_TYPE" 
-				+ "		FROM MEMBER"
-				+ "		WHERE M_EMAIL=?" 
-				+ "		AND M_PWD=?";
+				+ "						M_NAME,"
+				+ "						M_EMAIL,"
+				+ "						M_PWD,"
+				+ "						M_PHONE,"
+				+ "						M_NICKNAME,"
+				+ "						M_IN_DATE,"
+				+ "						M_TYPE" 
+				+ "			FROM MEMBER"
+				+ "			WHERE M_EMAIL=?";
 
 		MemberDTO result = new MemberDTO();
 
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, email);
-			pstmt.setString(2, pwd);
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -53,7 +51,6 @@ public class MemberDAO {
 				result.setM_phone(resultPhone);
 				result.setM_in_date(resultIndate);
 				result.setM_type(resultMtype);
-
 			}
 
 		} catch (SQLException e) {
@@ -61,7 +58,6 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return result;
-
 	}
 
 	// 멤버추가
