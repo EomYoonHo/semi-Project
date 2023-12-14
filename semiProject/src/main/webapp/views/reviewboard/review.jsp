@@ -59,7 +59,9 @@
 				<div class="search-window">
 					<form action="/reviewBoardList.do" method="GET">
 						<div class="search-wrap">
-							<input type="hidden" name="cpage" value="1"> <input
+							<input type="hidden" name=mno value="${board.mno}">
+							<input type="hidden" name="cpage" value="1"> 
+							<input
 								id="search" type="search" name="searchText"
 								placeholder="검색어를 입력해주세요.">
 							<button type="submit" class="btn btn-dark">검색</button>
@@ -126,10 +128,39 @@
 			<button class="btn-s btn-s-dark">글작성</button>
 		</form>
 
+		
 		<div class="pagination wcct">
-			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a
-				href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">&raquo;</a>
+
+			<c:choose>
+				<c:when test="${pi.currentPage == 1}">
+					<a href="#">&laquo;</a>
+				</c:when>
+				<c:otherwise>
+					<a
+						href="/reviewBoardList.do?cpage=${pi.currentPage-1}&searchText=${searchText}">&laquo;</a>
+				</c:otherwise>
+			</c:choose>
+
+
+			<c:forEach var="page" begin="${pi.startPage}" end="${pi.endPage}">
+				<a href="/reviewBoardList.do?cpage=${page}&searchText=${searchText}">${page}</a>
+			</c:forEach>
+
+
+			<c:choose>
+				<c:when test="${pi.currentPage == pi.maxPage}">
+					<a href="#">&raquo;</a>
+				</c:when>
+				<c:otherwise>
+					<a
+						href="/boardList.do?cpage=${pi.currentPage+1}&searchText=${searchText}">&raquo;</a>
+				</c:otherwise>
+			</c:choose>
 		</div>
+		
+		
+		
+		
 	</section>
 	<div class="page-title">
 		<div class="container">

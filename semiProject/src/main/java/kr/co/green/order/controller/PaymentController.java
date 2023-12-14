@@ -2,13 +2,13 @@
 package kr.co.green.order.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.green.order.model.dto.OrderDTO;
 import kr.co.green.order.model.service.OrderServiceImpl;
@@ -36,6 +36,13 @@ public class PaymentController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 
+		HttpSession session = request.getSession();
+		
+		try {
+			
+		
+		int mno = (int)session.getAttribute("m_no");
+		
 //		boolean success = Boolean.parseBoolean(request.getParameter("success"));
 //		String currency = request.getParameter("currency");
 //		String status = request.getParameter("status");
@@ -116,7 +123,9 @@ public class PaymentController extends HttpServlet {
 
 			}
 		}
-
+	}catch(Exception e){
+		response.sendRedirect("/views/common/error.jsp");
 	}
 
+}
 }

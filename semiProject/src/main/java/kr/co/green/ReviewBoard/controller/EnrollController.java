@@ -44,46 +44,26 @@ public class EnrollController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
+		
+		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String star = request.getParameter("star");
 		
 		
 		HttpSession session = request.getSession();
+		
+		try {
+			
 		int mno = (int)session.getAttribute("m_no");
 		String nickName = (String)session.getAttribute("nickName");
-		
-//		// ���� ���ε��Ҷ�
-//		Collection<Part> parts = request.getParts();
-// 		String uploadDirectory = "C:\\Users\\pje97\\eclipse-workspace\\FirstProject\\src\\main\\webapp\\resource\\upload";
-// 		
-// 		File filePath = new File(uploadDirectory);
-// 		
-// 		if(!filePath.exists()) {
-// 			filePath.mkdirs();
-// 		}
-// 		
-// 		String fileName = null;
-// 		
-// 		for(Part part : parts) {
-// 			fileName = getFileName(part);
-// 		
-// 			if(fileName != null) {
-// 				part.write(filePath + File.separator + fileName);
-// 			}
-// 		
-// 		}
  		
- 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
- 		
+ 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();	
  		ReviewBoardDTO board = new ReviewBoardDTO();
-// 		board.setTitle(title);
-// 		board.setContent(content);
-// 		board.setStar(star);
-// 		board.setNickName(nickName);
-// 		board.setFileName(fileName);
-// 		board.setFilePath(uploadDirectory);
-	
+ 		
+ 		board.setMno(mno);
+ 		System.out.println(board.getMno());
+ 		
  		int result = boardService.boardEnroll(title, content, star, mno);
 	
  		if(result > 0) {
@@ -93,29 +73,10 @@ public class EnrollController extends HttpServlet {
 			view.forward(request, response);
  		}
  		
+		}catch(Exception e){
+			response.sendRedirect("/views/common/error.jsp");
+		}
+ 		
 	}
-// 		private String getFileName(Part part) {
-// 			String contentDisposition = part.getHeader("content-disposition");
-//
-// 			String[] tokens = contentDisposition.split(";");
-//
-// 			  // ��ū�� �ϳ��� �����鼭 ��ū�� �̸��� filename����
-// 		      // �����ϴ°� ã���� ���� �ݺ�
-// 		      for(String token : tokens) {
-// 		         // ��ū�� �̸��� filename���� �����ϴ��� Ȯ��
-// 		         if(token.trim().startsWith("filename")) {
-// 		            
-// 		            // ������ �̸��� "filename=" ������ ������ ������
-// 		            // "filename=" �� ���� ���ں��� ������ ����
-// 		            return token.substring(token.indexOf('=')+2, token.length()-1);
-// 		         }
-// 		      }
-// 		      return null;
-//
-// 		}
- 		
- 		
- 		
-
 
 }

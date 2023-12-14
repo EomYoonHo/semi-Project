@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.green.ReviewBoard.model.dto.ReviewBoardDTO;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
@@ -34,11 +35,20 @@ public class UpdateController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
+		
+		
+		
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String star = request.getParameter("star");
 		
+		HttpSession session = request.getSession();
+		try {
+			
+		
+			
+		int mno = (int) session.getAttribute("m_no");
 		
 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
 		ReviewBoardDTO reviewboard = new ReviewBoardDTO();
@@ -55,6 +65,10 @@ public class UpdateController extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);
 		}
+		}catch(Exception e) {
+			response.sendRedirect("/views/common/error.jsp");
+		}
+		
 	}
 
 }

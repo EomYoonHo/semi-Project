@@ -104,6 +104,8 @@
 						id="rate4"><label for="rate4">★</label> <input
 						type="radio" name="star" value="★" id="rate5"><label
 						for="rate5">★</label>
+						
+						<input type="hidden" value="${board.mno}">
 				</fieldset>
 				<br>
 				<br>

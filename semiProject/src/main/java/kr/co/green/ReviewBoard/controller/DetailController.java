@@ -28,9 +28,11 @@ public class DetailController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int idx = Integer.parseInt(request.getParameter("idx"));
+
 		
 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
 		int result = boardService.boardView(idx);
+		
 		
 		if(result > 0) {
 			

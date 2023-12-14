@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
 
@@ -30,6 +31,11 @@ public class DeleteController extends HttpServlet {
 	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
+		
+		try {
+			
+		int mno = (int)session.getAttribute("m_no");
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		
 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
@@ -41,6 +47,9 @@ public class DeleteController extends HttpServlet {
 		}else {
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);
+		}
+		}catch(Exception e){
+			response.sendRedirect("/views/common/error.jsp");
 		}
 				
 		

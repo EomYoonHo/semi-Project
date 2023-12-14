@@ -2,16 +2,16 @@ package kr.co.green.ReviewBoard.model.dto;
 
 public class ReviewBoardDTO {
 
-	private int idx;  // °Ô½Ã±Û ¹øÈ£
-	private String title;  //°Ô½Ã±Û Á¦¸ñ
-	private String content;  //°Ô½Ã±Û ³»¿ë
-	private String indate;  //°Ô½Ã±Û ÀÛ¼ºÀÏ
-	private String updateDate;  // °Ô½Ã±Û ¼öÁ¤ÀÏ
-	private String deleteDate;  // °Ô½Ã±Û »èÁ¦ÀÏ
-	private int views;  // °Ô½Ã±Û Á¶È¸¼ö
-	private String nickName;  // ÀÛ¼ºÀÚ ´Ð³×ÀÓ
-	private String star; // ¸®ºä º°
-	
+	private int idx;  // ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£
+	private String title;  //ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String content;  //ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String indate;  //ï¿½Ô½Ã±ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
+	private String updateDate;  // ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String deleteDate;  // ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private int views;  // ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È¸ï¿½ï¿½
+	private String nickName;  // ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½
+	private String star; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+	private int mno;
 	
 	
 	
@@ -69,6 +69,12 @@ public class ReviewBoardDTO {
 	}
 	public void setViews(int views) {
 		this.views = views;
+	}
+	public int getMno() {
+		return mno;
+	}
+	public void setMno(int mno) {
+		this.mno = mno;
 	}
 	
 	

@@ -44,6 +44,8 @@ public class PackageController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		//세션에서 M이메일 받아오기
+		try {
+		int mno = (int) session.getAttribute("m_no");	
 		String m_email = (String) session.getAttribute("m_email");
 		
 		//멤버 정보 받기
@@ -79,6 +81,9 @@ public class PackageController extends HttpServlet {
 				RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 				view.forward(request, response);
 			}
+		}
+		}catch(Exception e) {
+			response.sendRedirect("/views/common/error.jsp");
 		}
 	}
 
