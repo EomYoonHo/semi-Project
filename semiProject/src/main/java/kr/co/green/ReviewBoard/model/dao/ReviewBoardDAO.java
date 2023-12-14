@@ -21,7 +21,8 @@ public class ReviewBoardDAO {
 				+ "			   r_title, "
 				+ "			   m_nickname, "
 				+ "			   r_star, "
-				+ "			   r_views  "
+				+ "			   r_views,"
+				+ "				r.m_no  "
 				+ " 	FROM review r "
 				+ "		join member m on r.m_no = m.m_no "
 				+ " 	WHERE r_delete_date IS NULL "
@@ -45,13 +46,16 @@ public class ReviewBoardDAO {
 				String nickname = rs.getString("M_NICKNAME");
 				String star = rs.getString("R_STAR");
 				int views = rs.getInt("R_VIEWS");
+				int mno = rs.getInt("m_no");
 				
 				ReviewBoardDTO board = new ReviewBoardDTO();
 				board.setIdx(idx);
 				board.setTitle(title);
+				
 				board.setNickName(nickname);
 				board.setStar(star);
 				board.setViews(views);
+				board.setMno(mno);
 				
 				list.add(board);
 			}

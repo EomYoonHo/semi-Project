@@ -61,11 +61,11 @@ public class EnrollController extends HttpServlet {
  		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();	
  		ReviewBoardDTO board = new ReviewBoardDTO();
  		
- 		board.setMno(mno);
  		System.out.println(board.getMno());
  		
  		int result = boardService.boardEnroll(title, content, star, mno);
 	
+ 		board.setMno(mno);
  		if(result > 0) {
  			response.sendRedirect("/reviewBoardList.do?cpage=1");
  		}else {

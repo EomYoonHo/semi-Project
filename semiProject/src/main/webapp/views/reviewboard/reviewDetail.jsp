@@ -123,12 +123,20 @@
 				</div>
 			</div>
 			<div class="pt-1 wwwii">
+				<c:choose>
+					<c:when test="${sessionScope.m_no == reviewboard.mno || sessionScope.m_type==0}">
+					
 				<button class="custom-btn btn-6" onclick="reviewForm()">수정페이지</button>
 				<button class="custom-btn btn-6-1" onclick="reviewDelete()">삭제</button>
 				
 				<button class="custom-btn btn-6" type="reset"
 					onclick="window.location.href='/reviewBoardList.do?cpage=1'">취소
 				</button>
+					</c:when>
+					<c:otherwise>
+						<p>작성자나 관리자만 수정가능합니다.</p>
+					</c:otherwise>
+				</c:choose>
 			</div>
 				
 				
