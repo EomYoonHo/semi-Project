@@ -39,7 +39,7 @@ public class AirLineResultController extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		try {
+		
 			
 		int m_no = (int) session.getAttribute("m_no");
 		String m_email = (String) session.getAttribute("m_email");
@@ -68,11 +68,9 @@ public class AirLineResultController extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);
 		}
-		}catch(Exception e){
-			response.sendRedirect("/views/common/error.jsp");
-		}
-
 	}
+
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

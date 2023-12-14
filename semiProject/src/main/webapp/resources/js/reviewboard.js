@@ -1,5 +1,5 @@
-function detailPage(idx){
-     const pageUrl = '/detail.do?idx=' + idx;
+function detailPage(idx, mno){
+     const pageUrl = '/detail.do?idx=' + idx + "&mno=" + mno;
      window.location.href = pageUrl;
      }
      
