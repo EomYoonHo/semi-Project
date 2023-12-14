@@ -49,7 +49,7 @@ public class DeleteController extends HttpServlet {
 			view.forward(request, response);
 		}
 		}catch(Exception e){
-			response.sendRedirect("/views/common/error.jsp");
+			response.sendRedirect("/views/common/loginError.jsp");
 		}
 				
 		

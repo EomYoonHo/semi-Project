@@ -64,7 +64,7 @@ public class BoardUpdateController extends HttpServlet {
 			response.sendRedirect("/boardList.do?cpage=1");
 		}
 		}catch (Exception e) {
-			response.sendRedirect("/views/common/error.jsp");
+			response.sendRedirect("/views/common/loginError.jsp");
 		}
 		
 		//RequestDispatcher : 호출할 페이지가 jsp일때
