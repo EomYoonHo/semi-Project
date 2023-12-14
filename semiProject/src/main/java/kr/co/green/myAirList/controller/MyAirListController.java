@@ -1,4 +1,4 @@
-package kr.co.green.myList.controller;
+package kr.co.green.myAirList.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,17 +13,16 @@ import javax.servlet.http.HttpSession;
 
 import kr.co.green.common.PageInfo;
 import kr.co.green.common.Pagination;
-import kr.co.green.myList.model.dto.MyListDTO;
-import kr.co.green.myList.model.service.MyListServiceImpl;
-import kr.co.green.order.model.dto.OrderDTO;
+import kr.co.green.myAirList.model.dto.MyAirListDTO;
+import kr.co.green.myAirList.model.service.MyAirListServiceImpl;
 
 
-@WebServlet("/MyList.do")
-public class MyListController extends HttpServlet {
+@WebServlet("/MyAirList.do")
+public class MyAirListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public MyListController() {
+    public MyAirListController() {
         super();
     }
 
@@ -32,11 +31,11 @@ public class MyListController extends HttpServlet {
 		// cpage = 현재 페이지
 		int cpage = Integer.parseInt(request.getParameter("cpage"));
 //		System.out.println(cpage);
-		MyListServiceImpl myListService = new MyListServiceImpl();
+		MyAirListServiceImpl myAirListService = new MyAirListServiceImpl();
 		// 게시글 검색
 		String searchText = request.getParameter("searchText");
 		// 전체 게시글 수
-		int listCount = myListService.myListCount(searchText);
+		int listCount = myAirListService.myAirListCount(searchText);
 //		System.out.println(listCount);
 		// 보여질 페이지 수
 		int pageLimit = 10;
@@ -55,7 +54,7 @@ public class MyListController extends HttpServlet {
 		String m_type = (String) session.getAttribute("m_type");
 		// 목록 불러오기
 		
-		ArrayList<MyListDTO> list = myListService.myList(pi, searchText, m_no, m_type);
+		ArrayList<MyAirListDTO> list = myAirListService.myAirList(pi, searchText, m_no, m_type);
 		
 		int row = listCount - (cpage - 1) * boardLimit;
 		request.setAttribute("row", row);
@@ -65,15 +64,13 @@ public class MyListController extends HttpServlet {
 		System.out.println("나의 넘버"+m_no);
 		
 		
-		RequestDispatcher view = request.getRequestDispatcher("/views/myPage/myList.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/views/myPage/airlineList.jsp");
 		view.forward(request, response);
-		
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
+
 	}
 
 }

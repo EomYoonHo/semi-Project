@@ -62,57 +62,72 @@
               <h3 class="pgc" style="font-size: 50px;"><b>My Info</b></h3>
             </div>
         <br>
-  <form id="infodetail">          
-  <div id="board-list">
-    <div class="container">
-        <table class="board-table iipp5">
-        	<div>
-              <tr class="iipp6">
-              	<input type = "hidden" name = "m_no" value= "${sessionScope.m_no}">     	
-              	<input type = "hidden" name="p_balance" class="bs ww www wwww" type="text" value="${points.p_balance}" disabled>
-                
-                <th width=40% class="text-center warning">이름</th>
-                <td width=20% class="text-center www"><input class="www bs ct" name="name" type="text" value="${sessionScope.m_name}" disabled></td>
-                <th width=40% class="text-center warning">닉네임</th>
-                <td width=20% class="text-center www"><input class="www bs ct" name="nickName" type="text" value="${sessionScope.m_nickname}" disabled></td>
-              </tr>
-        	</div>
+		<form id="infodetail">
+			<div id="board-list">
+				<div class="container">
+					<table class="board-table iipp5">
+						<tr class="iipp6">
+							<input type="hidden" name="m_no" value="${sessionScope.m_no}" />
+							<input type="hidden" name="p_balance" value="${points.p_balance}">
+							<input type="hidden" name="name" value="${sessionScope.m_name}">
+							<input type="hidden" name="nickName" value="${sessionScope.m_nickname}">
+							<input type="hidden" name="phone" value="${sessionScope.m_phone}">
+							<input type="hidden" name="email" value="${sessionScope.m_email}">
+
+							<th width=40% class="text-center warning">이름</th>
+							<td width=20% class="text-center www"><input
+								class="www bs ct" name="name" type="text"
+								value="${sessionScope.m_name}" disabled></td>
+							<th width=40% class="text-center warning">닉네임</th>
+							<td width=20% class="text-center www"><input
+								class="www bs ct" name="nickName" type="text"
+								value="${sessionScope.m_nickname}" disabled></td>
+						</tr>
 
 
-               <tr>
-                <th width=40% class="text-center warning ff">전화번호</th>
-                <td colspan="3" width=60% class="www wwww"><input name="phone" class="bs ww www wwww" type="text" value="${sessionScope.m_phone}" disabled></td>
-                
-               </tr>
-               <tr>
-                <th width=40% class="text-center warning ff">이메일</th>
-                <td colspan="3" width=60% class="www wwww"><input name="email" class="bs ww www wwww" type="text" value="${sessionScope.m_email}" disabled></td>
-                
-               </tr>
-               <tr>
-                <th width=40% class="text-center warning ff">비밀번호</th>
-                <td colspan="3" width=60% class="www wwww"><input name="pwd" class="bs ww www wwww" type="text" value="******************" disabled></td>
-               </tr>
+						<tr>
+							<th width=40% class="text-center warning ff">전화번호</th>
+							<td colspan="3" width=60% class="www wwww"><input
+								name="phone" class="bs ww www wwww" type="text"
+								value="${sessionScope.m_phone}" disabled></td>
 
-                <tr>
-                <th width=40% class="text-center warning ff">마일리지</th>
-                <td colspan="3" width=60% class="www wwww ctct"><input name="p_balance" class="bs ww www wwww" type="text" value="${points.p_balance}" disabled></td>
-               </tr>
-               
-            </table>
-    <br>
-    <!--  
+						</tr>
+						<tr>
+							<th width=40% class="text-center warning ff">이메일</th>
+							<td colspan="3" width=60% class="www wwww"><input
+								name="email" class="bs ww www wwww" type="text"
+								value="${sessionScope.m_email}" disabled></td>
+
+						</tr>
+						<tr>
+							<th width=40% class="text-center warning ff">비밀번호</th>
+							<td colspan="3" width=60% class="www wwww"><input name="pwd"
+								class="bs ww www wwww" type="text" value="******************"
+								disabled></td>
+						</tr>
+
+						<tr>
+							<th width=40% class="text-center warning ff">마일리지</th>
+							<td colspan="3" width=60% class="www wwww ctct"><input
+								name="p_balance" class="bs ww www wwww" type="text"
+								value="${points.p_balance}" disabled></td>
+						</tr>
+
+					</table>
+					<br>
+					<!--  
     //컨트롤러
     -->
-    <div class="pt-1 wwwii dfjc">    
-    <button class="custom-btn btn-6"  onclick="infoform()">수정페이지</button>
-    <button class="custom-btn btn-6-1" onclick="memberDelete()">회원탈퇴</button>
-    <button class="custom-btn btn-6" formaction="/views/myPage/myPage.jsp">취소</button>
-    </div>
-    </div>
-    </div> 
-</form>    
-</section>
+					<div class="pt-1 wwwii dfjc">
+						<button class="custom-btn btn-6" onclick="infoform()">수정페이지</button>
+						<button class="custom-btn btn-6-1" onclick="memberDelete()">회원탈퇴</button>
+						<button class="custom-btn btn-6"
+							formaction="/views/myPage/myPage.jsp">취소</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
 <br><br>
 <div class="page-title">
   <div class="container">

@@ -37,7 +37,12 @@ public class ChooseAirLineController extends HttpServlet {
 		MemberServiceImpl memberService= new MemberServiceImpl();
 		MemberDTO memberInfo = new MemberDTO();
 		
+		
 		HttpSession session =request.getSession();
+		try {
+			
+		int mno = (int) session.getAttribute("m_no");
+		
 		String m_email = (String)session.getAttribute("m_email");
 		memberInfo.setM_email(m_email);
 		memberService.selectMember(memberInfo);
@@ -72,6 +77,9 @@ public class ChooseAirLineController extends HttpServlet {
 		
 		RequestDispatcher view = request.getRequestDispatcher("/views/airLine/airLineTicket.jsp");
 		view.forward(request, response);
+		}catch(Exception e) {
+			response.sendRedirect("/views/common/loginError.jsp");
+		}
 
 	}
 

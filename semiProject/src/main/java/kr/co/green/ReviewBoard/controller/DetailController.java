@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.green.ReviewBoard.model.dto.ReviewBoardDTO;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
@@ -27,19 +28,25 @@ public class DetailController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		int idx = Integer.parseInt(request.getParameter("idx"));
+		int mno = Integer.parseInt(request.getParameter("mno"));
 		
 		ReviewBoardServiceImpl boardService = new ReviewBoardServiceImpl();
 		int result = boardService.boardView(idx);
 		
+		
 		if(result > 0) {
+			HttpSession session = request.getSession();
+				
+			
 			
 			ReviewBoardDTO reviewboard = new ReviewBoardDTO();
 			reviewboard.setIdx(idx);
-			
+			reviewboard.setMno(mno);
 			boardService.boardSelect(reviewboard);
-			
-			
+			System.out.println(reviewboard.getMno());
+			System.out.println(session.getAttribute("m_no"));
 			if(!Objects.isNull(reviewboard.getIdx())) {
 				request.setAttribute("reviewboard", reviewboard);
 				RequestDispatcher view = request.getRequestDispatcher("/views/reviewboard/reviewDetail.jsp");

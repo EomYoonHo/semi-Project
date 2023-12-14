@@ -116,7 +116,7 @@
 			<h3 style="font-size: 15px;">Flight Reservation</h3>
 			<div class="pt-1 wwwii dfjc">
 				<button type="button" class="custom-btn btn-6"
-					onclick="window.location.href = '/MyList.do?cpage=1'">
+					onclick="window.location.href = '/MyAirList.do?cpage=1'">
 					<span>항공예약목록</span></button>
 			</div>
 		</div>

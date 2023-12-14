@@ -36,7 +36,11 @@ public class AirLineResultController extends HttpServlet {
 		MemberServiceImpl memberService = new MemberServiceImpl();
 		MemberDTO memberInfo = new MemberDTO();
 
+		
 		HttpSession session = request.getSession();
+		
+		
+			
 		int m_no = (int) session.getAttribute("m_no");
 		String m_email = (String) session.getAttribute("m_email");
 		memberInfo.setM_email(m_email);
@@ -64,8 +68,9 @@ public class AirLineResultController extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);
 		}
-
 	}
+
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

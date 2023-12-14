@@ -34,67 +34,67 @@ public class RegisterController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 
 		// 값받기
-//		String email = request.getParameter("email");
-//		String pwd = request.getParameter("pwd");
-//		String pwdCheck = request.getParameter("pwdCheck");
-//		String name = request.getParameter("name");
-//		String phone = request.getParameter("phone");
-//		String nickname = request.getParameter("nickname");
+//      String email = request.getParameter("email");
+//      String pwd = request.getParameter("pwd");
+//      String pwdCheck = request.getParameter("pwdCheck");
+//      String name = request.getParameter("name");
+//      String phone = request.getParameter("phone");
+//      String nickname = request.getParameter("nickname");
 //
-////	String salt = BCrypt.gensalt(12);
-////	
-////	String hashedPassword = BCrypt.hashpw(pwd,salt);
+////   String salt = BCrypt.gensalt(12);
+////   
+////   String hashedPassword = BCrypt.hashpw(pwd,salt);
 //
-//		//
-//		MemberDTO memberDTO = new MemberDTO();
-//		memberDTO.setM_email(email);
-//		memberDTO.setM_pwd(pwd);
-//		memberDTO.setM_name(name);
-//		memberDTO.setM_phone(phone);
-//		memberDTO.setM_nickname(nickname);
+//      //
+//      MemberDTO memberDTO = new MemberDTO();
+//      memberDTO.setM_email(email);
+//      memberDTO.setM_pwd(pwd);
+//      memberDTO.setM_name(name);
+//      memberDTO.setM_phone(phone);
+//      memberDTO.setM_nickname(nickname);
 //
-//		PointServiceImpl pointService = new PointServiceImpl();
+//      PointServiceImpl pointService = new PointServiceImpl();
 //
-//		MemberServiceImpl memberService = new MemberServiceImpl();
+//      MemberServiceImpl memberService = new MemberServiceImpl();
 //
-//		int result = memberService.memberEnroll(memberDTO);
+//      int result = memberService.memberEnroll(memberDTO);
 //
-//		MemberDTO pointmaker = new MemberDTO();
-//		pointmaker.setM_email(email);
-//		// 회원가입
-//		if (result == 0) {
-//			validationAlert(response, "회원가입에 실패했습니다.");
-//		} else {
-//			memberService.selectMember(pointmaker);
-//			int m_no = pointmaker.getM_no();
-//			int presult = pointService.pointEnroll(m_no);
-//			if (presult == 0) {
-//				System.out.println("포인트 실패");
-//			} else {
-//				System.out.println("포인트 만듬");
-//			}
-//			RequestDispatcher view = request.getRequestDispatcher("/views/member/login.jsp");
-//			view.forward(request, response);
-//			System.out.println("회원가입 성공");
-//		}
+//      MemberDTO pointmaker = new MemberDTO();
+//      pointmaker.setM_email(email);
+//      // 회원가입
+//      if (result == 0) {
+//         validationAlert(response, "회원가입에 실패했습니다.");
+//      } else {
+//         memberService.selectMember(pointmaker);
+//         int m_no = pointmaker.getM_no();
+//         int presult = pointService.pointEnroll(m_no);
+//         if (presult == 0) {
+//            System.out.println("포인트 실패");
+//         } else {
+//            System.out.println("포인트 만듬");
+//         }
+//         RequestDispatcher view = request.getRequestDispatcher("/views/member/login.jsp");
+//         view.forward(request, response);
+//         System.out.println("회원가입 성공");
+//      }
 //
-////		//유효성 검사
-////		//이름
-////		String namePattern ="^[가-힣]+$";
-////		Pattern pattern = Pattern.compile(namePattern);
-////		Matcher nameMatcher=pattern.matcher(name);
-////		//패스워드
-////		String pwdpattern ="^(?=.*[a-zA-Z])(?=.*[@$!%*?&\\\\#])[A-Za-z\\\\d@$!%*?&\\\\#]{6,20}$";
-////		Pattern passwordPattern = Pattern.compile(pwdpattern);
-////		Matcher pwdMatcher = pattern.matcher(pwd);
+////      //유효성 검사
+////      //이름
+////      String namePattern ="^[가-힣]+$";
+////      Pattern pattern = Pattern.compile(namePattern);
+////      Matcher nameMatcher=pattern.matcher(name);
+////      //패스워드
+////      String pwdpattern ="^(?=.*[a-zA-Z])(?=.*[@$!%*?&\\\\#])[A-Za-z\\\\d@$!%*?&\\\\#]{6,20}$";
+////      Pattern passwordPattern = Pattern.compile(pwdpattern);
+////      Matcher pwdMatcher = pattern.matcher(pwd);
 //
-////		if(nameMatcher.matches()&&pwdMatcher.matches()) {
+////      if(nameMatcher.matches()&&pwdMatcher.matches()) {
 //
-////		}else if(!nameMatcher.matches()) {
-////			validationAlert(response,"외국인은 회원으로 받지 않습니다");
-////		}else if(!pwdMatcher.matches()) {
-////			validationAlert(response,"비밀번호가 정책에 맞지 않습니다");
-////		}
+////      }else if(!nameMatcher.matches()) {
+////         validationAlert(response,"외국인은 회원으로 받지 않습니다");
+////      }else if(!pwdMatcher.matches()) {
+////         validationAlert(response,"비밀번호가 정책에 맞지 않습니다");
+////      }
 
 	}
 
@@ -142,13 +142,25 @@ public class RegisterController extends HttpServlet {
 			result = memberService.memberEnroll(memberDTO);
 		} else if (!nameMatcher.matches()) {
 			System.out.println("이름이 부적합합니다");
-//			validationAlert(response, "외국인은 회원으로 받지 않습니다");
+			PrintWriter writer = response.getWriter();
+			writer.println(
+					"<script>alert('이름이 부적합 합니다'); location.href='" + "/views/member/register.jsp" + "';</script>");
+			writer.close();
+
 		} else if (!pwdMatcher.matches()) {
 			System.out.println("비밀번호가 부적합합니다");
-//			validationAlert(response, "비밀번호가 정책에 맞지 않습니다");
+			PrintWriter writer = response.getWriter();
+			writer.println(
+					"<script>alert('비밀번호가 부적합 합니다'); location.href='" + "/views/member/register.jsp" + "';</script>");
+			writer.close();
+
 		} else if (!pwd.equals(pwdCheck)) {
 			System.out.println("비밀번호가 일치하지 않습니다");
-//			validationAlert(response, "비밀번호가 일치하지 않습니다.");
+			PrintWriter writer = response.getWriter();
+			writer.println(
+					"<script>alert('비밀번호가 부적합 합니다'); location.href='" + "/views/member/register.jsp" + "';</script>");
+			writer.close();
+
 		} else {
 			System.out.println("문제가 있습니다");
 		}
@@ -159,7 +171,10 @@ public class RegisterController extends HttpServlet {
 		int m_no = pointmaker.getM_no();
 
 		if (result == 0) {// 회원가입성공여부
-			validationAlert(response, "회원가입에 실패했습니다.");
+			PrintWriter writer = response.getWriter();
+			writer.println(
+					"<script>alert('회원가입에 실패했습니다.'); location.href='" + "/views/member/register.jsp" + "';</script>");
+			writer.close();
 		} else {
 			int presult = pointService.pointEnroll(m_no);
 			if (presult == 0) {// 포인트성공여부
@@ -173,12 +188,4 @@ public class RegisterController extends HttpServlet {
 		}
 	}
 
-	private void validationAlert(HttpServletResponse response, String msg) throws IOException {
-		PrintWriter out = response.getWriter();
-		out.println("<script>" + "	location.href='/views/member/register.jsp';" + "	alter('" + msg + "'); "
-				+ "	</script>");
-		out.flush();
-		out.close();
-
-	}
 }

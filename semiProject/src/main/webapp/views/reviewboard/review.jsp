@@ -25,7 +25,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
 	rel="stylesheet">
-<script src="/resources/js/reviewboard.js"></script>
 
 </head>
 
@@ -52,6 +51,7 @@
 				<h3 class="pgc">Tell us about your experience.</h3>
 			</div>
 		</div>
+		<input type="hidden" name="mno" value="${reviewBoard.mno}">
 		<br>
 		<br>
 		<!-- board seach area -->
@@ -60,7 +60,9 @@
 				<div class="search-window">
 					<form action="/reviewBoardList.do" method="GET">
 						<div class="search-wrap">
-							<input type="hidden" name="cpage" value="1"> <input
+							
+							<input type="hidden" name="cpage" value="1"> 
+							<input
 								id="search" type="search" name="searchText"
 								placeholder="검색어를 입력해주세요.">
 							<button type="submit" class="btn btn-dark">검색</button>
@@ -86,13 +88,12 @@
 					<tbody>
 						<tr>
 							<td>●</td>
-							<th><a href="#!">[공지사항] 개인정보 처리방침 변경안내</a>
+							<th><a href="/views/common/privacy.jsp">[공지사항] 개인정보 처리방침 변경안내</a>
 								<p>테스트</p></th>
 							<td>운영자</td>
 							<td>★★★★★</td>
 							<td>30</td>
 						</tr>
-
 						<c:choose>
 							<c:when test="${empty list}">
 								<tr>
@@ -102,14 +103,12 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
-									<tr>
-									<tr onclick="detailPage(${item.idx})">
+									<tr onclick="detailPage(${item.idx}, ${item.mno})">
 										<td>${row}</td>
 										<th>${item.title}</th>
 										<td>${item.nickName}</td>
 										<td>${item.star}</td>
 										<td>${item.views}</td>
-									</tr>
 									</tr>
 									<c:set var="row" value="${row-1}" />
 								</c:forEach>
@@ -127,10 +126,39 @@
 			<button class="btn-s btn-s-dark">글작성</button>
 		</form>
 
+		
 		<div class="pagination wcct">
-			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a
-				href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">&raquo;</a>
+
+			<c:choose>
+				<c:when test="${pi.currentPage == 1}">
+					<a href="#">&laquo;</a>
+				</c:when>
+				<c:otherwise>
+					<a
+						href="/reviewBoardList.do?cpage=${pi.currentPage-1}&searchText=${searchText}">&laquo;</a>
+				</c:otherwise>
+			</c:choose>
+
+
+			<c:forEach var="page" begin="${pi.startPage}" end="${pi.endPage}">
+				<a href="/reviewBoardList.do?cpage=${page}&searchText=${searchText}">${page}</a>
+			</c:forEach>
+
+
+			<c:choose>
+				<c:when test="${pi.currentPage == pi.maxPage}">
+					<a href="#">&raquo;</a>
+				</c:when>
+				<c:otherwise>
+					<a
+						href="/boardList.do?cpage=${pi.currentPage+1}&searchText=${searchText}">&raquo;</a>
+				</c:otherwise>
+			</c:choose>
 		</div>
+		
+		
+		
+		
 	</section>
 	<div class="page-title">
 		<div class="container">
@@ -146,4 +174,5 @@
 
 
 </body>
+<script src="/resources/js/reviewboard.js"></script>
 </html>

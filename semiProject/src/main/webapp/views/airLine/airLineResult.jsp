@@ -312,7 +312,7 @@
             <br> <br> <br> <br>
             <form action="">
                 <div class="pt-1 wwwii dfjc">
-                    <button class="custom-btn btn-6" formaction="airLine.html">
+                    <button class="custom-btn btn-6" formaction="/views/airLine/airLine.jsp">
                         <span>돌아가기</span>
                     </button>
                 </div>
@@ -335,7 +335,7 @@
 
         <!-- [S]glamping-N3 -->
         <footer class="glamping-N3" data-bid="hNLPJ5jFl2">
-<%@ include file="/views/common/header.jsp" %>
+<%@ include file="/views/common/footer.jsp" %>
         </footer>
         <!-- [E]glamping-N3 -->
     </body>

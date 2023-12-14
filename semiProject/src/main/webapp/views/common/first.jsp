@@ -84,7 +84,7 @@
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4LoIjkvF7-JSdIatqJUxFwEqohzJqYU4&callback=myMap"></script>
 
-                    <br><br><br>
+                    <br>
                     <a href="/views/common/map.jsp" class="btnset btnset-round btnset-line btnset-black dfjc">다른 여행지 보러가기</a>
                     <br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br>
