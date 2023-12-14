@@ -42,7 +42,8 @@ public class BoardUpdateController extends HttpServlet {
 		String b_title = request.getParameter("b_title");
 		String b_content = request.getParameter("b_content");
 		
-		
+		try {
+		int m_no = (int) session.getAttribute("m_no");
 		//2. 서비스 호출(DTO or 매개변수)
 		BoardServiceImpl boardService = new BoardServiceImpl();
 		BoardDTO boardDTO = new BoardDTO();//이거 안해도된다 DTO 대신 매개변수 썼기때문에.
@@ -62,10 +63,15 @@ public class BoardUpdateController extends HttpServlet {
 			
 			response.sendRedirect("/boardList.do?cpage=1");
 		}
-		
+		}catch (Exception e) {
+			response.sendRedirect("/views/common/error.jsp");
+		}
 		
 		//RequestDispatcher : 호출할 페이지가 jsp일때
 		//response.sendRedirect : 호출할 페이지가 COntroller일때		
 
+		
+		
+		
 	}
 }

@@ -23,7 +23,7 @@
   
    <!-- Custom stlylesheet -->
    <!-- Google font -->
-  <link type="text/css" rel="stylesheet" href="/resources/css/board/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="/resources/css/bootstrap.min.css" />
    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
 
    <!-- Bootstrap -->

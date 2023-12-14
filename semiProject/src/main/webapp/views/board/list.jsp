@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="en-us">
 
 <head>
 <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/resources/css/style.css">
 <link rel="stylesheet" href="/resources/css/yh.css">
 <link rel="stylesheet" href="/resources/css/table.css">
-<link
+ <link
 	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
 	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
 	rel="stylesheet">
-<script src="/resources/js/board.js"></script>
+
 </head>
 
 <body>
@@ -80,24 +80,35 @@
 						</tr>
 					</thead>
 					<tbody>
+						<tr>
+							<td>●</td>
+							<th><a href="/views/common/privacy.jsp">[공지사항] 개인정보 처리방침 변경안내</a>
+								<p>테스트</p></th>
+							<td>운영자</td>
+							<td>30</td>
+						</tr>
 						<c:choose>
 							<c:when test="${empty list}">
 								<tr>
-									<td colspan="4" class="text-center">등록된 글이 없어요!!!!!!!!!</td>
+									<td colspan="4" class="text-center">등록된 글이 없습니다 게사글을
+										등록해주세요.</td>
 								</tr>
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
+								<tr>
 									<tr>
 										<td>${row}</td>
-										<td onclick="detailPage(${item.b_idx}, ${row} )">${item.b_title}</td>
+										<th onclick="detailPage(${item.b_idx}, ${row} )">${item.b_title}</th>
 										<td>${item.m_nickname}</td>
 										<td>${item.b_views}</td>
 									</tr>
+								</tr>
 									<c:set var="row" value="${row-1}" />
 								</c:forEach>
 							</c:otherwise>
 						</c:choose>
+						<tr scope="row">
 					</tbody>
 				</table>
 			</div>
@@ -152,4 +163,5 @@
 
 
 </body>
+<script src="/resources/js/board.js"></script>
 </html>
