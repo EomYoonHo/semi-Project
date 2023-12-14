@@ -130,7 +130,7 @@
          <div class="productdetail dfjc">
             <span>인원수</span> <input class="minsu2 pts" type="number"
                onclick="multiplication()" onkeyup="multiplication()" id="mulkey"
-               style="background-color: white; width: 5%;">
+               style="background-color: white; width: 5%;" min="1">
          </div>
          <div>
             <div class="productdetail dfjc">
