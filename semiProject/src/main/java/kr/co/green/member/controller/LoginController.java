@@ -64,7 +64,8 @@ public class LoginController extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
-
+		
+		
 		MemberServiceImpl memberService = new MemberServiceImpl();
 
 		MemberDTO member = memberService.memberLogin(email);
@@ -94,6 +95,8 @@ public class LoginController extends HttpServlet {
 
 		} else {
 			System.out.println("암호화된 비밀번호와 일치하지 않음 ");
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
+			view.forward(request, response);
 		}
 
 	}
