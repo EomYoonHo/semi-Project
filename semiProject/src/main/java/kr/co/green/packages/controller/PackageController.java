@@ -83,7 +83,7 @@ public class PackageController extends HttpServlet {
 			}
 		}
 		}catch(Exception e) {
-			response.sendRedirect("/views/common/error.jsp");
+			response.sendRedirect("/views/common/loginError.jsp");
 		}
 	}
 
