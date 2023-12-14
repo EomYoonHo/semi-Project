@@ -94,22 +94,16 @@
 					<table class="board-table iipp5">
 						<div>
 							<tr class="iipp6">
-								<th width=40% class="text-center warning">회원등급</th>
+							    <input type = "hidden" name = "m_no" value= "${sessionScope.m_no}">     	
+              					<input type = "hidden" name="p_balance" class="bs ww www wwww" type="text" value="${points.p_balance}" disabled>
+								<th width=40% class="text-center warning">* 이름 *</th>
 								<td width=20% class="text-center www"><input
-									class="www bs " type="text" value="#" disabled></td>
-								<th width=40% class="text-center warning">마일리지</th>
-								<td width=20% class="text-center www"><input class="www bs"
-									type="text" value="#" disabled></td>
+									name="name" class="www bs " type="text" value="${sessionScope.m_name}"></td>
+								<th width=40% class="text-center warning">* 닉네임 *</th>
+								<td width=20% class="text-center www"><input 
+									name="nickname" class="www bs" type="text" value="${sessionScope.m_nickname}"></td>
 							</tr>
 						</div>
-
-
-						<tr>
-							<th width=40% class="text-center warning ff">* 이름 *</th>
-							<td colspan="3" width=60% class="www wwww"><input
-								name="name" class="bs ww www wwww" type="text"
-								value="${sessionScope.m_name}"></td>
-						</tr>
 
 						<tr>
 							<th width=40% class="text-center warning ff">* 전화번호 *</th>
@@ -132,10 +126,10 @@
 								disabled></td>
 						</tr>
 						<tr>
-							<th width=40% class="text-center warning ff">* 닉네임 *</th>
+							<th width=40% class="text-center warning ff">마일리지</th>
 							<td colspan="3" width=60% class="www wwww"><input
-								name="nickName" class="bs ww www wwww" type="text"
-								value="${sessionScope.m_nickname}"></td>
+								name="p_balance" class="bs ww www wwww" type="text"
+								value="${sessionScope.p_balance}" disabled></td>
 						</tr>
 
 					</table>

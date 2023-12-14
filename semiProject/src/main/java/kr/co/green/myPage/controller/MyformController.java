@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kr.co.green.member.model.dto.MemberDTO;
-
 
 @WebServlet("/MyformController")
 public class MyformController extends HttpServlet {
@@ -32,19 +30,20 @@ public class MyformController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session =request.getSession();
 		
-		
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		String nickName =request.getParameter("nickName");
+		String p_balance = request.getParameter("p_balance");
 		
 		session.setAttribute("name", name);
 		session.setAttribute("phone", phone);
 		session.setAttribute("email", email);
 		session.setAttribute("pwd", pwd);
 		session.setAttribute("nickName", nickName);
-		
+		session.setAttribute("p_balance", p_balance);
+		System.out.println(p_balance);
 //		MemberDTO member = new MemberDTO();
 //		member.setM_name(name);
 //		member.setM_phone(phone);
