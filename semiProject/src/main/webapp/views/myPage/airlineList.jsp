@@ -94,7 +94,6 @@
 								<th width=20% scope="col" class="th-title">가격</th>
 								<th width=20% scope="col" class="th-title">가는날</th>
 								<th width=20% scope="col" class="th-title">오는날</th>
-								<th width=20% scope="col" class="th-title">예약자</th>
 								<th width=20% scope="col" class="th-title">구매날짜</th>
 							</tr>
 						</thead>
@@ -112,11 +111,11 @@
 								<c:forEach var="item" items="${list}">
 						
 									<tr>
-										<td width=30%><a href="">${item.o_name}</a></td>
-										<td width=20%>${item.o_paid_amount}</td>
-										<td width=20%>${item.o_period}</td>
-										<td width=20%>${item.o_buyer_name}</td>
-										<td width=20%>${item.o_paid_at}</td>
+										<td width=30%>${item.at_airline}</td>
+										<td width=20%>${item.at_all_price}</td>
+										<td width=20%>${item.at_godate}</td>
+										<td width=20%>${item.at_backdate}</td>
+										<td width=20%>${item.at_buydate}</td>
 									</tr>
 															
 									<c:set var="row" value="${row-1}" />
