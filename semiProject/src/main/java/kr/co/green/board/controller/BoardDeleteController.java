@@ -47,7 +47,7 @@ public class BoardDeleteController extends HttpServlet {
 				response.sendRedirect("/boardList.do?cpage=1");
 			}
 		} catch (Exception e) {
-			response.sendRedirect("/views/common/error.jsp");
+			response.sendRedirect("/views/common/loginError.jsp");
 		}
 
 	}
