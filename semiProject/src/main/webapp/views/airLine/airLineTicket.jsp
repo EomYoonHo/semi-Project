@@ -92,7 +92,7 @@
 													<span class="tooltip text">경유 1회</span>
 												</p> <br>
 												<p class="load dfjc">
-													<img class="isize" src="/resources/img/티켓plane.png" alt="">
+													<img class="isize" src="/resources/image/티켓plane.png" alt="">
 												</p>
 											</span> <br> <span class="time dfjc"><b>${airlineDTO.at_backdate}</b>&nbsp;&nbsp;
 												<span class="city"><b>${airlineDTO.at_destination}
@@ -121,7 +121,7 @@
 							</div>
 							<!-- 항공사 사진 -->
 							<div class="cardset-body dfjc" style="width: 30%; height: 150px;">
-								<img src="/resources/img/로고KoreanAir.png" alt="">
+								<img src="/resources/image/로고대한항공.png" alt="">
 							</div>
 						</div>
 						<!-- 진에어항공 -->
@@ -177,7 +177,7 @@
 							</div>
 							<!-- 항공사 사진 -->
 							<div class="cardset-body dfjc" style="width: 30%; height: 150px;">
-								<img src="/resources/img/로고JinAir.png" alt="">
+								<img src="/resources/image/로고진에어.png" alt="">
 							</div>
 						</div>
 						<!-- 아시아나항공 -->
@@ -234,7 +234,7 @@
 							</div>
 							<!-- 항공사 사진 -->
 							<div class="cardset-body dfjc" style="width: 30%; height: 150px;">
-								<img src="/resources/img/로고Asianaair.png" alt="">
+								<img src="/resources/image/로고아시아나.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -316,13 +316,13 @@
         function requestPayAir(airLine) {
             if (airLine == 'koreaAirLine') {
                 at_all_price = koreaPrice;
-                at_airLine='korea';
+                at_airLine='대한항공';
             } else if (airLine == 'jinAirAirLine') {
                 at_all_price = jinAirPrice;
-                at_airLine='jinAir';
+                at_airLine='진에어항공';
             } else if (airLine == 'asianaAirLine') {
                 at_all_price = asianaPrice;
-                at_airLine='asiana';
+                at_airLine='아시아나항공';
                 
             }
 

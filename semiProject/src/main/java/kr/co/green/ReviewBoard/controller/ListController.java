@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.green.ReviewBoard.model.dto.ReviewBoardDTO;
 import kr.co.green.ReviewBoard.model.service.ReviewBoardServiceImpl;
@@ -28,36 +29,46 @@ public class ListController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int cpage = Integer.parseInt(request.getParameter("cpage")); //ÇöÀç ÆäÀÌÁö
+		int cpage = Integer.parseInt(request.getParameter("cpage")); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
-		String searchText = request.getParameter("searchText"); // °Ë»ö
+		String searchText = request.getParameter("searchText"); // ï¿½Ë»ï¿½
 		
 		ReviewBoardServiceImpl ReviewBoardService = new ReviewBoardServiceImpl();
 		
 		int listCount = ReviewBoardService.boardListCount(searchText);
 		
-		int pageLimit = 5; // º¸¿©Áú ÆäÀÌÁö ¼ö
+		int pageLimit = 5; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		
-		int boardLimit = 10; // ÇÑÆäÀÌÁö¿¡ µé¾î°¥ °Ô½Ã±Û ¼ö
+		int boardLimit = 10; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¥ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½
 		
-		BoardPagination page = new BoardPagination();	// ³ª¸ÓÁö ÆäÀÌÂ¡ Ã³¸® common
+		BoardPagination page = new BoardPagination();	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â¡ Ã³ï¿½ï¿½ common
 		
 		BoardPageInfo pi = page.getPageInfo(listCount, cpage, pageLimit, boardLimit);
 		
-		ArrayList<ReviewBoardDTO> list = ReviewBoardService.boardList(pi, searchText);
 		
+		HttpSession session = request.getSession();
+		ArrayList<ReviewBoardDTO> list = ReviewBoardService.boardList(pi, searchText);
+		try {
+			
+//		int mno = (int) session.getAttribute("m_no");
+//		ReviewBoardDTO reviewBoard = new ReviewBoardDTO();
+//		reviewBoard.setMno(mno);
 		int row = listCount - (cpage-1) * boardLimit;
 //		String star = request.getParameter("star");
 		
 		request.setAttribute("row", row);
-		request.setAttribute("searchText", searchText); // °Ë»ö
+//		request.setAttribute("reviewBoard", reviewBoard);
+		request.setAttribute("searchText", searchText); // ï¿½Ë»ï¿½
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		RequestDispatcher view = request.getRequestDispatcher("/views/reviewboard/review.jsp");
 		view.forward(request, response);
-		
-	}
+		}catch(Exception e) {
+			response.sendRedirect("/views/common/error.jsp");
+		}
+	
 
+	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

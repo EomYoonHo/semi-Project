@@ -51,6 +51,7 @@
 				<h3 class="pgc">Tell us about your experience.</h3>
 			</div>
 		</div>
+		<input type="hidden" name="mno" value="${reviewBoard.mno}">
 		<br>
 		<br>
 		<!-- board seach area -->
@@ -59,7 +60,7 @@
 				<div class="search-window">
 					<form action="/reviewBoardList.do" method="GET">
 						<div class="search-wrap">
-							<input type="hidden" name=mno value="${board.mno}">
+							
 							<input type="hidden" name="cpage" value="1"> 
 							<input
 								id="search" type="search" name="searchText"
@@ -93,7 +94,6 @@
 							<td>★★★★★</td>
 							<td>30</td>
 						</tr>
-
 						<c:choose>
 							<c:when test="${empty list}">
 								<tr>
@@ -103,14 +103,12 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
-									<tr>
-									<tr onclick="detailPage(${item.idx})">
+									<tr onclick="detailPage(${item.idx}, ${item.mno})">
 										<td>${row}</td>
 										<th>${item.title}</th>
 										<td>${item.nickName}</td>
 										<td>${item.star}</td>
 										<td>${item.views}</td>
-									</tr>
 									</tr>
 									<c:set var="row" value="${row-1}" />
 								</c:forEach>
