@@ -146,7 +146,7 @@
 
 						<c:otherwise>
 
-							<p>관리자 계정만 답변할수 있습니다</p>
+							<p class="dfjc" >관리자 계정만 답변할수 있습니다</p>
 						</c:otherwise>
 
 					</c:choose>
