@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import kr.co.green.member.model.dto.MemberDTO;
 import kr.co.green.member.model.service.MemberServiceImpl;
 import kr.co.green.point.model.service.PointServiceImpl;
@@ -110,14 +112,14 @@ public class RegisterController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String nickname = request.getParameter("nickname");
 
-//	String salt = BCrypt.gensalt(12);
-//	
-//	String hashedPassword = BCrypt.hashpw(pwd,salt);
+		String salt = BCrypt.gensalt(12);
+
+		String hashedPassword = BCrypt.hashpw(pwd, salt);
 
 		//
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setM_email(email);
-		memberDTO.setM_pwd(pwd);
+		memberDTO.setM_pwd(hashedPassword);
 		memberDTO.setM_name(name);
 		memberDTO.setM_phone(phone);
 		memberDTO.setM_nickname(nickname);
@@ -126,23 +128,22 @@ public class RegisterController extends HttpServlet {
 		MemberServiceImpl memberService = new MemberServiceImpl();
 
 		int result = memberService.memberEnroll(memberDTO);
-		
-		
 
 		MemberDTO pointmaker = new MemberDTO();
 		pointmaker.setM_email(email);
 		memberService.selectMember(pointmaker);
+
 		System.out.println(pointmaker.getM_no());
 		System.out.println(pointmaker.getM_email());
 		System.out.println(pointmaker.getM_pwd());
 		System.out.println(pointmaker.getM_name());
 		System.out.println(pointmaker.getM_nickname());
+
 		int m_no = pointmaker.getM_no();
+
 		// 회원가입
 		if (result == 0) {
 			validationAlert(response, "회원가입에 실패했습니다.");
-			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
-			view.forward(request, response);
 		} else {
 			int presult = pointService.pointEnroll(m_no);
 			if (presult == 0) {
