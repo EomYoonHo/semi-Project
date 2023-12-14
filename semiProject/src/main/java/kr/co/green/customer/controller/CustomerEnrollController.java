@@ -37,6 +37,7 @@ public class CustomerEnrollController extends HttpServlet {
 		
 		//2.세션에 있는 name 꺼내기
 		HttpSession session = request.getSession();
+		try {
 		int m_no = (int)session.getAttribute("m_no");
 
 		//3.서비스호출
@@ -52,7 +53,9 @@ public class CustomerEnrollController extends HttpServlet {
 			view.forward(request, response);
 	        System.out.println("문의등록실패");
 		}
-		
+		} catch (Exception e) {
+			response.sendRedirect("/views/common/error.jsp");
+		}
 		
 	}
 

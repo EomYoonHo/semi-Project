@@ -25,7 +25,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
 	rel="stylesheet">
-<script src="/resources/js/reviewboard.js"></script>
 
 </head>
 
@@ -88,7 +87,7 @@
 					<tbody>
 						<tr>
 							<td>●</td>
-							<th><a href="#!">[공지사항] 개인정보 처리방침 변경안내</a>
+							<th><a href="/views/common/privacy.jsp">[공지사항] 개인정보 처리방침 변경안내</a>
 								<p>테스트</p></th>
 							<td>운영자</td>
 							<td>★★★★★</td>
@@ -177,4 +176,5 @@
 
 
 </body>
+<script src="/resources/js/reviewboard.js"></script>
 </html>
