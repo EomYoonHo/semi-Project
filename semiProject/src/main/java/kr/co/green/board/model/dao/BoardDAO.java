@@ -22,7 +22,8 @@ public class BoardDAO {
 		String query = "SELECT b.b_idx," 
 				+ "			m.m_nickname,"
 				+ "			b.b_title," 
-				+ "			b.b_views" 
+				+ "			b.b_views,"
+				+ "			b.m_no" 
 				+ "		FROM board b"
 				+ "		JOIN  MEMBER m"
 				+ "		ON b.m_no=m.m_no"
@@ -49,12 +50,14 @@ public class BoardDAO {
 				String b_title = rs.getString("b_title");
 				String m_nickname = rs.getString("m_nickname");
 				int b_views = rs.getInt("b_views");
-
+				int m_no = rs.getInt("m_no");
+				
 				BoardDTO board = new BoardDTO();
 				board.setB_idx(b_idx);
 				board.setB_title(b_title);
 				board.setM_nickname(m_nickname);
 				board.setB_views(b_views);
+				board.setM_no(m_no);
 				list.add(board);
 			}
 			pstmt.close();
