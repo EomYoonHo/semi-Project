@@ -84,7 +84,7 @@
 				<br> <br>
 				<div class="pt-1">
 					<input class="iipp" type="text" name="b_title"
-						placeholder="제목을 입력하세요">
+						placeholder="제목을 입력하세요" maxlength="15">
 				</div>
 				<br> <br>
 				<div class="container page-title pgc">
@@ -94,14 +94,24 @@
 				</div>
 				<br> <br>
 				<div class="pt-1 bbb iipp2" style="background-color: white;">
-					<textarea id="summernote" name="b_content"></textarea>
+					<textarea id="summernote" name="b_content" maxlength="100"></textarea>
 				</div>
 				<script>
 					$('#summernote').summernote({
 						placeholder : '내용을 입력해주세요',
 						tabsize : 2,
-						height : 250
+						height : 250,
+						maxlength : 100
 					});
+					var textarea = $('textarea[maxlength]');
+					textarea.bind("keydown keyup click",  function(){
+					    var max = $(this).attr('maxlength');
+					    if($(this).val().length > max){
+					        $(this).val($(this).val().substr(0, max));
+					    }
+					});
+					 
+					$("summernote").attr("maxlength", 100);
 				</script>
 				<div class="pt-1">
 

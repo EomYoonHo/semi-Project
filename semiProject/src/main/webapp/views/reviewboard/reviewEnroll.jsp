@@ -121,7 +121,7 @@
 				<br>
 				<div class="pt-1">
 					<input class="iipp" type="text" name="title"
-						placeholder="제목을 입력하세요">
+						placeholder="제목을 입력하세요" maxlength="15">
 				</div>
 				<br>
 				<br>
