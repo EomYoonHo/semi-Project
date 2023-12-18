@@ -53,4 +53,9 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.memberUpdate(con, memberdto);
 	}
 
+	public int passwordChange(String hashedPassword, String email) {
+		
+		return memberDAO.passwordChange(con,hashedPassword,email);
+	}
+
 }
