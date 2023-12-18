@@ -233,5 +233,21 @@ public class MemberDAO {
 		return 0;
 	}
 
+	public int passwordChange(Connection con, String hashedPassword, String email) {
+		String query = "UPDATE MEMBER "
+				+ "		  SET M_PWD =? "
+				+ "		  WHERE M_EMAIL =?";
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, hashedPassword);
+			pstmt.setString(2, email);
+			return pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
 
 }

@@ -372,3 +372,29 @@ padding: 10px;
   left: 79%;
   width: 20%;
 }
+.ddff {
+  display: flex;
+  justify-content: center;
+}
+
+.bbttnn {
+  background: none;
+  color: white;
+  height: 40px;
+  width: 40%px;
+  border-color: white;
+  font-family: initial;
+}
+.get__number {
+  width: 25%;
+  height: 45px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-left: 8px;
+  background:none;
+  display: flex;
+  float: right;
+  align-items: center;
+  text-align: center;
+}
