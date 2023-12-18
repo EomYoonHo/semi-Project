@@ -1,0 +1,103 @@
+.hero-header{
+    height: 310px;
+    background-image: url("../img/sss.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    }
+
+.product-list{
+    display: block;
+    text-align: center;
+    text-decoration:none;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.pptt {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.product{
+    display: block;
+    width: 225px;
+    text-align: center;
+    text-decoration:none;
+    color: black;
+    float:left;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+.product-name{
+    margin-top: 20px;
+    margin-bottom: 4px;
+    
+    
+}
+
+  .packagename {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+    
+  }
+  
+  .packagename2 {
+    font-size: 13px;
+    margin-top: 3px;
+    padding-bottom: 5px;
+    
+  }
+  
+  .detail {
+    padding-top: 17px;
+    border-top: 3px solid black;
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    
+  }
+  
+  .productdetail {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+  
+  .productdetail span {
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 0;
+    
+  }
+  .slider {
+    width: 100%;                                 
+    overflow: hidden;
+    position: relative;
+}
+.slide {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.img {
+    width: 100%;
+    height: auto;
+}
+.dfjc {
+  display: flex;
+  justify-content: center;
+}

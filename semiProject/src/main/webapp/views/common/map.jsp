@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <title>semi-Project</title>
-  <link rel="stylesheet" href="/resources/css/setting.css">
+  <link rel="stylesheet" href="/resources/css/setting.css"> 
   <link rel="stylesheet" href="/resources/css/plugin.css">
   <link rel="stylesheet" href="/resources/css/semi.css">
   <link rel="stylesheet" href="/resources/css/common.css">

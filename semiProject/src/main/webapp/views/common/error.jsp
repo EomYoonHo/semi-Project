@@ -11,7 +11,7 @@
    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
    <title>404 HTML Template by Colorlib</title>
-   <link rel="stylesheet" href="/resources/css/setting.css">
+   <link rel="stylesheet" href="/resources/css/setting.css"> 
    <link rel="stylesheet" href="/resources/css/plugin.css">
    <link rel="stylesheet" href="/resources/css/semi.css">
    <link rel="stylesheet" href="/resources/css/common.css">
