@@ -89,9 +89,16 @@
           </div>
       </div>
       <div class="pt-1 wwwii">
-        <button type="button" onclick="boardUpdate(${board.b_idx},${b_row})" class="custom-btn btn-6"><span>수정</span>
-        <button type="submit" onclick="boardDelete()" class="custom-btn btn-6-1"><span>삭제</span>
-        <button type="reset" onclick="window.location.href = '/boardList.do?cpage=1'" class="custom-btn btn-6"><span>취소</span>
+      	<c:choose>
+      		<c:when test="${sessionScope.m_no == board.m_no || sessionScope.m_type==0}">
+	        <button type="button" onclick="boardUpdate(${board.b_idx},${b_row})" class="custom-btn btn-6"><span>수정</span>
+    	    <button type="submit" onclick="boardDelete()" class="custom-btn btn-6-1"><span>삭제</span>
+        	<button type="reset" onclick="window.location.href = '/boardList.do?cpage=1'" class="custom-btn btn-6"><span>취소</span>
+      		</c:when>
+      		<c:otherwise>
+      			<p> 작성자나 관리자만 수정가능합니다.</p>
+      		</c:otherwise>
+      	</c:choose>	
       </div>
   
   </form>    

@@ -1,5 +1,5 @@
-function detailPage(b_idx,row) {
-	const pageUrl = 'boardDetail.do?b_idx=' + b_idx+"&b_row="+row;
+function detailPage(b_idx,row,m_no) {
+	const pageUrl = 'boardDetail.do?b_idx=' + b_idx+"&b_row="+row+ "&m_no=" + m_no;
 	window.location.href = pageUrl;
 }
 

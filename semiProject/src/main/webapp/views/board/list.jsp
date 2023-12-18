@@ -49,7 +49,9 @@
 				<h3 class="pgc">Feel free to write your opinions.</h3>
 			</div>
 		</div>
-		<br> <br>
+		<input type="hidden" name="m_no" value="${board.m_no}">
+		<br> 
+		<br>
 		<!-- board seach area -->
 		<div id="board-search">
 			<div class="container iipp6">
@@ -99,7 +101,7 @@
 								<tr>
 									<tr>
 										<td>${row}</td>
-										<th onclick="detailPage(${item.b_idx}, ${row} )">${item.b_title}</th>
+										<th onclick="detailPage(${item.b_idx}, ${row},${item.m_no} )">${item.b_title}</th>
 										<td>${item.m_nickname}</td>
 										<td>${item.b_views}</td>
 									</tr>

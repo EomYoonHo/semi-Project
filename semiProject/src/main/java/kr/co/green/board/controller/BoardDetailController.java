@@ -26,6 +26,7 @@ public class BoardDetailController extends HttpServlet {
 		//1.idx받기
 		int b_idx = Integer.parseInt(request.getParameter("b_idx"));
 		int b_row = Integer.parseInt(request.getParameter("b_row"));
+		int m_no = Integer.parseInt(request.getParameter("m_no"));
 		
 		//2.클릭하면 조회수 늘리기
 		BoardServiceImpl boardService = new BoardServiceImpl();
@@ -36,7 +37,7 @@ public class BoardDetailController extends HttpServlet {
 			BoardDTO board = new BoardDTO();
 			board.setB_idx(b_idx);
 			boardService.boardSelect(board);
-			
+			board.setM_no(m_no);
 			
 			
 			//4.freeDetail.jsp로 포워딩
