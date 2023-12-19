@@ -322,8 +322,7 @@
             <br> <br> <br> <br> <br>
             <div class="page-title">
                 <div class="container">
-                    <h3 class="pgc" style="font-size: 50px;">Thank you for using [
-                        Pess-Port ] travel agency.</h3>
+                    <h3 class="pgc" style="font-size: 50px;">Thank you for using [ Pess-Port ] travel agency.</h3>
                 </div>
             </div>
 
