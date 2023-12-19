@@ -44,7 +44,7 @@
             <h1><span>4</span><span>0</span><span>4</span></h1>
          </div>
          <h2>we are sorry, but the page you requested was not found</h2>
-         <a href="/views/common/home.jsp" class="btnset btnset-round btnset-line btnset-black dfjc">뒤로가기</a>
+         <a href="/views/common/home.jsp" class="btnset btnset-round btnset-line btnset-black dfjc">홈으로가기</a>
       </div>
    </div>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
