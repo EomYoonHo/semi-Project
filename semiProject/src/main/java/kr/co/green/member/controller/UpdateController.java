@@ -39,7 +39,7 @@ public class UpdateController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
-		String nickName = request.getParameter("nickName");
+		String nickName = request.getParameter("nickname");
 		int mno = (int)session.getAttribute("m_no");
 
 		MemberServiceImpl memberService = new MemberServiceImpl();
