@@ -87,6 +87,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=1" class="product"> <img
 									src="/resources/image/package파리투어1.PNG" width="225">
+									<br><br>
 									<p class="packagename">파리 패키지</p>
 									<p class="packagename2">Paris Tour</p>
 									<div class="product-price">3,699,000 ₩</div>
@@ -98,6 +99,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=2" class="product"> <img
 									src="/resources/image/package동유럽2.PNG" width="225">
+									<br><br>
 									<p class="packagename">동유럽 패키지</p>
 									<p class="packagename2">Eastern Europe Tour</p>
 									<div class="product-price">2,599,000 ₩</div>
@@ -109,6 +111,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=3" class="product"> <img
 									src="/resources/image/package북유럽3.PNG" width="225">
+									<br><br>
 									<p class="packagename">북유럽 패키지</p>
 									<p class="packagename2">North Europe Tour</p>
 									<div class="product-price">4,699,000 ₩</div>
@@ -120,6 +123,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=4" class="product"> <img
 									src="/resources/image/package삿포로4.PNG" width="225">
+									<br><br>
 									<p class="packagename">삿포로 패키지</p>
 									<p class="packagename2">Sapporo Tour</p>
 									<div class="product-price">1,299,000 ₩</div>
@@ -131,6 +135,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=5" class="product"> <img
 									src="/resources/image/package장가계5.PNG" width="225">
+									<br><br>
 									<p class="packagename">장가계 패키지</p>
 									<p class="packagename2">Jangjiaji Tour</p>
 									<div class="product-price">569,000 ₩</div>
@@ -142,6 +147,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=6" class="product"> <img
 									src="/resources/image/package미동부6.PNG" width="225">
+									<br><br>
 									<p class="packagename">미동부 패키지</p>
 									<p class="packagename2">Eastern U.S Tour</p>
 									<div class="product-price">4,340,200 ₩</div>
@@ -153,6 +159,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=7" class="product"> <img
 									src="/resources/image/package칸쿤7.PNG" width="225">
+									<br><br>
 									<p class="packagename">칸쿤 패키지</p>
 									<p class="packagename2">Cancun Tour</p>
 									<div class="product-price">5,326,200 ₩</div>
@@ -164,6 +171,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=8" class="product"> <img
 									src="/resources/image/package남미투어8.PNG" width="225">
+									<br><br>
 									<p class="packagename">남미 패키지</p>
 									<p class="packagename2">South America Tour</p>
 									<div class="product-price">19,900,000 ₩</div>
@@ -175,6 +183,7 @@
                   				<figure>
 								<a href="/packageControll.do?p_idx=9" class="product"> <img
 									src="/resources/image/package라오스9.PNG" width="225">
+									<br><br>
 									<p class="packagename">라오스 패키지</p>
 									<p class="packagename2">Laos Tour</p>
 									<div class="product-price">619,900 ₩</div>
@@ -343,7 +352,7 @@
 	<br>
 	<br>
 	<br>
-	<br>
+	<br><br><br>
 	<div class="page-title">
 		<div class="container">
 			<h3 class="pgc" style="font-size: 50px;">Thank you for
