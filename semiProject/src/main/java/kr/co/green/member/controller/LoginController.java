@@ -61,7 +61,7 @@ public class LoginController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		
@@ -87,11 +87,11 @@ public class LoginController extends HttpServlet {
 
 				RequestDispatcher view = request.getRequestDispatcher("/views/common/home.jsp");
 				view.forward(request, response);
-				System.out.println("�솚�쁺�빀�땲�떎" + member.getM_name() + "�떂");
+				System.out.println("환영합니다" + member.getM_name() + "님");
 			}
 
 		} else {
-			System.out.println("�븫�샇�솕�맂 鍮꾨�踰덊샇�� �씪移섑븯吏� �븡�쓬 ");
+			System.out.println("암호화된 비밀번호와 일치하지 않음 ");
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);
 		}
