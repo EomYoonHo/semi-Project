@@ -10,7 +10,7 @@
 			</a>
 		</h1>
 	</div>
-	<div class="header-center">
+	<div class="header-center"> 
 		<ul class="header-gnblist">
 			<li class="header-gnbitem"><a class="header-gnblink" href="">
 					<span>여행지추천</span>
@@ -59,7 +59,7 @@
 			</a>
 				<ul class="header-sublist">
 					<li class="header-subitem"><a class="header-sublink"
-						onclick="window.location.href = '/customerList.do?cpage=1'"><span>고객문의</span>
+						onclick="window.location.href = '/customerList.do?cpage=1'" style="cursor: pointer;"><span>고객문의</span>
 					</a></li>
 					<li class="header-subitem"><a class="header-sublink"
 						href="/views/customer/customerEnroll.jsp"> <span>문의하기</span>
