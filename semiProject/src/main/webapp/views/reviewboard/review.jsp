@@ -103,7 +103,7 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
-									<tr onclick="detailPage(${item.idx}, ${item.mno})">
+									<tr style="cursor: pointer;" onclick="detailPage(${item.idx}, ${item.mno})">
 										<td>${row}</td>
 										<th>${item.title}</th>
 										<td>${item.nickName}</td>

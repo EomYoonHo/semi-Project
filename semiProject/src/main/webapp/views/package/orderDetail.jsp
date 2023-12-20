@@ -114,14 +114,14 @@
             <span>기간</span> <select class="www pgc pptt" name="period"
                id="period" onclick="choosePeriod()">
                <option value="">기간을 선택해주세요.</option>
-               <option value="2023-11-23~2023-12-23">2023-11-23 ~
-                  2023-12-23</option>
-               <option value="2023-11-25~2023-12-25">2023-11-25 ~
-                  2023-12-25</option>
-               <option value="2023-11-27~2023-12-27">2023-11-27 ~
-                  2023-12-27</option>
-               <option value="2023-11-29~2023-12-29">2023-11-29 ~
-                  2023-12-29</option>
+               <option value="2023-11-23~2023-12-23">2023-12-22 ~
+                  2024-01-22</option>
+               <option value="2023-11-25~2023-12-25">2023-12-25 ~
+                  2024-01-25</option>
+               <option value="2023-11-27~2023-12-27">2023-12-27 ~
+                  2024-01-27</option>
+               <option value="2023-11-29~2023-12-29">2023-12-29 ~
+                  2024-01-29</option>
             </select>
          </div>
          <div class="productdetail dfjc">

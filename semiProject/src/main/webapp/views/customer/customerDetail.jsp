@@ -134,7 +134,7 @@
 
                            <td colspan="4" class="text-left www" valign="top" height="100">
                               <input class="www wwww dfjc" name="reply" type="text"
-                              style="hegiht: 100%; width: 100%; border: none;"
+                              style="height: 100%; width: 100%; border: none;"  
                               value="${customerDTO.cs_reply}">
 
                            </td>
