@@ -61,7 +61,7 @@ public class LoginController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		
@@ -91,6 +91,7 @@ public class LoginController extends HttpServlet {
 			}
 
 		} else {
+
 			System.out.println("암호화된 비밀번호와 일치하지 않음");
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);

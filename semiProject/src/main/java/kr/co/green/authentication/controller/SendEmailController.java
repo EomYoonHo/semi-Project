@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/SendEmail.do")
 public class SendEmailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,6 +30,7 @@ public class SendEmailController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -42,21 +42,19 @@ public class SendEmailController extends HttpServlet {
 		int rightLimit = 122; // letter 'z'
 		int targetStringLength = 10;
 		Random random = new Random();
-		String generatedString = random
-				.ints(leftLimit, rightLimit + 1)
-				.filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
-				.limit(targetStringLength)
+		String generatedString = random.ints(leftLimit, rightLimit + 1)
+				.filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97)).limit(targetStringLength)
 				.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
-		
-		//사용자 이메일 주소 받아오기
+
+		// 사용자 이메일 주소 받아오기
 		String email = request.getParameter("email");
 
 		String recipient = email;// 받는사람
 		String code = generatedString;// 난수
 
 		// 1. 발신자의 메일 계정과 비밀번호 설정
-		final String user = "";//본인의 지메일 계정
-		final String password = "";//구글 메일에서 설정으로 받아온 토큰 (이거 토큰은 민수한테 물어보기)
+		final String user = "";// 본인의 지메일 계정
+		final String password = "";// 구글 메일에서 설정으로 받아온 토큰 (이거 토큰은 민수한테 물어보기)
 
 		// 2. Property에 SMTP 서버 정보 설정
 		Properties prop = new Properties();
@@ -91,7 +89,7 @@ public class SendEmailController extends HttpServlet {
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
-		//코드 전 페이지로 보내주기
+		// 코드 전 페이지로 보내주기
 		PrintWriter out = response.getWriter();
 		out.print(code);
 	}
