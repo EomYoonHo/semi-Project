@@ -30,7 +30,7 @@ public class LoginController extends HttpServlet {
 
 //		String email = request.getParameter("email");
 //		String pwd = request.getParameter("pwd");
-//		System.out.println("받아오는값"+email);
+//		System.out.println("諛쏆븘�삤�뒗媛�"+email);
 //
 //		MemberServiceImpl memberService = new MemberServiceImpl();
 //
@@ -72,10 +72,7 @@ public class LoginController extends HttpServlet {
 
 		if (BCrypt.checkpw(pwd, member.getM_pwd())) {
 
-			System.out.println("암호랑 비번이랑 일치");
-
 			if (Objects.isNull(member.getM_name())) {
-				System.out.println("?조회한 회원정보에서 이름이 존재 하지 않음 로그인 실패");
 				RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 				view.forward(request, response);
 			} else {

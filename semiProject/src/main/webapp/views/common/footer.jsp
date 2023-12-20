@@ -12,7 +12,7 @@ class="btn_gotop2 link-7">
 	<a href="#" class="btn_gotop"> 
 	<span class="glyphicon glyphicon-chevron-up"> 
 		<img src="/resources/image/top.png" alt="" width="20">
-	</span>
+	</span> 
 	</a>
 	<div class="footer-container">
 		<!--  <audio src="/resources/music/home.mp3" controls="controls" autoplay="autoplay" style="display: none;"></audio>-->

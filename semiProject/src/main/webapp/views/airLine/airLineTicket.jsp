@@ -149,7 +149,7 @@
 													<span class="tooltip text">경유 1회</span>
 												</p> <br>
 												<p class="load dfjc">
-													<img class="isize" src="/resources/img/티켓plane.png" alt="">
+													<img class="isize" src="/resources/image/티켓plane.png" alt="">
 												</p>
 											</span> <br> <span class="time dfjc"><b>${airlineDTO.at_backdate}</b>&nbsp;&nbsp;
 												<span class="city"><b>${airlineDTO.at_destination}
@@ -205,7 +205,7 @@
 													<span class="tooltip text">경유 1회</span>
 												</p> <br>
 												<p class="load dfjc">
-													<img class="isize" src="/resources/img/티켓plane.png" alt="">
+													<img class="isize" src="/resources/image/티켓plane.png" alt="">
 												</p>
 											</span> <br> <span class="time dfjc"><b>${airlineDTO.at_backdate}</b>&nbsp;&nbsp;
 												<span class="city"><b>${airlineDTO.at_destination}
