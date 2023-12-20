@@ -49,7 +49,7 @@
 	<!-- [S]glamping-N4 -->
 	<main class="th-layout-main ">
 		<div class="glamping-N3">
-			<img class="footer-backimg img-pc" src="/resources/img/airplane2.jpg"
+			<img class="footer-backimg img-pc" src="/resources/image/airplane2.jpg"
 				alt="PC 푸터 비주얼">
 		</div>
 		<br> <br> <br> <br>
