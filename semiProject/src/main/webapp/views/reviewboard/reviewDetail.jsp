@@ -84,7 +84,7 @@
 			<div class="container">
 				<input type="hidden" name="idx" value="${reviewboard.idx}">
 				<input type="hidden" name="title" value="${reviewboard.title}">
-				<input type="hidden" name="content">
+				<input type="hidden" name="content" value="${reviewboard.content}">
 				<input type="hidden" name="star" value="${reviewboard.star}">
 				<input type="hidden" name="indate" value="${reviewboard.indate}">
 				<input type="hidden" name="views" value="${reviewboard.views}">

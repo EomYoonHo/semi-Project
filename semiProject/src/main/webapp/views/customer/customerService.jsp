@@ -113,7 +113,7 @@
 													<c:otherwise>
 														<c:forEach var="item" items="${list}">
 															<td type="hidden" name="idx" value="${item.cs_idx}">
-															<tr>
+															<tr style="cursor: pointer;">
 																<td>${row}</td>
 																<td
 																	onclick="customerDetailPage(${item.cs_idx}, ${row} )">${item.cs_title}</td>

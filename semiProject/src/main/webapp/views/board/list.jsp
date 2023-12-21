@@ -98,14 +98,14 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="item" items="${list}">
-								<tr>
-									<tr>
+								
+									<tr style="cursor: pointer;">
 										<td>${row}</td>
 										<th onclick="detailPage(${item.b_idx}, ${row},${item.m_no} )">${item.b_title}</th>
 										<td>${item.m_nickname}</td>
 										<td>${item.b_views}</td>
 									</tr>
-								</tr>
+								
 									<c:set var="row" value="${row-1}" />
 								</c:forEach>
 							</c:otherwise>
