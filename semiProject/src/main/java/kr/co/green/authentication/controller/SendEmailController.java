@@ -55,8 +55,8 @@ public class SendEmailController extends HttpServlet {
 		String code = generatedString;// 난수
 
 		// 1. 발신자의 메일 계정과 비밀번호 설정
-		final String user = "";//본인의 지메일 계정
-		final String password = "";//구글 메일에서 설정으로 받아온 토큰 (이거 토큰은 민수한테 물어보기)
+		final String user = "ghtm8942@gmail.com";//본인의 지메일 계정
+		final String password = "jfzr vaol ozat askq";//구글 메일에서 설정으로 받아온 토큰 (이거 토큰은 민수한테 물어보기)
 
 		// 2. Property에 SMTP 서버 정보 설정
 		Properties prop = new Properties();
