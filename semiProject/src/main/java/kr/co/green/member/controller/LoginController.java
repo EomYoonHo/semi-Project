@@ -87,7 +87,7 @@ public class LoginController extends HttpServlet {
 
 				RequestDispatcher view = request.getRequestDispatcher("/views/common/home.jsp");
 				view.forward(request, response);
-				System.out.println("환영합니다" + member.getM_name() + "님");
+				System.out.println("환영합니다!" + member.getM_name() + "님");
 			}
 
 		} else {
