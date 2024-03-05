@@ -1,4 +1,4 @@
-# ✈️🗺️ Java-Project- PESSPORT (23.11 ~ 23.12)
+# ✈️🗺️ Java-Project- PESSPORT 
 ![KakaoTalk_20240304_162905637](https://github.com/EomYoonHo/semi-Project/assets/150643108/2708a200-7193-4d21-82be-83f0b6506227)
 <br/><br/>
 # 👨‍💼🕰️ 프로젝트 기한 (23.11 ~ 23.12)
@@ -87,5 +87,6 @@
 
 ## 🧑 : 멤버별 후기 (Acknowledgements)
 
+![ㅈㅈ](https://github.com/EomYoonHo/semi-Project/assets/150643108/93943b55-95e0-4c24-8d7d-143d6f71d37a)
 
 <br/><br/>
