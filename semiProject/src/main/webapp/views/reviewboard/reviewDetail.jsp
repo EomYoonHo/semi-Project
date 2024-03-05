@@ -41,6 +41,14 @@
 	crossorigin="anonymous"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
+  integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('482f0af3abdd2a4f04ce467e36613aec'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+
+	
 <link
 	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
 	rel="stylesheet">
@@ -84,7 +92,7 @@
 			<div class="container">
 				<input type="hidden" name="idx" value="${reviewboard.idx}">
 				<input type="hidden" name="title" value="${reviewboard.title}">
-				<input type="hidden" name="content">
+				<input type="hidden" name="content" value="${reviewboard.content}">
 				<input type="hidden" name="star" value="${reviewboard.star}">
 				<input type="hidden" name="indate" value="${reviewboard.indate}">
 				<input type="hidden" name="views" value="${reviewboard.views}">
@@ -141,6 +149,10 @@
 				
 				
 		</form>
+<a id="kakaotalk-sharing-btn" href="javascript:;">
+  <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+    alt="카카오톡 공유 보내기 버튼" />
+</a>	
 	</section>
 	<div class="page-title">
 		<div class="container">
@@ -155,4 +167,42 @@
 	</footer>
 
 </body>
+<script>
+  Kakao.Share.createDefaultButton({
+    container: '#kakaotalk-sharing-btn',
+    objectType: 'feed',
+    content: {
+      title: '딸기 치즈 케익',
+      description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+      imageUrl:
+        'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+      link: {
+        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+        mobileWebUrl: 'http://localhost/detail.do?idx=48&mno=8',
+        webUrl: 'http://localhost/detail.do?idx=48&mno=8',
+      },
+    },
+    social: {
+      likeCount: 286,
+      commentCount: 45,
+      sharedCount: 845,
+    },
+    buttons: [
+      {
+        title: '웹으로 보기',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      {
+        title: '앱으로 보기',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+    ],
+  });
+</script>
 </html>
