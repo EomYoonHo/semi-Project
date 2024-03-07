@@ -86,7 +86,7 @@
 
 
 ## 🧑 : 멤버별 후기 (Acknowledgements)
-![ㅈㅈ](https://github.com/EomYoonHo/semi-Project/assets/150643108/8b4fe27f-4277-47ed-b850-ad5e33f69ade)
+
 
 ![ㅈㅈ](https://github.com/EomYoonHo/semi-Project/assets/150643108/93943b55-95e0-4c24-8d7d-143d6f71d37a)
 
