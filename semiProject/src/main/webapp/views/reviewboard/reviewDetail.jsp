@@ -41,6 +41,14 @@
 	crossorigin="anonymous"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
+  integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('482f0af3abdd2a4f04ce467e36613aec'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+
+	
 <link
 	href="https://fonts.googleapis.com/css?family=Cabin:400,700|Playfair+Display:900"
 	rel="stylesheet">
@@ -141,6 +149,7 @@
 				
 				
 		</form>
+
 	</section>
 	<div class="page-title">
 		<div class="container">
@@ -155,4 +164,5 @@
 	</footer>
 
 </body>
+
 </html>

@@ -54,7 +54,7 @@ public class CustomerEnrollController extends HttpServlet {
 	        System.out.println("문의등록실패");
 		}
 		} catch (Exception e) {
-			response.sendRedirect("/views/common/error.jsp");
+			response.sendRedirect("/views/common/loginError.jsp");
 		}
 		
 	}
