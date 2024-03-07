@@ -155,20 +155,22 @@
                </div>
             </div>
 
-         <div class="pt-1 wwwii">
-         <c:choose>
-            <c:when test="${sessionScope.m_type == 0}">
-            <button class="custom-btn btn-6-1" onclick="customerDelete()">
-               <span>삭제</span>
-            </c:when>
-            <c:otherwise>
-            
-            </c:otherwise>
-         </c:choose>
-               <button class="custom-btn btn-6" type="reset"
-                  onclick="window.location.href = '/customerList.do?cpage=1'">
-                  <span>취소</span>
-         </div>
+
+			<div class="pt-1 wwwii">
+			<c:choose>
+				<c:when test="${sessionScope.m_type == 0}">
+				<button class="custom-btn btn-6-1" onclick="customerDelete()">
+					<span>삭제</span>
+				</c:when>
+				<c:otherwise>
+				
+				</c:otherwise>
+			</c:choose>
+					<button class="custom-btn btn-6" type="reset"
+						onclick="window.location.href = '/customerList.do?cpage=1'">
+						<span>취소</span>
+			</div>
+
 
       </form>
    </section>

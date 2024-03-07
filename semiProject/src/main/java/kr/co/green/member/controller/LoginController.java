@@ -87,12 +87,13 @@ public class LoginController extends HttpServlet {
 
 				RequestDispatcher view = request.getRequestDispatcher("/views/common/home.jsp");
 				view.forward(request, response);
-				System.out.println("환영합니다" + member.getM_name() + "님");
+
+				System.out.println("환영합니다!" + member.getM_name() + "님");
 			}
 
 		} else {
+			System.out.println("암호화된 비밀번호와 일치하지 않음 ");
 
-			System.out.println("암호화된 비밀번호와 일치하지 않음");
 			RequestDispatcher view = request.getRequestDispatcher("/views/common/error.jsp");
 			view.forward(request, response);
 		}
